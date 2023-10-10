@@ -45,17 +45,38 @@ class IntREPL extends REPLBase {
 
     }
 
+    private def reversePolishToExpressionTree(expression: Seq[String]): String = {
+        val outputStack = mutable.Stack[String]()
+        for (token <- expression) {
+            if (isOperator(token)) {
+                val firstOperand = outputStack.pop()
+                val secondOperand = outputStack.pop()
+                val res = applyOperation(secondOperand.toInt, token, firstOperand.toInt)
+                outputStack.push(res.toString)
+            } else if (isInteger(token)) {
+                outputStack.push(token)
+            } else {
+                throw new Error("Unknown expression element " + token)
+            }
+        }
+        outputStack.top
+    }
+
+
     override def readEval(command: String): String = {
         val expression = SplitExpressionString.splitExpressionString(command)
-        val reversedExpression = normalToReversePolish(expression)
-        val result = evaluateExpression(reversedExpression)
+        val reversePolishExpression = normalToReversePolish(expression)
+        val standardExpression = reversePolishToExpressionTree(reversePolishExpression)
+        //val result = evaluateExpression(standardExpression)
         //println(s"The result is ${reversedExpression}")
-        result
+        //println(s"The standard expression is ${standardExpression}")
+        //result
+        standardExpression
     }
 
     def evaluateExpression(expression: Seq[String]): String = {
-        val operandStack = Stack[Int]() // Stack to store operands
-        val operatorStack = Stack[String]() // Stack to store operators
+        val operandStack = mutable.Stack[Int]() // Stack to store operands
+        val operatorStack = mutable.Stack[String]() // Stack to store operators
 
         ""
     }
@@ -80,4 +101,3 @@ class IntREPL extends REPLBase {
         }
     }
 }
-
