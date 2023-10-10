@@ -22,7 +22,7 @@ object SplitExpressionString {
   b - 11 -> (b, - , 11)
   if - directly borders on a digit on the right, but not on the left, is included in the string on the right
   b + -11 -> (b,+,-11)
- if - directly borders on a letter on the right, it is a seperate string 
+ if - directly borders on a letter on the right, it is a separate string
  n-n -> (n,-,n)
 
   set parsing: everything between { and } is taken as a single literal string

@@ -1,9 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="repls.IntReplTests" tests="48" skipped="0" failures="46" errors="0" timestamp="2023-10-10T12:10:56" hostname="Jays-MacBook-Pro-2.local" time="0.211">
+<testsuite name="repls.IntReplTests" tests="48" skipped="0" failures="48" errors="0" timestamp="2023-10-10T16:08:34" hostname="Jays-MacBook-Pro-2.local" time="0.334">
   <properties/>
-  <testcase name="Echo simple" classname="repls.IntReplTests" time="0.071"/>
-  <testcase name="Echo brackets" classname="repls.IntReplTests" time="0.021">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[( 42 )]&quot; did not equal &quot;[42]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[( 42 )]&quot; did not equal &quot;[42]&quot;
+  <testcase name="Echo simple" classname="repls.IntReplTests" time="0.091">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[1]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[1]&quot;
+	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
+	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
+	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
+	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
+	at app//repls.IntReplTests.$anonfun$new$1(IntReplTests.scala:20)
+	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
+	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
+	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
+	at app//org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
+	at app//org.scalatest.Transformer.apply(Transformer.scala:22)
+	at app//org.scalatest.Transformer.apply(Transformer.scala:20)
+	at app//org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)
+	at app//org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
+	at app//org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
+	at app//repls.infrastructure.TestBase.org$scalatest$concurrent$TimeLimitedTests$$super$withFixture(TestBase.scala:9)
+	at app//org.scalatest.concurrent.TimeLimitedTests.$anonfun$withFixture$3(TimeLimitedTests.scala:154)
+	at app//org.scalatest.enablers.Timed$$anon$1.timeoutAfter(Timed.scala:127)
+	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl(TimeLimits.scala:239)
+	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl$(TimeLimits.scala:233)
+	at app//org.scalatest.concurrent.TimeLimits$.failAfterImpl(TimeLimits.scala:305)
+	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture(TimeLimitedTests.scala:153)
+	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture$(TimeLimitedTests.scala:150)
+	at app//repls.infrastructure.TestBase.withFixture(TestBase.scala:9)
+	at app//org.scalatest.FunSuiteLike.invokeWithFixture$1(FunSuiteLike.scala:184)
+	at app//org.scalatest.FunSuiteLike.$anonfun$runTest$1(FunSuiteLike.scala:196)
+	at app//org.scalatest.SuperEngine.runTestImpl(Engine.scala:286)
+	at app//org.scalatest.FunSuiteLike.runTest(FunSuiteLike.scala:196)
+	at app//org.scalatest.FunSuiteLike.runTest$(FunSuiteLike.scala:178)
+	at app//org.scalatest.FunSuite.runTest(FunSuite.scala:1560)
+	at app//org.scalatest.FunSuiteLike.$anonfun$runTests$1(FunSuiteLike.scala:229)
+	at app//org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:393)
+	at app//scala.collection.immutable.List.foreach(List.scala:333)
+	at app//org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:381)
+	at app//org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:376)
+	at app//org.scalatest.SuperEngine.runTestsImpl(Engine.scala:458)
+	at app//org.scalatest.FunSuiteLike.runTests(FunSuiteLike.scala:229)
+	at app//org.scalatest.FunSuiteLike.runTests$(FunSuiteLike.scala:228)
+	at app//org.scalatest.FunSuite.runTests(FunSuite.scala:1560)
+	at app//org.scalatest.Suite.run(Suite.scala:1124)
+	at app//org.scalatest.Suite.run$(Suite.scala:1106)
+	at app//org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1560)
+	at app//org.scalatest.FunSuiteLike.$anonfun$run$1(FunSuiteLike.scala:233)
+	at app//org.scalatest.SuperEngine.runImpl(Engine.scala:518)
+	at app//org.scalatest.FunSuiteLike.run(FunSuiteLike.scala:233)
+	at app//org.scalatest.FunSuiteLike.run$(FunSuiteLike.scala:232)
+	at app//repls.infrastructure.TestBase.run(TestBase.scala:26)
+	at app//org.scalatest.Suite.callExecuteOnSuite$1(Suite.scala:1187)
+	at app//org.scalatest.Suite.$anonfun$runNestedSuites$1(Suite.scala:1234)
+	at app//scala.collection.ArrayOps$.foreach$extension(ArrayOps.scala:1323)
+	at app//org.scalatest.Suite.runNestedSuites(Suite.scala:1232)
+	at app//org.scalatest.Suite.runNestedSuites$(Suite.scala:1166)
+	at app//org.scalatest.Suites.runNestedSuites(Suites.scala:56)
+	at app//org.scalatest.Suite.run(Suite.scala:1121)
+	at app//org.scalatest.Suite.run$(Suite.scala:1106)
+	at app//repls.ReplsTestSuitesBase.runDirect(ReplsTestSuitesBase.scala:16)
+	at app//repls.ReplsTestSuitesBase.runWithScoreCounter(ReplsTestSuitesBase.scala:11)
+	at app//repls.ReplsTestSuite4_1.run(ReplsTestSuite4_1.scala:15)
+	at app//org.scalatestplus.junit.JUnitRunner.run(JUnitRunner.scala:99)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base@18.0.2.1/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base@18.0.2.1/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</failure>
+  </testcase>
+  <testcase name="Echo brackets" classname="repls.IntReplTests" time="0.003">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[42]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[42]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -85,8 +167,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Evaluate addition simple" classname="repls.IntReplTests" time="0.002">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[1178 + 465 + 65 + 204 + 444]&quot; did not equal &quot;[2356]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[1178 + 465 + 65 + 204 + 444]&quot; did not equal &quot;[2356]&quot;
+  <testcase name="Evaluate addition simple" classname="repls.IntReplTests" time="0.003">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[2356]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[2356]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -168,8 +250,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Evaluate addition brackets" classname="repls.IntReplTests" time="0.003">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[( 12 + 1 ) + ( 45 + 547 + 56 )]&quot; did not equal &quot;[661]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[( 12 + 1 ) + ( 45 + 547 + 56 )]&quot; did not equal &quot;[661]&quot;
+  <testcase name="Evaluate addition brackets" classname="repls.IntReplTests" time="0.002">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[661]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[661]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -251,8 +333,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Evaluate addition negative numbers" classname="repls.IntReplTests" time="0.002">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[10 + -1]1&quot; did not equal &quot;[-]1&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[10 + -1]1&quot; did not equal &quot;[-]1&quot;
+  <testcase name="Evaluate addition negative numbers" classname="repls.IntReplTests" time="0.001">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[-1]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[-1]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -334,8 +416,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Evaluate subtraction simple" classname="repls.IntReplTests" time="0.002">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[5 - 2]&quot; did not equal &quot;[3]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[5 - 2]&quot; did not equal &quot;[3]&quot;
+  <testcase name="Evaluate subtraction simple" classname="repls.IntReplTests" time="0.001">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[3]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[3]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -417,8 +499,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Evaluate subtraction brackets" classname="repls.IntReplTests" time="0.002">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[24 - ( 75 - 643 )]&quot; did not equal &quot;[592]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[24 - ( 75 - 643 )]&quot; did not equal &quot;[592]&quot;
+  <testcase name="Evaluate subtraction brackets" classname="repls.IntReplTests" time="0.003">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[592]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[592]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -501,7 +583,7 @@
 </failure>
   </testcase>
   <testcase name="Evaluate subtraction negative" classname="repls.IntReplTests" time="0.001">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[( 0 - 29 )]&quot; did not equal &quot;[-29]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[( 0 - 29 )]&quot; did not equal &quot;[-29]&quot;
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[-29]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[-29]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -583,8 +665,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Evaluate subtraction two negatives make positives" classname="repls.IntReplTests" time="0.003">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[3 - -5]&quot; did not equal &quot;[8]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[3 - -5]&quot; did not equal &quot;[8]&quot;
+  <testcase name="Evaluate subtraction two negatives make positives" classname="repls.IntReplTests" time="0.002">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[8]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[8]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -666,8 +748,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Evaluate multiplication simple" classname="repls.IntReplTests" time="0.0">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[2 * 4]&quot; did not equal &quot;[8]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[2 * 4]&quot; did not equal &quot;[8]&quot;
+  <testcase name="Evaluate multiplication simple" classname="repls.IntReplTests" time="0.001">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[8]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[8]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -749,8 +831,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Evaluate multiplication brackets" classname="repls.IntReplTests" time="0.001">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[( 23 * 123 ) * ( 2 * 32 )]&quot; did not equal &quot;[181056]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[( 23 * 123 ) * ( 2 * 32 )]&quot; did not equal &quot;[181056]&quot;
+  <testcase name="Evaluate multiplication brackets" classname="repls.IntReplTests" time="0.002">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[181056]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[181056]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -832,8 +914,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Evaluate multiplication negative" classname="repls.IntReplTests" time="0.001">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[( -10 * 64 ) * ( 2 * 32 )]&quot; did not equal &quot;[-40960]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[( -10 * 64 ) * ( 2 * 32 )]&quot; did not equal &quot;[-40960]&quot;
+  <testcase name="Evaluate multiplication negative" classname="repls.IntReplTests" time="0.002">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[-40960]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[-40960]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -915,8 +997,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Evaluate Expressions simple" classname="repls.IntReplTests" time="0.0">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[1 + 4 * 5]&quot; did not equal &quot;[21]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[1 + 4 * 5]&quot; did not equal &quot;[21]&quot;
+  <testcase name="Evaluate Expressions simple" classname="repls.IntReplTests" time="0.004">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[21]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[21]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -998,8 +1080,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Evaluate Expressions brackets" classname="repls.IntReplTests" time="0.001">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;5[ * ( 45 + 1247 * 87 ) + 58]3&quot; did not equal &quot;5[4325]3&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;5[ * ( 45 + 1247 * 87 ) + 58]3&quot; did not equal &quot;5[4325]3&quot;
+  <testcase name="Evaluate Expressions brackets" classname="repls.IntReplTests" time="0.002">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[543253]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[543253]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -1082,7 +1164,7 @@
 </failure>
   </testcase>
   <testcase name="Evaluate Expressions nested brackets" classname="repls.IntReplTests" time="0.001">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[( 43 - ( 35 * 2 + ( 32 - ( 45 ) * 2 ) ) )]&quot; did not equal &quot;[31]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[( 43 - ( 35 * 2 + ( 32 - ( 45 ) * 2 ) ) )]&quot; did not equal &quot;[31]&quot;
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[31]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[31]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -1164,8 +1246,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Evaluate Expressions advanced brackets" classname="repls.IntReplTests" time="0.001">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[35 + ( 35 * ( ( 54 - 465 ) + ( ( 35 ) - 3 ) ) - ( 43 + 61 ) ) * 1]&quot; did not equal &quot;[-13334]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[35 + ( 35 * ( ( 54 - 465 ) + ( ( 35 ) - 3 ) ) - ( 43 + 61 ) ) * 1]&quot; did not equal &quot;[-13334]&quot;
+  <testcase name="Evaluate Expressions advanced brackets" classname="repls.IntReplTests" time="0.007">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[-13334]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[-13334]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -1247,9 +1329,91 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Assign variables simple" classname="repls.IntReplTests" time="0.001"/>
-  <testcase name="Assign variables and evaluate" classname="repls.IntReplTests" time="0.004">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;n = [1 + 4 * 5]&quot; did not equal &quot;n = [21]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;n = [1 + 4 * 5]&quot; did not equal &quot;n = [21]&quot;
+  <testcase name="Assign variables simple" classname="repls.IntReplTests" time="0.003">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[n = 1]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[n = 1]&quot;
+	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
+	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
+	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
+	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
+	at app//repls.IntReplTests.$anonfun$new$17(IntReplTests.scala:179)
+	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
+	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
+	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
+	at app//org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
+	at app//org.scalatest.Transformer.apply(Transformer.scala:22)
+	at app//org.scalatest.Transformer.apply(Transformer.scala:20)
+	at app//org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)
+	at app//org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
+	at app//org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
+	at app//repls.infrastructure.TestBase.org$scalatest$concurrent$TimeLimitedTests$$super$withFixture(TestBase.scala:9)
+	at app//org.scalatest.concurrent.TimeLimitedTests.$anonfun$withFixture$3(TimeLimitedTests.scala:154)
+	at app//org.scalatest.enablers.Timed$$anon$1.timeoutAfter(Timed.scala:127)
+	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl(TimeLimits.scala:239)
+	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl$(TimeLimits.scala:233)
+	at app//org.scalatest.concurrent.TimeLimits$.failAfterImpl(TimeLimits.scala:305)
+	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture(TimeLimitedTests.scala:153)
+	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture$(TimeLimitedTests.scala:150)
+	at app//repls.infrastructure.TestBase.withFixture(TestBase.scala:9)
+	at app//org.scalatest.FunSuiteLike.invokeWithFixture$1(FunSuiteLike.scala:184)
+	at app//org.scalatest.FunSuiteLike.$anonfun$runTest$1(FunSuiteLike.scala:196)
+	at app//org.scalatest.SuperEngine.runTestImpl(Engine.scala:286)
+	at app//org.scalatest.FunSuiteLike.runTest(FunSuiteLike.scala:196)
+	at app//org.scalatest.FunSuiteLike.runTest$(FunSuiteLike.scala:178)
+	at app//org.scalatest.FunSuite.runTest(FunSuite.scala:1560)
+	at app//org.scalatest.FunSuiteLike.$anonfun$runTests$1(FunSuiteLike.scala:229)
+	at app//org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:393)
+	at app//scala.collection.immutable.List.foreach(List.scala:333)
+	at app//org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:381)
+	at app//org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:376)
+	at app//org.scalatest.SuperEngine.runTestsImpl(Engine.scala:458)
+	at app//org.scalatest.FunSuiteLike.runTests(FunSuiteLike.scala:229)
+	at app//org.scalatest.FunSuiteLike.runTests$(FunSuiteLike.scala:228)
+	at app//org.scalatest.FunSuite.runTests(FunSuite.scala:1560)
+	at app//org.scalatest.Suite.run(Suite.scala:1124)
+	at app//org.scalatest.Suite.run$(Suite.scala:1106)
+	at app//org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1560)
+	at app//org.scalatest.FunSuiteLike.$anonfun$run$1(FunSuiteLike.scala:233)
+	at app//org.scalatest.SuperEngine.runImpl(Engine.scala:518)
+	at app//org.scalatest.FunSuiteLike.run(FunSuiteLike.scala:233)
+	at app//org.scalatest.FunSuiteLike.run$(FunSuiteLike.scala:232)
+	at app//repls.infrastructure.TestBase.run(TestBase.scala:26)
+	at app//org.scalatest.Suite.callExecuteOnSuite$1(Suite.scala:1187)
+	at app//org.scalatest.Suite.$anonfun$runNestedSuites$1(Suite.scala:1234)
+	at app//scala.collection.ArrayOps$.foreach$extension(ArrayOps.scala:1323)
+	at app//org.scalatest.Suite.runNestedSuites(Suite.scala:1232)
+	at app//org.scalatest.Suite.runNestedSuites$(Suite.scala:1166)
+	at app//org.scalatest.Suites.runNestedSuites(Suites.scala:56)
+	at app//org.scalatest.Suite.run(Suite.scala:1121)
+	at app//org.scalatest.Suite.run$(Suite.scala:1106)
+	at app//repls.ReplsTestSuitesBase.runDirect(ReplsTestSuitesBase.scala:16)
+	at app//repls.ReplsTestSuitesBase.runWithScoreCounter(ReplsTestSuitesBase.scala:11)
+	at app//repls.ReplsTestSuite4_1.run(ReplsTestSuite4_1.scala:15)
+	at app//org.scalatestplus.junit.JUnitRunner.run(JUnitRunner.scala:99)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base@18.0.2.1/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base@18.0.2.1/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</failure>
+  </testcase>
+  <testcase name="Assign variables and evaluate" classname="repls.IntReplTests" time="0.002">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[n = 21]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[n = 21]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -1331,8 +1495,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Assign variables reuse" classname="repls.IntReplTests" time="0.002">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;m = [n + 4]&quot; did not equal &quot;m = [25]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;m = [n + 4]&quot; did not equal &quot;m = [25]&quot;
+  <testcase name="Assign variables reuse" classname="repls.IntReplTests" time="0.005">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[m = 25]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[m = 25]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -1414,8 +1578,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Assign variables negative numbers" classname="repls.IntReplTests" time="0.001">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;n = [n + 4]&quot; did not equal &quot;n = [-12]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;n = [n + 4]&quot; did not equal &quot;n = [-12]&quot;
+  <testcase name="Assign variables negative numbers" classname="repls.IntReplTests" time="0.004">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[n = -12]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[n = -12]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -1497,8 +1661,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Assign variables reassign" classname="repls.IntReplTests" time="0.001">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;p = [( 1 + p * 2 ) * 2 + p]&quot; did not equal &quot;p = [62]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;p = [( 1 + p * 2 ) * 2 + p]&quot; did not equal &quot;p = [62]&quot;
+  <testcase name="Assign variables reassign" classname="repls.IntReplTests" time="0.004">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[p = 62]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[p = 62]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -1580,8 +1744,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Assign variables evaluate" classname="repls.IntReplTests" time="0.003">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[5 + q]&quot; did not equal &quot;[17]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[5 + q]&quot; did not equal &quot;[17]&quot;
+  <testcase name="Assign variables evaluate" classname="repls.IntReplTests" time="0.004">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[17]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[17]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -1663,8 +1827,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Assign variables advanced" classname="repls.IntReplTests" time="0.002">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[45 + ( r * r ) - ( 2 + 16 )]&quot; did not equal &quot;[31356]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[45 + ( r * r ) - ( 2 + 16 )]&quot; did not equal &quot;[31356]&quot;
+  <testcase name="Assign variables advanced" classname="repls.IntReplTests" time="0.007">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[31356]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[31356]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -1747,7 +1911,7 @@
 </failure>
   </testcase>
   <testcase name="Simplify simple" classname="repls.IntReplTests" time="0.002">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[@ ( 4 * 4 )] * x&quot; did not equal &quot;[16] * x&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[@ ( 4 * 4 )] * x&quot; did not equal &quot;[16] * x&quot;
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[16 * x]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[16 * x]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -1829,8 +1993,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simplify unneeded 0 left" classname="repls.IntReplTests" time="0.002">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[@ 0 + ]x&quot; did not equal &quot;[]x&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[@ 0 + ]x&quot; did not equal &quot;[]x&quot;
+  <testcase name="Simplify unneeded 0 left" classname="repls.IntReplTests" time="0.013">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[x]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[x]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -1912,8 +2076,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simplify unneeded 0 right" classname="repls.IntReplTests" time="0.004">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[@ x + 0]&quot; did not equal &quot;[x]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[@ x + 0]&quot; did not equal &quot;[x]&quot;
+  <testcase name="Simplify unneeded 0 right" classname="repls.IntReplTests" time="0.003">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[x]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[x]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -1996,7 +2160,7 @@
 </failure>
   </testcase>
   <testcase name="Simplify multiply by one left" classname="repls.IntReplTests" time="0.003">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[@ 1 * ]x&quot; did not equal &quot;[]x&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[@ 1 * ]x&quot; did not equal &quot;[]x&quot;
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[x]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[x]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -2078,8 +2242,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simplify multiply by one right" classname="repls.IntReplTests" time="0.003">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[@ y * 1]&quot; did not equal &quot;[y]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[@ y * 1]&quot; did not equal &quot;[y]&quot;
+  <testcase name="Simplify multiply by one right" classname="repls.IntReplTests" time="0.001">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[y]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[y]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -2161,8 +2325,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simplify multiply by 0 left" classname="repls.IntReplTests" time="0.001">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[@ 0 * x]&quot; did not equal &quot;[0]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[@ 0 * x]&quot; did not equal &quot;[0]&quot;
+  <testcase name="Simplify multiply by 0 left" classname="repls.IntReplTests" time="0.006">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -2244,8 +2408,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simplify multiply by 0 right" classname="repls.IntReplTests" time="0.002">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[@ x * ]0&quot; did not equal &quot;[]0&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[@ x * ]0&quot; did not equal &quot;[]0&quot;
+  <testcase name="Simplify multiply by 0 right" classname="repls.IntReplTests" time="0.003">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -2327,8 +2491,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simplify brackets" classname="repls.IntReplTests" time="0.001">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[@ ( x * 0 ) + ( y * 2 )]&quot; did not equal &quot;[y * 2]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[@ ( x * 0 ) + ( y * 2 )]&quot; did not equal &quot;[y * 2]&quot;
+  <testcase name="Simplify brackets" classname="repls.IntReplTests" time="0.003">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[y * 2]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[y * 2]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -2410,8 +2574,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simplify negative numbers" classname="repls.IntReplTests" time="0.004">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[@ ( x * -11 ) + ( a * 0 )]&quot; did not equal &quot;[x * -11]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[@ ( x * -11 ) + ( a * 0 )]&quot; did not equal &quot;[x * -11]&quot;
+  <testcase name="Simplify negative numbers" classname="repls.IntReplTests" time="0.007">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[x * -11]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[x * -11]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -2494,7 +2658,7 @@
 </failure>
   </testcase>
   <testcase name="Simplify trailing 0" classname="repls.IntReplTests" time="0.003">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[@ ( a + 6 ) * 2 * ]0&quot; did not equal &quot;[]0&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[@ ( a + 6 ) * 2 * ]0&quot; did not equal &quot;[]0&quot;
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -2576,8 +2740,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simplify leading 0" classname="repls.IntReplTests" time="0.002">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[@ 0 * ( x + y )]&quot; did not equal &quot;[0]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[@ 0 * ( x + y )]&quot; did not equal &quot;[0]&quot;
+  <testcase name="Simplify leading 0" classname="repls.IntReplTests" time="0.005">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -2660,7 +2824,7 @@
 </failure>
   </testcase>
   <testcase name="Simplify advanced" classname="repls.IntReplTests" time="0.001">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[@ ( ( ( 23 * 2 ) + ( 2 * 9 ) ) + 34 + 4 )] * y&quot; did not equal &quot;[102] * y&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[@ ( ( ( 23 * 2 ) + ( 2 * 9 ) ) + 34 + 4 )] * y&quot; did not equal &quot;[102] * y&quot;
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[102 * y]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[102 * y]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -2742,8 +2906,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simplify subtract abstract" classname="repls.IntReplTests" time="0.002">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[@ ( x + y + z ) - ( x + y + z )]&quot; did not equal &quot;[0]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[@ ( x + y + z ) - ( x + y + z )]&quot; did not equal &quot;[0]&quot;
+  <testcase name="Simplify subtract abstract" classname="repls.IntReplTests" time="0.004">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -2825,8 +2989,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simplify subtract abstract nested" classname="repls.IntReplTests" time="0.001">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[@ ( x + y + z ) - ( ( x + y + z ) + 0 )]&quot; did not equal &quot;[0]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[@ ( x + y + z ) - ( ( x + y + z ) + 0 )]&quot; did not equal &quot;[0]&quot;
+  <testcase name="Simplify subtract abstract nested" classname="repls.IntReplTests" time="0.003">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -2908,8 +3072,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simplify abstract brackets" classname="repls.IntReplTests" time="0.002">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[@ a + ( b * 1 )]&quot; did not equal &quot;[a + b]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[@ a + ( b * 1 )]&quot; did not equal &quot;[a + b]&quot;
+  <testcase name="Simplify abstract brackets" classname="repls.IntReplTests" time="0.0">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[a + b]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[a + b]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -2991,8 +3155,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simplify nested" classname="repls.IntReplTests" time="0.002">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[@ a + ( 0 + ( 0 + ( 0 + 0 ) ) )]&quot; did not equal &quot;[a]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[@ a + ( 0 + ( 0 + ( 0 + 0 ) ) )]&quot; did not equal &quot;[a]&quot;
+  <testcase name="Simplify nested" classname="repls.IntReplTests" time="0.011">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[a]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[a]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -3074,8 +3238,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simplify distributivity simple" classname="repls.IntReplTests" time="0.001">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[@ ( a * b ) + ( a *] c )&quot; did not equal &quot;[a * ( b +] c )&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[@ ( a * b ) + ( a *] c )&quot; did not equal &quot;[a * ( b +] c )&quot;
+  <testcase name="Simplify distributivity simple" classname="repls.IntReplTests" time="0.012">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[a * ( b + c )]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[a * ( b + c )]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -3157,8 +3321,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simplify distributivity 2" classname="repls.IntReplTests" time="0.001">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[@ ( b * ( 1 + x ) ) + ( ( 1 + x ) *] c )&quot; did not equal &quot;[( 1 + x ) * ( b +] c )&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[@ ( b * ( 1 + x ) ) + ( ( 1 + x ) *] c )&quot; did not equal &quot;[( 1 + x ) * ( b +] c )&quot;
+  <testcase name="Simplify distributivity 2" classname="repls.IntReplTests" time="0.005">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[( 1 + x ) * ( b + c )]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[( 1 + x ) * ( b + c )]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -3240,8 +3404,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simplify distributivity 3" classname="repls.IntReplTests" time="0.0">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[@ ( ( x + 1 ) * 2 ) + ( 3 * ( x + 1 ) )]&quot; did not equal &quot;[( x + 1 ) * 5]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[@ ( ( x + 1 ) * 2 ) + ( 3 * ( x + 1 ) )]&quot; did not equal &quot;[( x + 1 ) * 5]&quot;
+  <testcase name="Simplify distributivity 3" classname="repls.IntReplTests" time="0.022">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[( x + 1 ) * 5]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[( x + 1 ) * 5]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -3323,8 +3487,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simplify distributivity 4" classname="repls.IntReplTests" time="0.001">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[@ b * a + c * a]&quot; did not equal &quot;[a * ( b + c )]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[@ b * a + c * a]&quot; did not equal &quot;[a * ( b + c )]&quot;
+  <testcase name="Simplify distributivity 4" classname="repls.IntReplTests" time="0.005">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[a * ( b + c )]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[a * ( b + c )]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -3407,7 +3571,7 @@
 </failure>
   </testcase>
   <testcase name="Simplify abstract advanced" classname="repls.IntReplTests" time="0.004">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[@ a + ( ( b * c ) + ( c * d )] )&quot; did not equal &quot;[a + c * ( b + d] )&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[@ a + ( ( b * c ) + ( c * d )] )&quot; did not equal &quot;[a + c * ( b + d] )&quot;
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[a + c * ( b + d )]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[a + c * ( b + d )]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -3489,8 +3653,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simplify advanced 2" classname="repls.IntReplTests" time="0.003">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[@ ( x - x ) + ( ( b + 0 ) * ( a + 0 ) + c * a ) - ( ( a * b ) + ( a * c ) + ( ( z + q ) * 0 ) )]&quot; did not equal &quot;[0]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[@ ( x - x ) + ( ( b + 0 ) * ( a + 0 ) + c * a ) - ( ( a * b ) + ( a * c ) + ( ( z + q ) * 0 ) )]&quot; did not equal &quot;[0]&quot;
+  <testcase name="Simplify advanced 2" classname="repls.IntReplTests" time="0.004">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -3572,8 +3736,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simplify with assigned variables" classname="repls.IntReplTests" time="0.001">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[@ a]&quot; did not equal &quot;[-15]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[@ a]&quot; did not equal &quot;[-15]&quot;
+  <testcase name="Simplify with assigned variables" classname="repls.IntReplTests" time="0.002">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[-15]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[-15]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -3655,8 +3819,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simplify with assigned variables brackets" classname="repls.IntReplTests" time="0.003">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[@ ( 3 + ( 4 * a ) )] * b&quot; did not equal &quot;[-37] * b&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[@ ( 3 + ( 4 * a ) )] * b&quot; did not equal &quot;[-37] * b&quot;
+  <testcase name="Simplify with assigned variables brackets" classname="repls.IntReplTests" time="0.002">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[-37 * b]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[-37 * b]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -3738,8 +3902,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simplify with assigned variables advanced" classname="repls.IntReplTests" time="0.003">
-    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[@ ( a * b + c * b ) * 2] + d&quot; did not equal &quot;[720] + d&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[@ ( a * b + c * b ) * 2] + d&quot; did not equal &quot;[720] + d&quot;
+  <testcase name="Simplify with assigned variables advanced" classname="repls.IntReplTests" time="0.005">
+    <failure message="org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[720 + d]&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[720 + d]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -3821,67 +3985,67 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <system-out><![CDATA[1
-( 42 )
-1178 + 465 + 65 + 204 + 444
-( 12 + 1 ) + ( 45 + 547 + 56 )
-10 + -11
-5 - 2
-24 - ( 75 - 643 )
-( 0 - 29 )
-3 - -5
-2 * 4
-( 23 * 123 ) * ( 2 * 32 )
-( -10 * 64 ) * ( 2 * 32 )
-1 + 4 * 5
-5 * ( 45 + 1247 * 87 ) + 583
-( 43 - ( 35 * 2 + ( 32 - ( 45 ) * 2 ) ) )
-35 + ( 35 * ( ( 54 - 465 ) + ( ( 35 ) - 3 ) ) - ( 43 + 61 ) ) * 1
-n = 1
-n = 1 + 4 * 5
-n = 21
-m = n + 4
-n = -16
-n = n + 4
-p = 12
-p = ( 1 + p * 2 ) * 2 + p
-q = 12
-5 + q
-r = 4 * 12
-r = ( r * 2 - 45 ) + 126
-45 + ( r * r ) - ( 2 + 16 )
-@ ( 4 * 4 ) * x
-@ 0 + x
-@ x + 0
-@ 1 * x
-@ y * 1
-@ 0 * x
-@ x * 0
-@ ( x * 0 ) + ( y * 2 )
-@ ( x * -11 ) + ( a * 0 )
-@ ( a + 6 ) * 2 * 0
-@ 0 * ( x + y )
-@ ( ( ( 23 * 2 ) + ( 2 * 9 ) ) + 34 + 4 ) * y
-@ ( x + y + z ) - ( x + y + z )
-@ ( x + y + z ) - ( ( x + y + z ) + 0 )
-@ a + ( b * 1 )
-@ a + ( 0 + ( 0 + ( 0 + 0 ) ) )
-@ ( a * b ) + ( a * c )
-@ ( b * ( 1 + x ) ) + ( ( 1 + x ) * c )
-@ ( ( x + 1 ) * 2 ) + ( 3 * ( x + 1 ) )
-@ b * a + c * a
-@ a + ( ( b * c ) + ( c * d ) )
-z = 12
-q = 7
-@ ( x - x ) + ( ( b + 0 ) * ( a + 0 ) + c * a ) - ( ( a * b ) + ( a * c ) + ( ( z + q ) * 0 ) )
-a = -15
-@ a
-a = -10
-@ ( 3 + ( 4 * a ) ) * b
-a = 3
-b = a * 4
-c = b + ( a * 5 )
-@ ( a * b + c * b ) * 2 + d
+  <system-out><![CDATA[The result is List(1)
+The result is List(42)
+The result is List(1178, 465, +, 65, +, 204, +, 444, +)
+The result is List(12, 1, +, 45, 547, +, 56, +, +)
+The result is List(10, -11, +)
+The result is List(5, 2, -)
+The result is List(24, 75, 643, -, -)
+The result is List(0, 29, -)
+The result is List(3, -5, -)
+The result is List(2, 4, *)
+The result is List(23, 123, *, 2, 32, *, *)
+The result is List(-10, 64, *, 2, 32, *, *)
+The result is List(1, 4, 5, *, +)
+The result is List(5, 45, 1247, 87, *, +, *, 583, +)
+The result is List(43, 35, 2, *, 32, 45, 2, *, -, +, -)
+The result is List(35, 35, 54, 465, -, 35, 3, -, +, *, 43, 61, +, -, 1, *, +)
+The result is List(1)
+The result is List(1, 4, 5, *, +)
+The result is List(21)
+The result is List(4, +)
+The result is List(-16)
+The result is List(4, +)
+The result is List(12)
+The result is List(1, 2, *, +, 2, *, +)
+The result is List(12)
+The result is List(5, +)
+The result is List(4, 12, *)
+The result is List(2, *, 45, -, 126, +)
+The result is List(45, *, +, 2, 16, +, -)
+The result is List(4, 4, *, *)
+The result is List(0, +)
+The result is List(0, +)
+The result is List(1, *)
+The result is List(1, *)
+The result is List(0, *)
+The result is List(0, *)
+The result is List(0, *, 2, *, +)
+The result is List(-11, *, 0, *, +)
+The result is List(6, +, 2, *, 0, *)
+The result is List(0, +, *)
+The result is List(23, 2, *, 2, 9, *, +, 34, +, 4, +, *)
+The result is List(+, +, +, +, -)
+The result is List(+, +, +, +, 0, +, -)
+The result is List(1, *, +)
+The result is List(0, 0, 0, 0, +, +, +, +)
+The result is List(*, *, +)
+The result is List(1, +, *, 1, +, *, +)
+The result is List(1, +, 2, *, 3, 1, +, *, +)
+The result is List(*, *, +)
+The result is List(*, *, +, +)
+The result is List(12)
+The result is List(7)
+The result is List(-, 0, +, 0, +, *, *, +, +, *, *, +, +, 0, *, +, -)
+The result is List(-15)
+The result is List()
+The result is List(-10)
+The result is List(3, 4, *, +, *)
+The result is List(3)
+The result is List(4, *)
+The result is List(5, *, +)
+The result is List(*, *, +, 2, *, +)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">46</div>
+<div class="counter">48</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.178s</div>
+<div class="counter">0.284s</div>
 <p>duration</p>
 </div>
 </td>
@@ -51,7 +51,7 @@
 </td>
 <td>
 <div class="infoBox failures" id="successRate">
-<div class="percent">4%</div>
+<div class="percent">0%</div>
 <p>successful</p>
 </div>
 </td>
@@ -76,7 +76,7 @@
 <a name="Assign variables advanced"></a>
 <h3 class="failures">Assign variables advanced</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[45 + ( r * r ) - ( 2 + 16 )]&quot; did not equal &quot;[31356]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[31356]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -163,7 +163,7 @@
 <a name="Assign variables and evaluate"></a>
 <h3 class="failures">Assign variables and evaluate</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;n = [1 + 4 * 5]&quot; did not equal &quot;n = [21]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[n = 21]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -250,7 +250,7 @@
 <a name="Assign variables evaluate"></a>
 <h3 class="failures">Assign variables evaluate</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[5 + q]&quot; did not equal &quot;[17]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[17]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -337,7 +337,7 @@
 <a name="Assign variables negative numbers"></a>
 <h3 class="failures">Assign variables negative numbers</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;n = [n + 4]&quot; did not equal &quot;n = [-12]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[n = -12]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -424,7 +424,7 @@
 <a name="Assign variables reassign"></a>
 <h3 class="failures">Assign variables reassign</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;p = [( 1 + p * 2 ) * 2 + p]&quot; did not equal &quot;p = [62]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[p = 62]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -511,7 +511,7 @@
 <a name="Assign variables reuse"></a>
 <h3 class="failures">Assign variables reuse</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;m = [n + 4]&quot; did not equal &quot;m = [25]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[m = 25]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -595,10 +595,97 @@
 </span>
 </div>
 <div class="test">
+<a name="Assign variables simple"></a>
+<h3 class="failures">Assign variables simple</h3>
+<span class="code">
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[n = 1]&quot;
+	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
+	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
+	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
+	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
+	at app//repls.IntReplTests.$anonfun$new$17(IntReplTests.scala:179)
+	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
+	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
+	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
+	at app//org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
+	at app//org.scalatest.Transformer.apply(Transformer.scala:22)
+	at app//org.scalatest.Transformer.apply(Transformer.scala:20)
+	at app//org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)
+	at app//org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
+	at app//org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
+	at app//repls.infrastructure.TestBase.org$scalatest$concurrent$TimeLimitedTests$$super$withFixture(TestBase.scala:9)
+	at app//org.scalatest.concurrent.TimeLimitedTests.$anonfun$withFixture$3(TimeLimitedTests.scala:154)
+	at app//org.scalatest.enablers.Timed$$anon$1.timeoutAfter(Timed.scala:127)
+	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl(TimeLimits.scala:239)
+	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl$(TimeLimits.scala:233)
+	at app//org.scalatest.concurrent.TimeLimits$.failAfterImpl(TimeLimits.scala:305)
+	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture(TimeLimitedTests.scala:153)
+	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture$(TimeLimitedTests.scala:150)
+	at app//repls.infrastructure.TestBase.withFixture(TestBase.scala:9)
+	at app//org.scalatest.FunSuiteLike.invokeWithFixture$1(FunSuiteLike.scala:184)
+	at app//org.scalatest.FunSuiteLike.$anonfun$runTest$1(FunSuiteLike.scala:196)
+	at app//org.scalatest.SuperEngine.runTestImpl(Engine.scala:286)
+	at app//org.scalatest.FunSuiteLike.runTest(FunSuiteLike.scala:196)
+	at app//org.scalatest.FunSuiteLike.runTest$(FunSuiteLike.scala:178)
+	at app//org.scalatest.FunSuite.runTest(FunSuite.scala:1560)
+	at app//org.scalatest.FunSuiteLike.$anonfun$runTests$1(FunSuiteLike.scala:229)
+	at app//org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:393)
+	at app//scala.collection.immutable.List.foreach(List.scala:333)
+	at app//org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:381)
+	at app//org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:376)
+	at app//org.scalatest.SuperEngine.runTestsImpl(Engine.scala:458)
+	at app//org.scalatest.FunSuiteLike.runTests(FunSuiteLike.scala:229)
+	at app//org.scalatest.FunSuiteLike.runTests$(FunSuiteLike.scala:228)
+	at app//org.scalatest.FunSuite.runTests(FunSuite.scala:1560)
+	at app//org.scalatest.Suite.run(Suite.scala:1124)
+	at app//org.scalatest.Suite.run$(Suite.scala:1106)
+	at app//org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1560)
+	at app//org.scalatest.FunSuiteLike.$anonfun$run$1(FunSuiteLike.scala:233)
+	at app//org.scalatest.SuperEngine.runImpl(Engine.scala:518)
+	at app//org.scalatest.FunSuiteLike.run(FunSuiteLike.scala:233)
+	at app//org.scalatest.FunSuiteLike.run$(FunSuiteLike.scala:232)
+	at app//repls.infrastructure.TestBase.run(TestBase.scala:26)
+	at app//org.scalatest.Suite.callExecuteOnSuite$1(Suite.scala:1187)
+	at app//org.scalatest.Suite.$anonfun$runNestedSuites$1(Suite.scala:1234)
+	at app//scala.collection.ArrayOps$.foreach$extension(ArrayOps.scala:1323)
+	at app//org.scalatest.Suite.runNestedSuites(Suite.scala:1232)
+	at app//org.scalatest.Suite.runNestedSuites$(Suite.scala:1166)
+	at app//org.scalatest.Suites.runNestedSuites(Suites.scala:56)
+	at app//org.scalatest.Suite.run(Suite.scala:1121)
+	at app//org.scalatest.Suite.run$(Suite.scala:1106)
+	at app//repls.ReplsTestSuitesBase.runDirect(ReplsTestSuitesBase.scala:16)
+	at app//repls.ReplsTestSuitesBase.runWithScoreCounter(ReplsTestSuitesBase.scala:11)
+	at app//repls.ReplsTestSuite4_1.run(ReplsTestSuite4_1.scala:15)
+	at app//org.scalatestplus.junit.JUnitRunner.run(JUnitRunner.scala:99)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base@18.0.2.1/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base@18.0.2.1/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+</span>
+</div>
+<div class="test">
 <a name="Echo brackets"></a>
 <h3 class="failures">Echo brackets</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[( 42 )]&quot; did not equal &quot;[42]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[42]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -682,10 +769,97 @@
 </span>
 </div>
 <div class="test">
+<a name="Echo simple"></a>
+<h3 class="failures">Echo simple</h3>
+<span class="code">
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[1]&quot;
+	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
+	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
+	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
+	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
+	at app//repls.IntReplTests.$anonfun$new$1(IntReplTests.scala:20)
+	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
+	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
+	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
+	at app//org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
+	at app//org.scalatest.Transformer.apply(Transformer.scala:22)
+	at app//org.scalatest.Transformer.apply(Transformer.scala:20)
+	at app//org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)
+	at app//org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
+	at app//org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
+	at app//repls.infrastructure.TestBase.org$scalatest$concurrent$TimeLimitedTests$$super$withFixture(TestBase.scala:9)
+	at app//org.scalatest.concurrent.TimeLimitedTests.$anonfun$withFixture$3(TimeLimitedTests.scala:154)
+	at app//org.scalatest.enablers.Timed$$anon$1.timeoutAfter(Timed.scala:127)
+	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl(TimeLimits.scala:239)
+	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl$(TimeLimits.scala:233)
+	at app//org.scalatest.concurrent.TimeLimits$.failAfterImpl(TimeLimits.scala:305)
+	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture(TimeLimitedTests.scala:153)
+	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture$(TimeLimitedTests.scala:150)
+	at app//repls.infrastructure.TestBase.withFixture(TestBase.scala:9)
+	at app//org.scalatest.FunSuiteLike.invokeWithFixture$1(FunSuiteLike.scala:184)
+	at app//org.scalatest.FunSuiteLike.$anonfun$runTest$1(FunSuiteLike.scala:196)
+	at app//org.scalatest.SuperEngine.runTestImpl(Engine.scala:286)
+	at app//org.scalatest.FunSuiteLike.runTest(FunSuiteLike.scala:196)
+	at app//org.scalatest.FunSuiteLike.runTest$(FunSuiteLike.scala:178)
+	at app//org.scalatest.FunSuite.runTest(FunSuite.scala:1560)
+	at app//org.scalatest.FunSuiteLike.$anonfun$runTests$1(FunSuiteLike.scala:229)
+	at app//org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:393)
+	at app//scala.collection.immutable.List.foreach(List.scala:333)
+	at app//org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:381)
+	at app//org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:376)
+	at app//org.scalatest.SuperEngine.runTestsImpl(Engine.scala:458)
+	at app//org.scalatest.FunSuiteLike.runTests(FunSuiteLike.scala:229)
+	at app//org.scalatest.FunSuiteLike.runTests$(FunSuiteLike.scala:228)
+	at app//org.scalatest.FunSuite.runTests(FunSuite.scala:1560)
+	at app//org.scalatest.Suite.run(Suite.scala:1124)
+	at app//org.scalatest.Suite.run$(Suite.scala:1106)
+	at app//org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1560)
+	at app//org.scalatest.FunSuiteLike.$anonfun$run$1(FunSuiteLike.scala:233)
+	at app//org.scalatest.SuperEngine.runImpl(Engine.scala:518)
+	at app//org.scalatest.FunSuiteLike.run(FunSuiteLike.scala:233)
+	at app//org.scalatest.FunSuiteLike.run$(FunSuiteLike.scala:232)
+	at app//repls.infrastructure.TestBase.run(TestBase.scala:26)
+	at app//org.scalatest.Suite.callExecuteOnSuite$1(Suite.scala:1187)
+	at app//org.scalatest.Suite.$anonfun$runNestedSuites$1(Suite.scala:1234)
+	at app//scala.collection.ArrayOps$.foreach$extension(ArrayOps.scala:1323)
+	at app//org.scalatest.Suite.runNestedSuites(Suite.scala:1232)
+	at app//org.scalatest.Suite.runNestedSuites$(Suite.scala:1166)
+	at app//org.scalatest.Suites.runNestedSuites(Suites.scala:56)
+	at app//org.scalatest.Suite.run(Suite.scala:1121)
+	at app//org.scalatest.Suite.run$(Suite.scala:1106)
+	at app//repls.ReplsTestSuitesBase.runDirect(ReplsTestSuitesBase.scala:16)
+	at app//repls.ReplsTestSuitesBase.runWithScoreCounter(ReplsTestSuitesBase.scala:11)
+	at app//repls.ReplsTestSuite4_1.run(ReplsTestSuite4_1.scala:15)
+	at app//org.scalatestplus.junit.JUnitRunner.run(JUnitRunner.scala:99)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base@18.0.2.1/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base@18.0.2.1/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+</span>
+</div>
+<div class="test">
 <a name="Evaluate Expressions advanced brackets"></a>
 <h3 class="failures">Evaluate Expressions advanced brackets</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[35 + ( 35 * ( ( 54 - 465 ) + ( ( 35 ) - 3 ) ) - ( 43 + 61 ) ) * 1]&quot; did not equal &quot;[-13334]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[-13334]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -772,7 +946,7 @@
 <a name="Evaluate Expressions brackets"></a>
 <h3 class="failures">Evaluate Expressions brackets</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;5[ * ( 45 + 1247 * 87 ) + 58]3&quot; did not equal &quot;5[4325]3&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[543253]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -859,7 +1033,7 @@
 <a name="Evaluate Expressions nested brackets"></a>
 <h3 class="failures">Evaluate Expressions nested brackets</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[( 43 - ( 35 * 2 + ( 32 - ( 45 ) * 2 ) ) )]&quot; did not equal &quot;[31]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[31]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -946,7 +1120,7 @@
 <a name="Evaluate Expressions simple"></a>
 <h3 class="failures">Evaluate Expressions simple</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[1 + 4 * 5]&quot; did not equal &quot;[21]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[21]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -1033,7 +1207,7 @@
 <a name="Evaluate addition brackets"></a>
 <h3 class="failures">Evaluate addition brackets</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[( 12 + 1 ) + ( 45 + 547 + 56 )]&quot; did not equal &quot;[661]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[661]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -1120,7 +1294,7 @@
 <a name="Evaluate addition negative numbers"></a>
 <h3 class="failures">Evaluate addition negative numbers</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[10 + -1]1&quot; did not equal &quot;[-]1&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[-1]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -1207,7 +1381,7 @@
 <a name="Evaluate addition simple"></a>
 <h3 class="failures">Evaluate addition simple</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[1178 + 465 + 65 + 204 + 444]&quot; did not equal &quot;[2356]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[2356]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -1294,7 +1468,7 @@
 <a name="Evaluate multiplication brackets"></a>
 <h3 class="failures">Evaluate multiplication brackets</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[( 23 * 123 ) * ( 2 * 32 )]&quot; did not equal &quot;[181056]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[181056]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -1381,7 +1555,7 @@
 <a name="Evaluate multiplication negative"></a>
 <h3 class="failures">Evaluate multiplication negative</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[( -10 * 64 ) * ( 2 * 32 )]&quot; did not equal &quot;[-40960]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[-40960]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -1468,7 +1642,7 @@
 <a name="Evaluate multiplication simple"></a>
 <h3 class="failures">Evaluate multiplication simple</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[2 * 4]&quot; did not equal &quot;[8]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[8]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -1555,7 +1729,7 @@
 <a name="Evaluate subtraction brackets"></a>
 <h3 class="failures">Evaluate subtraction brackets</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[24 - ( 75 - 643 )]&quot; did not equal &quot;[592]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[592]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -1642,7 +1816,7 @@
 <a name="Evaluate subtraction negative"></a>
 <h3 class="failures">Evaluate subtraction negative</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[( 0 - 29 )]&quot; did not equal &quot;[-29]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[-29]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -1729,7 +1903,7 @@
 <a name="Evaluate subtraction simple"></a>
 <h3 class="failures">Evaluate subtraction simple</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[5 - 2]&quot; did not equal &quot;[3]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[3]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -1816,7 +1990,7 @@
 <a name="Evaluate subtraction two negatives make positives"></a>
 <h3 class="failures">Evaluate subtraction two negatives make positives</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[3 - -5]&quot; did not equal &quot;[8]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[8]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -1903,7 +2077,7 @@
 <a name="Simplify abstract advanced"></a>
 <h3 class="failures">Simplify abstract advanced</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[@ a + ( ( b * c ) + ( c * d )] )&quot; did not equal &quot;[a + c * ( b + d] )&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[a + c * ( b + d )]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -1990,7 +2164,7 @@
 <a name="Simplify abstract brackets"></a>
 <h3 class="failures">Simplify abstract brackets</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[@ a + ( b * 1 )]&quot; did not equal &quot;[a + b]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[a + b]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -2077,7 +2251,7 @@
 <a name="Simplify advanced"></a>
 <h3 class="failures">Simplify advanced</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[@ ( ( ( 23 * 2 ) + ( 2 * 9 ) ) + 34 + 4 )] * y&quot; did not equal &quot;[102] * y&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[102 * y]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -2164,7 +2338,7 @@
 <a name="Simplify advanced 2"></a>
 <h3 class="failures">Simplify advanced 2</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[@ ( x - x ) + ( ( b + 0 ) * ( a + 0 ) + c * a ) - ( ( a * b ) + ( a * c ) + ( ( z + q ) * 0 ) )]&quot; did not equal &quot;[0]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -2251,7 +2425,7 @@
 <a name="Simplify brackets"></a>
 <h3 class="failures">Simplify brackets</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[@ ( x * 0 ) + ( y * 2 )]&quot; did not equal &quot;[y * 2]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[y * 2]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -2338,7 +2512,7 @@
 <a name="Simplify distributivity 2"></a>
 <h3 class="failures">Simplify distributivity 2</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[@ ( b * ( 1 + x ) ) + ( ( 1 + x ) *] c )&quot; did not equal &quot;[( 1 + x ) * ( b +] c )&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[( 1 + x ) * ( b + c )]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -2425,7 +2599,7 @@
 <a name="Simplify distributivity 3"></a>
 <h3 class="failures">Simplify distributivity 3</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[@ ( ( x + 1 ) * 2 ) + ( 3 * ( x + 1 ) )]&quot; did not equal &quot;[( x + 1 ) * 5]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[( x + 1 ) * 5]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -2512,7 +2686,7 @@
 <a name="Simplify distributivity 4"></a>
 <h3 class="failures">Simplify distributivity 4</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[@ b * a + c * a]&quot; did not equal &quot;[a * ( b + c )]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[a * ( b + c )]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -2599,7 +2773,7 @@
 <a name="Simplify distributivity simple"></a>
 <h3 class="failures">Simplify distributivity simple</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[@ ( a * b ) + ( a *] c )&quot; did not equal &quot;[a * ( b +] c )&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[a * ( b + c )]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -2686,7 +2860,7 @@
 <a name="Simplify leading 0"></a>
 <h3 class="failures">Simplify leading 0</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[@ 0 * ( x + y )]&quot; did not equal &quot;[0]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -2773,7 +2947,7 @@
 <a name="Simplify multiply by 0 left"></a>
 <h3 class="failures">Simplify multiply by 0 left</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[@ 0 * x]&quot; did not equal &quot;[0]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -2860,7 +3034,7 @@
 <a name="Simplify multiply by 0 right"></a>
 <h3 class="failures">Simplify multiply by 0 right</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[@ x * ]0&quot; did not equal &quot;[]0&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -2947,7 +3121,7 @@
 <a name="Simplify multiply by one left"></a>
 <h3 class="failures">Simplify multiply by one left</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[@ 1 * ]x&quot; did not equal &quot;[]x&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[x]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -3034,7 +3208,7 @@
 <a name="Simplify multiply by one right"></a>
 <h3 class="failures">Simplify multiply by one right</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[@ y * 1]&quot; did not equal &quot;[y]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[y]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -3121,7 +3295,7 @@
 <a name="Simplify negative numbers"></a>
 <h3 class="failures">Simplify negative numbers</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[@ ( x * -11 ) + ( a * 0 )]&quot; did not equal &quot;[x * -11]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[x * -11]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -3208,7 +3382,7 @@
 <a name="Simplify nested"></a>
 <h3 class="failures">Simplify nested</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[@ a + ( 0 + ( 0 + ( 0 + 0 ) ) )]&quot; did not equal &quot;[a]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[a]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -3295,7 +3469,7 @@
 <a name="Simplify simple"></a>
 <h3 class="failures">Simplify simple</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[@ ( 4 * 4 )] * x&quot; did not equal &quot;[16] * x&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[16 * x]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -3382,7 +3556,7 @@
 <a name="Simplify subtract abstract"></a>
 <h3 class="failures">Simplify subtract abstract</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[@ ( x + y + z ) - ( x + y + z )]&quot; did not equal &quot;[0]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -3469,7 +3643,7 @@
 <a name="Simplify subtract abstract nested"></a>
 <h3 class="failures">Simplify subtract abstract nested</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[@ ( x + y + z ) - ( ( x + y + z ) + 0 )]&quot; did not equal &quot;[0]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -3556,7 +3730,7 @@
 <a name="Simplify trailing 0"></a>
 <h3 class="failures">Simplify trailing 0</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[@ ( a + 6 ) * 2 * ]0&quot; did not equal &quot;[]0&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -3643,7 +3817,7 @@
 <a name="Simplify unneeded 0 left"></a>
 <h3 class="failures">Simplify unneeded 0 left</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[@ 0 + ]x&quot; did not equal &quot;[]x&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[x]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -3730,7 +3904,7 @@
 <a name="Simplify unneeded 0 right"></a>
 <h3 class="failures">Simplify unneeded 0 right</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[@ x + 0]&quot; did not equal &quot;[x]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[x]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -3817,7 +3991,7 @@
 <a name="Simplify with assigned variables"></a>
 <h3 class="failures">Simplify with assigned variables</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[@ a]&quot; did not equal &quot;[-15]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[-15]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -3904,7 +4078,7 @@
 <a name="Simplify with assigned variables advanced"></a>
 <h3 class="failures">Simplify with assigned variables advanced</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[@ ( a * b + c * b ) * 2] + d&quot; did not equal &quot;[720] + d&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[720 + d]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -3991,7 +4165,7 @@
 <a name="Simplify with assigned variables brackets"></a>
 <h3 class="failures">Simplify with assigned variables brackets</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[@ ( 3 + ( 4 * a ) )] * b&quot; did not equal &quot;[-37] * b&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[-37 * b]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -4087,57 +4261,57 @@
 </thead>
 <tr>
 <td class="failures">Assign variables advanced</td>
-<td class="failures">0.002s</td>
+<td class="failures">0.007s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Assign variables and evaluate</td>
-<td class="failures">0.004s</td>
-<td class="failures">failed</td>
-</tr>
-<tr>
-<td class="failures">Assign variables evaluate</td>
-<td class="failures">0.003s</td>
-<td class="failures">failed</td>
-</tr>
-<tr>
-<td class="failures">Assign variables negative numbers</td>
-<td class="failures">0.001s</td>
-<td class="failures">failed</td>
-</tr>
-<tr>
-<td class="failures">Assign variables reassign</td>
-<td class="failures">0.001s</td>
-<td class="failures">failed</td>
-</tr>
-<tr>
-<td class="failures">Assign variables reuse</td>
 <td class="failures">0.002s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
-<td class="success">Assign variables simple</td>
-<td class="success">0.001s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="failures">Echo brackets</td>
-<td class="failures">0.021s</td>
+<td class="failures">Assign variables evaluate</td>
+<td class="failures">0.004s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
-<td class="success">Echo simple</td>
-<td class="success">0.071s</td>
-<td class="success">passed</td>
+<td class="failures">Assign variables negative numbers</td>
+<td class="failures">0.004s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">Assign variables reassign</td>
+<td class="failures">0.004s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">Assign variables reuse</td>
+<td class="failures">0.005s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">Assign variables simple</td>
+<td class="failures">0.003s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">Echo brackets</td>
+<td class="failures">0.003s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">Echo simple</td>
+<td class="failures">0.091s</td>
+<td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Evaluate Expressions advanced brackets</td>
-<td class="failures">0.001s</td>
+<td class="failures">0.007s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Evaluate Expressions brackets</td>
-<td class="failures">0.001s</td>
+<td class="failures">0.002s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
@@ -4147,42 +4321,42 @@
 </tr>
 <tr>
 <td class="failures">Evaluate Expressions simple</td>
-<td class="failures">0s</td>
+<td class="failures">0.004s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Evaluate addition brackets</td>
-<td class="failures">0.003s</td>
+<td class="failures">0.002s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Evaluate addition negative numbers</td>
-<td class="failures">0.002s</td>
+<td class="failures">0.001s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Evaluate addition simple</td>
-<td class="failures">0.002s</td>
+<td class="failures">0.003s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Evaluate multiplication brackets</td>
-<td class="failures">0.001s</td>
+<td class="failures">0.002s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Evaluate multiplication negative</td>
-<td class="failures">0.001s</td>
+<td class="failures">0.002s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Evaluate multiplication simple</td>
-<td class="failures">0s</td>
+<td class="failures">0.001s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Evaluate subtraction brackets</td>
-<td class="failures">0.002s</td>
+<td class="failures">0.003s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
@@ -4192,12 +4366,12 @@
 </tr>
 <tr>
 <td class="failures">Evaluate subtraction simple</td>
-<td class="failures">0.002s</td>
+<td class="failures">0.001s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Evaluate subtraction two negatives make positives</td>
-<td class="failures">0.003s</td>
+<td class="failures">0.002s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
@@ -4207,7 +4381,7 @@
 </tr>
 <tr>
 <td class="failures">Simplify abstract brackets</td>
-<td class="failures">0.002s</td>
+<td class="failures">0s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
@@ -4217,47 +4391,47 @@
 </tr>
 <tr>
 <td class="failures">Simplify advanced 2</td>
-<td class="failures">0.003s</td>
+<td class="failures">0.004s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify brackets</td>
-<td class="failures">0.001s</td>
+<td class="failures">0.003s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify distributivity 2</td>
-<td class="failures">0.001s</td>
+<td class="failures">0.005s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify distributivity 3</td>
-<td class="failures">0s</td>
+<td class="failures">0.022s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify distributivity 4</td>
-<td class="failures">0.001s</td>
+<td class="failures">0.005s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify distributivity simple</td>
-<td class="failures">0.001s</td>
+<td class="failures">0.012s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify leading 0</td>
-<td class="failures">0.002s</td>
+<td class="failures">0.005s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify multiply by 0 left</td>
-<td class="failures">0.001s</td>
+<td class="failures">0.006s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify multiply by 0 right</td>
-<td class="failures">0.002s</td>
+<td class="failures">0.003s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
@@ -4267,17 +4441,17 @@
 </tr>
 <tr>
 <td class="failures">Simplify multiply by one right</td>
-<td class="failures">0.003s</td>
+<td class="failures">0.001s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify negative numbers</td>
-<td class="failures">0.004s</td>
+<td class="failures">0.007s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify nested</td>
-<td class="failures">0.002s</td>
+<td class="failures">0.011s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
@@ -4287,12 +4461,12 @@
 </tr>
 <tr>
 <td class="failures">Simplify subtract abstract</td>
-<td class="failures">0.002s</td>
+<td class="failures">0.004s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify subtract abstract nested</td>
-<td class="failures">0.001s</td>
+<td class="failures">0.003s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
@@ -4302,27 +4476,27 @@
 </tr>
 <tr>
 <td class="failures">Simplify unneeded 0 left</td>
-<td class="failures">0.002s</td>
+<td class="failures">0.013s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify unneeded 0 right</td>
-<td class="failures">0.004s</td>
+<td class="failures">0.003s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify with assigned variables</td>
-<td class="failures">0.001s</td>
+<td class="failures">0.002s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify with assigned variables advanced</td>
-<td class="failures">0.003s</td>
+<td class="failures">0.005s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify with assigned variables brackets</td>
-<td class="failures">0.003s</td>
+<td class="failures">0.002s</td>
 <td class="failures">failed</td>
 </tr>
 </table>
@@ -4330,67 +4504,67 @@
 <div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>1
-( 42 )
-1178 + 465 + 65 + 204 + 444
-( 12 + 1 ) + ( 45 + 547 + 56 )
-10 + -11
-5 - 2
-24 - ( 75 - 643 )
-( 0 - 29 )
-3 - -5
-2 * 4
-( 23 * 123 ) * ( 2 * 32 )
-( -10 * 64 ) * ( 2 * 32 )
-1 + 4 * 5
-5 * ( 45 + 1247 * 87 ) + 583
-( 43 - ( 35 * 2 + ( 32 - ( 45 ) * 2 ) ) )
-35 + ( 35 * ( ( 54 - 465 ) + ( ( 35 ) - 3 ) ) - ( 43 + 61 ) ) * 1
-n = 1
-n = 1 + 4 * 5
-n = 21
-m = n + 4
-n = -16
-n = n + 4
-p = 12
-p = ( 1 + p * 2 ) * 2 + p
-q = 12
-5 + q
-r = 4 * 12
-r = ( r * 2 - 45 ) + 126
-45 + ( r * r ) - ( 2 + 16 )
-@ ( 4 * 4 ) * x
-@ 0 + x
-@ x + 0
-@ 1 * x
-@ y * 1
-@ 0 * x
-@ x * 0
-@ ( x * 0 ) + ( y * 2 )
-@ ( x * -11 ) + ( a * 0 )
-@ ( a + 6 ) * 2 * 0
-@ 0 * ( x + y )
-@ ( ( ( 23 * 2 ) + ( 2 * 9 ) ) + 34 + 4 ) * y
-@ ( x + y + z ) - ( x + y + z )
-@ ( x + y + z ) - ( ( x + y + z ) + 0 )
-@ a + ( b * 1 )
-@ a + ( 0 + ( 0 + ( 0 + 0 ) ) )
-@ ( a * b ) + ( a * c )
-@ ( b * ( 1 + x ) ) + ( ( 1 + x ) * c )
-@ ( ( x + 1 ) * 2 ) + ( 3 * ( x + 1 ) )
-@ b * a + c * a
-@ a + ( ( b * c ) + ( c * d ) )
-z = 12
-q = 7
-@ ( x - x ) + ( ( b + 0 ) * ( a + 0 ) + c * a ) - ( ( a * b ) + ( a * c ) + ( ( z + q ) * 0 ) )
-a = -15
-@ a
-a = -10
-@ ( 3 + ( 4 * a ) ) * b
-a = 3
-b = a * 4
-c = b + ( a * 5 )
-@ ( a * b + c * b ) * 2 + d
+<pre>The result is List(1)
+The result is List(42)
+The result is List(1178, 465, +, 65, +, 204, +, 444, +)
+The result is List(12, 1, +, 45, 547, +, 56, +, +)
+The result is List(10, -11, +)
+The result is List(5, 2, -)
+The result is List(24, 75, 643, -, -)
+The result is List(0, 29, -)
+The result is List(3, -5, -)
+The result is List(2, 4, *)
+The result is List(23, 123, *, 2, 32, *, *)
+The result is List(-10, 64, *, 2, 32, *, *)
+The result is List(1, 4, 5, *, +)
+The result is List(5, 45, 1247, 87, *, +, *, 583, +)
+The result is List(43, 35, 2, *, 32, 45, 2, *, -, +, -)
+The result is List(35, 35, 54, 465, -, 35, 3, -, +, *, 43, 61, +, -, 1, *, +)
+The result is List(1)
+The result is List(1, 4, 5, *, +)
+The result is List(21)
+The result is List(4, +)
+The result is List(-16)
+The result is List(4, +)
+The result is List(12)
+The result is List(1, 2, *, +, 2, *, +)
+The result is List(12)
+The result is List(5, +)
+The result is List(4, 12, *)
+The result is List(2, *, 45, -, 126, +)
+The result is List(45, *, +, 2, 16, +, -)
+The result is List(4, 4, *, *)
+The result is List(0, +)
+The result is List(0, +)
+The result is List(1, *)
+The result is List(1, *)
+The result is List(0, *)
+The result is List(0, *)
+The result is List(0, *, 2, *, +)
+The result is List(-11, *, 0, *, +)
+The result is List(6, +, 2, *, 0, *)
+The result is List(0, +, *)
+The result is List(23, 2, *, 2, 9, *, +, 34, +, 4, +, *)
+The result is List(+, +, +, +, -)
+The result is List(+, +, +, +, 0, +, -)
+The result is List(1, *, +)
+The result is List(0, 0, 0, 0, +, +, +, +)
+The result is List(*, *, +)
+The result is List(1, +, *, 1, +, *, +)
+The result is List(1, +, 2, *, 3, 1, +, *, +)
+The result is List(*, *, +)
+The result is List(*, *, +, +)
+The result is List(12)
+The result is List(7)
+The result is List(-, 0, +, 0, +, *, *, +, +, *, *, +, +, 0, *, +, -)
+The result is List(-15)
+The result is List()
+The result is List(-10)
+The result is List(3, 4, *, +, *)
+The result is List(3)
+The result is List(4, *)
+The result is List(5, *, +)
+The result is List(*, *, +, 2, *, +)
 </pre>
 </span>
 </div>
@@ -4402,7 +4576,7 @@ c = b + ( a * 5 )
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.5.1</a> at Oct 10, 2023, 2:10:56 PM</p>
+<a href="http://www.gradle.org">Gradle 7.5.1</a> at Oct 10, 2023, 6:08:35 PM</p>
 </div>
 </div>
 </body>
