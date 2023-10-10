@@ -8,7 +8,6 @@ class IntREPL extends REPLBase {
     private val variables = mutable.Map[String, Int]() // Dictionary to store variables and their values
 
     def isOperator(char: String): Boolean = Set("+", "-", "*", "/").contains(char)
-
     def isInteger(char: String): Boolean = char.matches("-?\\d+")
 
     def precedence(operator: String): Int = operator match {
@@ -17,24 +16,20 @@ class IntREPL extends REPLBase {
         case _ => 0 // Default precedence
     }
 
-    def applyOperation(operand1: Int, operator: String, operand2: Int): Int = {
-        operator match {
-            case "+" => operand1 + operand2
-            case "-" => operand1 - operand2
-            case "*" => operand1 * operand2
-            case "/" => operand1 / operand2
-            case _ => throw new IllegalArgumentException(s"Invalid operator: $operator")
-        }
+    private def applyOperation(firstOperator: Int, operator: String, secondOperator: Int): Int = operator match {
+        case "+" => firstOperator + secondOperator
+        case "-" => firstOperator - secondOperator
+        case "*" => firstOperator * secondOperator
+        case "/" => firstOperator / secondOperator
     }
 
     // Shunting Yard Algorithm Pseudocode: https://aquarchitect.github.io/swift-algorithm-club/Shunting%20Yard/
-    private def expressionToRPN (expression: Seq[String]): Seq[String] = {
+    private def expressionToRPN(expression: Seq[String]): Seq[String] = {
         val outputStack = mutable.Stack[String]()
         val operatorStack = mutable.Stack[String]()
 
         expression.foreach {
-            case token if isInteger(token) =>
-                outputStack.push(token)
+            case token if isInteger(token) => outputStack.push(token)
 
             case token if isOperator(token) =>
                 while (operatorStack.nonEmpty && precedence(operatorStack.top) >= precedence(token)) {
@@ -43,24 +38,17 @@ class IntREPL extends REPLBase {
                 }
                 operatorStack.push(token)
 
-            case "(" =>
-                operatorStack.push("(")
+            case "(" => operatorStack.push("(")
 
             case ")" =>
                 while (operatorStack.nonEmpty && operatorStack.top != "(") {
                     val operator = operatorStack.pop()
                     outputStack.push(operator)
                 }
-                if (operatorStack.isEmpty || operatorStack.top != "(") {
-                    throw new IllegalArgumentException("Mismatched parentheses")
-                }
                 operatorStack.pop()
         }
 
         while (operatorStack.nonEmpty) {
-            if (operatorStack.top == "(" || operatorStack.top == ")") {
-                throw new IllegalArgumentException("Mismatched parentheses")
-            }
             val operator = operatorStack.pop()
             outputStack.push(operator)
         }
@@ -68,23 +56,30 @@ class IntREPL extends REPLBase {
         outputStack.reverse.toSeq
     }
 
+    // Function to simplify an RPN expression
+    private def simplifyRPN(expression: Seq[String]): Seq[String] = {
+        val simplifiedStack = mutable.Stack[String]()
+
+        simplifiedStack.toSeq
+    }
+
+
     // Polish to Expression Tree Code: https://gitlab.com/vu-oofp/lecture-code/-/blob/master/OOReversePolish.scala
-    private def RPNToTree(expression: Seq[String]): String = {
+    private def RPNToTree(expression: Seq[String]): Seq[String] = {
         val outputStack = mutable.Stack[String]()
         expression.foreach {
             case token if isOperator(token) =>
                 val firstOperand = outputStack.pop()
                 val secondOperand = outputStack.pop()
-                val res = applyOperation(secondOperand.toInt, token, firstOperand.toInt)
-                outputStack.push(res.toString)
+                val result = applyOperation(secondOperand.toInt, token, firstOperand.toInt)
+                outputStack.push(result.toString)
 
             case token if isInteger(token) =>
                 outputStack.push(token)
 
-            case _ =>
-                throw new Error("Unknown expression element")
         }
-        outputStack.top
+
+        outputStack.toSeq
     }
 
     private def substituteVariables(expression: Seq[String]): Seq[String] = {
@@ -96,27 +91,30 @@ class IntREPL extends REPLBase {
         }
     }
 
+    private def solveExpression (expression: Seq[String], isSimplification: Boolean): String = {
+        val substitutedExpression = substituteVariables(expression)
+        val reversePolishExpression = expressionToRPN(substitutedExpression)
+        val treeExpression = RPNToTree(reversePolishExpression)
+        if (isSimplification) simplifyRPN(treeExpression).head else treeExpression.head
+    }
+
     override def readEval(command: String): String = {
-        val expression = SplitExpressionString.splitExpressionString(command)
+        val tokens = command.split(" ").toList
+        val isSimplification = tokens.contains("@")
+        val expression = if (tokens.contains("=")) {
+            tokens.drop(2)
+        } else {
+            tokens.drop(if (isSimplification) 1 else 0)
+        }
+        val result = solveExpression(expression, isSimplification)
 
-        if (expression.length >= 3 && expression(1) == "=") {
-            // Extract variable name and expression
-            val variableName = expression.head
-            val variableExpression = expression.drop(2)
-
-            val substitutedExpression = substituteVariables(variableExpression)
-            val reversePolishExpression = expressionToRPN(substitutedExpression)
-            val result = RPNToTree(reversePolishExpression)
+        if (tokens.contains("=")) { // We check for assignments
+            val variableName = tokens.head
             variables(variableName) = result.toInt
             s"$variableName = $result"
-
-        } else {
-
-            val substitutedExpression = substituteVariables(expression)
-            val reversePolishExpression = expressionToRPN(substitutedExpression)
-            val result = RPNToTree(reversePolishExpression)
-            if (variables.contains(result)) s"$result = ${variables(result)}" else result
-
+        } else { // Else we work like normal evaluations
+            result
         }
     }
+
 }
