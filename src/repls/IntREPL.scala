@@ -1,35 +1,39 @@
 package repls
 import scala.collection.mutable
-import scala.collection.mutable.Stack
 
 class IntREPL extends REPLBase {
 
     type Base = Int
     override val replName: String = "int-repl"
 
+    // Shunting Yard Algorithm Pseudocode: https://aquarchitect.github.io/swift-algorithm-club/Shunting%20Yard/
     private def normalToReversePolish(expression: Seq[String]): Seq[String] = {
         val outputStack = mutable.Stack[String]()
         val operatorStack = mutable.Stack[String]()
 
-        // Shunting Yard Algorithm Pseudocode: https://aquarchitect.github.io/swift-algorithm-club/Shunting%20Yard/
-        for (token <- expression) {
-            if (isInteger(token)) {
+        expression.foreach {
+            case token if isInteger(token) =>
                 outputStack.push(token)
-            } else if (isOperator(token)) {
-                while (operatorStack.nonEmpty && (precedence(operatorStack.top) >= precedence(token))) {
+
+            case token if isOperator(token) =>
+                while (operatorStack.nonEmpty && precedence(operatorStack.top) >= precedence(token)) {
                     val operator = operatorStack.pop()
                     outputStack.push(operator)
                 }
                 operatorStack.push(token)
-            } else if (token == "(") {
-                operatorStack.push(token)
-            } else if (token == ")") {
+
+            case "(" =>
+                operatorStack.push("(")
+
+            case ")" =>
                 while (operatorStack.nonEmpty && operatorStack.top != "(") {
                     val operator = operatorStack.pop()
                     outputStack.push(operator)
                 }
+                if (operatorStack.isEmpty || operatorStack.top != "(") {
+                    throw new IllegalArgumentException("Mismatched parentheses")
+                }
                 operatorStack.pop()
-            }
         }
 
         while (operatorStack.nonEmpty) {
@@ -40,37 +44,32 @@ class IntREPL extends REPLBase {
             outputStack.push(operator)
         }
 
-        val sequencedOutput: Seq[String] = outputStack.reverse.toSeq
-        sequencedOutput
-
+        outputStack.reverse.toSeq
     }
 
+    // Polish to Expression Tree Code: https://gitlab.com/vu-oofp/lecture-code/-/blob/master/OOReversePolish.scala
     private def reversePolishToExpressionTree(expression: Seq[String]): String = {
         val outputStack = mutable.Stack[String]()
-        for (token <- expression) {
-            if (isOperator(token)) {
+        expression.foreach {
+            case token if isOperator(token) =>
                 val firstOperand = outputStack.pop()
                 val secondOperand = outputStack.pop()
                 val res = applyOperation(secondOperand.toInt, token, firstOperand.toInt)
                 outputStack.push(res.toString)
-            } else if (isInteger(token)) {
+
+            case token if isInteger(token) =>
                 outputStack.push(token)
-            } else {
-                throw new Error("Unknown expression element " + token)
-            }
+
+            case _ =>
+                throw new Error("Unknown expression element")
         }
         outputStack.top
     }
-
 
     override def readEval(command: String): String = {
         val expression = SplitExpressionString.splitExpressionString(command)
         val reversePolishExpression = normalToReversePolish(expression)
         val standardExpression = reversePolishToExpressionTree(reversePolishExpression)
-        //val result = evaluateExpression(standardExpression)
-        //println(s"The result is ${reversedExpression}")
-        //println(s"The standard expression is ${standardExpression}")
-        //result
         standardExpression
     }
 
@@ -101,3 +100,4 @@ class IntREPL extends REPLBase {
         }
     }
 }
+
