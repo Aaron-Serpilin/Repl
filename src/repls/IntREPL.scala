@@ -7,10 +7,10 @@ class IntREPL extends REPLBase {
     override val replName: String = "int-repl"
     private val variables = mutable.Map[String, Int]() // Dictionary to store variables and their values
 
-    def isOperator(char: String): Boolean = Set("+", "-", "*", "/").contains(char)
-    def isInteger(char: String): Boolean = char.matches("-?\\d+")
+    private def isOperator(char: String): Boolean = Set("+", "-", "*", "/").contains(char)
+    private def isInteger(char: String): Boolean = char.matches("-?\\d+")
 
-    def precedence(operator: String): Int = operator match {
+    private def precedence(operator: String): Int = operator match {
         case "+" | "-" => 1
         case "*" | "/" => 2
         case _ => 0 // Default precedence
@@ -57,15 +57,41 @@ class IntREPL extends REPLBase {
     }
 
     // Function to simplify an RPN expression
-    private def simplifyRPN(expression: Seq[String]): Seq[String] = {
+    private def simplifyExpression(expression: Seq[String]): Seq[String] = {
         val simplifiedStack = mutable.Stack[String]()
+
+//        for (token <- expression) {
+//            token match {
+//                case "0" if simplifiedStack.nonEmpty =>
+//                    val previousToken = simplifiedStack.pop()
+//                    previousToken match {
+//                        case "*" =>
+//                            simplifiedStack.pop()
+//                            simplifiedStack.push("0")
+//                        case "+" | "-" =>
+//                    }
+//
+//                case "0" if simplifiedStack.isEmpty =>
+//
+//                case "1" if simplifiedStack.nonEmpty =>
+//                    val previousToken = simplifiedStack.pop()
+//                    previousToken match {
+//                        case "*" =>
+//                    }
+//
+//                case "1" if simplifiedStack.isEmpty =>
+//
+//                case  _ =>
+//                    simplifiedStack.push(token)
+//            }
+//        }
 
         simplifiedStack.toSeq
     }
 
 
-    // Polish to Expression Tree Code: https://gitlab.com/vu-oofp/lecture-code/-/blob/master/OOReversePolish.scala
-    private def RPNToTree(expression: Seq[String]): Seq[String] = {
+    // Polish to Result/Expression Tree Code: https://gitlab.com/vu-oofp/lecture-code/-/blob/master/OOReversePolish.scala
+    private def RPNToResult(expression: Seq[String]): Seq[String] = {
         val outputStack = mutable.Stack[String]()
         expression.foreach {
             case token if isOperator(token) =>
@@ -78,7 +104,6 @@ class IntREPL extends REPLBase {
                 outputStack.push(token)
 
         }
-
         outputStack.toSeq
     }
 
@@ -91,24 +116,28 @@ class IntREPL extends REPLBase {
         }
     }
 
-    private def solveExpression (expression: Seq[String], isSimplification: Boolean): String = {
+    private def solveExpression (expression: Seq[String]): String = {
         val substitutedExpression = substituteVariables(expression)
         val reversePolishExpression = expressionToRPN(substitutedExpression)
-        val treeExpression = RPNToTree(reversePolishExpression)
-        if (isSimplification) simplifyRPN(treeExpression).head else treeExpression.head
+        val result = RPNToResult(reversePolishExpression)
+        result.head
     }
 
     override def readEval(command: String): String = {
         val tokens = command.split(" ").toList
-        val isSimplification = tokens.contains("@")
-        val expression = if (tokens.contains("=")) {
-            tokens.drop(2)
-        } else {
-            tokens.drop(if (isSimplification) 1 else 0)
-        }
-        val result = solveExpression(expression, isSimplification)
+        val isVariableAssignment = tokens.contains("=") // We check for assignments
+        val isSimplification = command.contains("@")
 
-        if (tokens.contains("=")) { // We check for assignments
+        if (isSimplification) { // Check for simplification
+            val expression = tokens.drop(1)
+            val simplifiedExpression = simplifyExpression(expression)
+            return simplifiedExpression.mkString(" ")
+        }
+
+        val expression = if (isVariableAssignment) tokens.drop(2) else tokens
+        val result = solveExpression(expression)
+
+        if (isVariableAssignment) {
             val variableName = tokens.head
             variables(variableName) = result.toInt
             s"$variableName = $result"
@@ -117,4 +146,8 @@ class IntREPL extends REPLBase {
         }
     }
 
+
 }
+
+
+
