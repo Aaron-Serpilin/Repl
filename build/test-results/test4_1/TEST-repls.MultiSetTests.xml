@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="repls.MultiSetTests" tests="22" skipped="0" failures="19" errors="0" timestamp="2023-10-11T17:09:05" hostname="Jays-MacBook-Pro-2.local" time="0.107">
+<testsuite name="repls.MultiSetTests" tests="22" skipped="0" failures="19" errors="0" timestamp="2023-10-12T13:54:18" hostname="Jays-MacBook-Pro-2.local" time="0.104">
   <properties/>
   <testcase name="MultiSets can represent the empty Set" classname="repls.MultiSetTests" time="0.003"/>
-  <testcase name="Simple multiset character" classname="repls.MultiSetTests" time="0.018">
+  <testcase name="Simple multiset character" classname="repls.MultiSetTests" time="0.024">
     <failure message="org.scalatest.exceptions.TestFailedException: Expected List('a'), but got List()" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: Expected List('a'), but got List()
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
@@ -172,7 +172,7 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simple multiset Int" classname="repls.MultiSetTests" time="0.005">
+  <testcase name="Simple multiset Int" classname="repls.MultiSetTests" time="0.006">
     <failure message="org.scalatest.exceptions.TestFailedException: Expected List(1), but got List()" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: Expected List(1), but got List()
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
@@ -257,7 +257,7 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simple multiset double" classname="repls.MultiSetTests" time="0.001">
+  <testcase name="Simple multiset double" classname="repls.MultiSetTests" time="0.002">
     <failure message="org.scalatest.exceptions.TestFailedException: Expected List(1.0), but got List()" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: Expected List(1.0), but got List()
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
@@ -342,7 +342,7 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Multiple elements" classname="repls.MultiSetTests" time="0.004">
+  <testcase name="Multiple elements" classname="repls.MultiSetTests" time="0.003">
     <failure message="org.scalatest.exceptions.TestFailedException: Expected List('a', 'b', 'c'), but got List()" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: Expected List('a', 'b', 'c'), but got List()
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
@@ -427,7 +427,7 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Same elements" classname="repls.MultiSetTests" time="0.001">
+  <testcase name="Same elements" classname="repls.MultiSetTests" time="0.003">
     <failure message="org.scalatest.exceptions.TestFailedException: Expected List('a', 'a', 'a'), but got List()" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: Expected List('a', 'a', 'a'), but got List()
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
@@ -512,7 +512,7 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Different and same elements" classname="repls.MultiSetTests" time="0.003">
+  <testcase name="Different and same elements" classname="repls.MultiSetTests" time="0.006">
     <failure message="org.scalatest.exceptions.TestFailedException: Expected List(1, 1, 2, 2, 3), but got List()" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: Expected List(1, 1, 2, 2, 3), but got List()
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
@@ -597,7 +597,7 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Sum of multiset with empty set" classname="repls.MultiSetTests" time="0.002">
+  <testcase name="Sum of multiset with empty set" classname="repls.MultiSetTests" time="0.001">
     <failure message="org.scalatest.exceptions.TestFailedException: Expected List('a'), but got List()" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: Expected List('a'), but got List()
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
@@ -682,7 +682,7 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Sum of two multisets" classname="repls.MultiSetTests" time="0.004">
+  <testcase name="Sum of two multisets" classname="repls.MultiSetTests" time="0.005">
     <failure message="org.scalatest.exceptions.TestFailedException: Expected List(1.0, 1.0, 1.2, 1.2, 2.0, 2.2, 4.0), but got List()" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: Expected List(1.0, 1.0, 1.2, 1.2, 2.0, 2.2, 4.0), but got List()
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
@@ -767,7 +767,7 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Sum of three multisets" classname="repls.MultiSetTests" time="0.001">
+  <testcase name="Sum of three multisets" classname="repls.MultiSetTests" time="0.002">
     <failure message="org.scalatest.exceptions.TestFailedException: Expected List(1, 2, 2, 3, 4, 5, 5), but got List()" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: Expected List(1, 2, 2, 3, 4, 5, 5), but got List()
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
@@ -853,7 +853,7 @@
 </failure>
   </testcase>
   <testcase name="Difference of a multiset with empty set" classname="repls.MultiSetTests" time="0.001"/>
-  <testcase name="Difference of two multisets" classname="repls.MultiSetTests" time="0.002">
+  <testcase name="Difference of two multisets" classname="repls.MultiSetTests" time="0.001">
     <failure message="org.scalatest.exceptions.TestFailedException: Expected List(2.0), but got List()" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: Expected List(2.0), but got List()
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
@@ -938,7 +938,7 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Difference of three multisets" classname="repls.MultiSetTests" time="0.005">
+  <testcase name="Difference of three multisets" classname="repls.MultiSetTests" time="0.004">
     <failure message="org.scalatest.exceptions.TestFailedException: Expected List(1), but got List()" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: Expected List(1), but got List()
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
@@ -1023,8 +1023,8 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Intersection with empty set" classname="repls.MultiSetTests" time="0.001"/>
-  <testcase name="Intersection of two multisets" classname="repls.MultiSetTests" time="0.002">
+  <testcase name="Intersection with empty set" classname="repls.MultiSetTests" time="0.002"/>
+  <testcase name="Intersection of two multisets" classname="repls.MultiSetTests" time="0.0">
     <failure message="org.scalatest.exceptions.TestFailedException: Expected List(2, 3), but got List()" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: Expected List(2, 3), but got List()
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
@@ -1109,7 +1109,7 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Intersection of tree multisets" classname="repls.MultiSetTests" time="0.004">
+  <testcase name="Intersection of tree multisets" classname="repls.MultiSetTests" time="0.001">
     <failure message="org.scalatest.exceptions.TestFailedException: Expected List(2), but got List()" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: Expected List(2), but got List()
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
@@ -1364,7 +1364,7 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Large Multiset 1" classname="repls.MultiSetTests" time="0.007">
+  <testcase name="Large Multiset 1" classname="repls.MultiSetTests" time="0.006">
     <failure message="org.scalatest.exceptions.TestFailedException: Expected Map(&quot;bye&quot; -&gt; 2147483647, &quot;hello&quot; -&gt; 2147483647, &quot;bla&quot; -&gt; 1073741823), but got Map()" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: Expected Map(&quot;bye&quot; -&gt; 2147483647, &quot;hello&quot; -&gt; 2147483647, &quot;bla&quot; -&gt; 1073741823), but got Map()
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
@@ -1449,7 +1449,7 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Large Multiset 2" classname="repls.MultiSetTests" time="0.004">
+  <testcase name="Large Multiset 2" classname="repls.MultiSetTests" time="0.001">
     <failure message="org.scalatest.exceptions.TestFailedException: Expected Map(&quot;hello&quot; -&gt; 2147483647), but got Map()" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: Expected Map(&quot;hello&quot; -&gt; 2147483647), but got Map()
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
@@ -1534,7 +1534,7 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Large Multiset 3" classname="repls.MultiSetTests" time="0.003">
+  <testcase name="Large Multiset 3" classname="repls.MultiSetTests" time="0.001">
     <failure message="org.scalatest.exceptions.TestFailedException: Expected Map(&quot;hello&quot; -&gt; 2147483647, &quot;zozo&quot; -&gt; 2147483647, &quot;bla&quot; -&gt; 1073841823), but got Map()" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: Expected Map(&quot;hello&quot; -&gt; 2147483647, &quot;zozo&quot; -&gt; 2147483647, &quot;bla&quot; -&gt; 1073841823), but got Map()
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)

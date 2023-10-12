@@ -5,7 +5,7 @@ class IntREPL extends REPLBase {
 
     type Base = Int
     override val replName: String = "int-repl"
-    private val variables = mutable.Map[String, Int]() // Dictionary to store variables and their values
+    private val variablesMap = mutable.Map[String, Int]() // Dictionary to store variablesMap and their values
 
     private def isOperator(char: String): Boolean = Set("+", "-", "*", "/").contains(char)
     private def isInteger(char: String): Boolean = char.matches("-?\\d+")
@@ -25,11 +25,12 @@ class IntREPL extends REPLBase {
 
     // Shunting Yard Algorithm Pseudocode: https://aquarchitect.github.io/swift-algorithm-club/Shunting%20Yard/
     private def expressionToRPN(expression: Seq[String]): Seq[String] = {
+
         val outputStack = mutable.Stack[String]()
         val operatorStack = mutable.Stack[String]()
 
         expression.foreach {
-            case token if isInteger(token) => outputStack.push(token)
+            case token if isInteger(token) || token == "e" || token == "x" => outputStack.push(token)
 
             case token if isOperator(token) =>
                 while (operatorStack.nonEmpty && precedence(operatorStack.top) >= precedence(token)) {
@@ -56,40 +57,6 @@ class IntREPL extends REPLBase {
         outputStack.reverse.toSeq
     }
 
-    // Function to simplify an RPN expression
-    private def simplifyExpression(expression: Seq[String]): Seq[String] = {
-        val simplifiedStack = mutable.Stack[String]()
-
-//        for (token <- expression) {
-//            token match {
-//                case "0" if simplifiedStack.nonEmpty =>
-//                    val previousToken = simplifiedStack.pop()
-//                    previousToken match {
-//                        case "*" =>
-//                            simplifiedStack.pop()
-//                            simplifiedStack.push("0")
-//                        case "+" | "-" =>
-//                    }
-//
-//                case "0" if simplifiedStack.isEmpty =>
-//
-//                case "1" if simplifiedStack.nonEmpty =>
-//                    val previousToken = simplifiedStack.pop()
-//                    previousToken match {
-//                        case "*" =>
-//                    }
-//
-//                case "1" if simplifiedStack.isEmpty =>
-//
-//                case  _ =>
-//                    simplifiedStack.push(token)
-//            }
-//        }
-
-        simplifiedStack.toSeq
-    }
-
-
     // Polish to Result/Expression Tree Code: https://gitlab.com/vu-oofp/lecture-code/-/blob/master/OOReversePolish.scala
     private def RPNToResult(expression: Seq[String]): Seq[String] = {
         val outputStack = mutable.Stack[String]()
@@ -109,8 +76,8 @@ class IntREPL extends REPLBase {
 
     private def substituteVariables(expression: Seq[String]): Seq[String] = {
         expression.map {
-            case variable if variables.contains(variable) =>
-                variables(variable).toString
+            case variable if variablesMap.contains(variable) =>
+                variablesMap(variable).toString
             case other =>
                 other
         }
@@ -124,14 +91,20 @@ class IntREPL extends REPLBase {
     }
 
     override def readEval(command: String): String = {
+
         val tokens = command.split(" ").toList
         val isVariableAssignment = tokens.contains("=") // We check for assignments
-        val isSimplification = command.contains("@")
+        val isSimplification = command.contains("@") // We check for simplifications
 
         if (isSimplification) { // Check for simplification
             val expression = tokens.drop(1)
-            val simplifiedExpression = simplifyExpression(expression)
-            return simplifiedExpression.mkString(" ")
+            val reversePolishExpression = expressionToRPN(expression).mkString(" ")
+            val treeExpression = repls.Expressions.ReversePolish.reversePolishToExpression(reversePolishExpression) // We use the given code from the course
+            val simplifiedExpression = repls.Expressions.PatternMatch.simplify(treeExpression)
+//            println(s"The tree expression is:$treeExpression")
+//            println(s"The simplified expression is:\n $simplifiedExpression")
+            //println(s"The abstract output is:\n${simplifiedExpression}\nThe output is:\n${simplifiedExpression.abstractToString}")
+            return simplifiedExpression.abstractToString
         }
 
         val expression = if (isVariableAssignment) tokens.drop(2) else tokens
@@ -139,7 +112,7 @@ class IntREPL extends REPLBase {
 
         if (isVariableAssignment) {
             val variableName = tokens.head
-            variables(variableName) = result.toInt
+            variablesMap(variableName) = result.toInt
             s"$variableName = $result"
         } else { // Else we work like normal evaluations
             result
@@ -148,6 +121,3 @@ class IntREPL extends REPLBase {
 
 
 }
-
-
-

@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">25</div>
+<div class="counter">20</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.183s</div>
+<div class="counter">0.216s</div>
 <p>duration</p>
 </div>
 </td>
@@ -51,7 +51,7 @@
 </td>
 <td>
 <div class="infoBox failures" id="successRate">
-<div class="percent">47%</div>
+<div class="percent">58%</div>
 <p>successful</p>
 </div>
 </td>
@@ -66,6 +66,9 @@
 <li>
 <a href="#tab1">Tests</a>
 </li>
+<li>
+<a href="#tab2">Standard output</a>
+</li>
 </ul>
 <div id="tab0" class="tab">
 <h2>Failed tests</h2>
@@ -73,12 +76,12 @@
 <a name="Simplify abstract advanced"></a>
 <h3 class="failures">Simplify abstract advanced</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[a + c * ( b + d )]&quot;
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
-	at app//repls.IntReplTests.$anonfun$new$44(IntReplTests.scala:436)
+<pre>scala.MatchError: a (of class java.lang.String)
+	at app//repls.IntREPL.$anonfun$expressionToRPN$1(IntREPL.scala:32)
+	at app//scala.collection.immutable.List.foreach(List.scala:333)
+	at app//repls.IntREPL.expressionToRPN(IntREPL.scala:32)
+	at app//repls.IntREPL.readEval(IntREPL.scala:101)
+	at app//repls.IntReplTests.$anonfun$new$44(IntReplTests.scala:433)
 	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
 	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
 	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
@@ -160,12 +163,12 @@
 <a name="Simplify abstract brackets"></a>
 <h3 class="failures">Simplify abstract brackets</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[a + b]&quot;
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
-	at app//repls.IntReplTests.$anonfun$new$38(IntReplTests.scala:380)
+<pre>scala.MatchError: a (of class java.lang.String)
+	at app//repls.IntREPL.$anonfun$expressionToRPN$1(IntREPL.scala:32)
+	at app//scala.collection.immutable.List.foreach(List.scala:333)
+	at app//repls.IntREPL.expressionToRPN(IntREPL.scala:32)
+	at app//repls.IntREPL.readEval(IntREPL.scala:101)
+	at app//repls.IntReplTests.$anonfun$new$38(IntReplTests.scala:377)
 	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
 	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
 	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
@@ -247,12 +250,12 @@
 <a name="Simplify advanced"></a>
 <h3 class="failures">Simplify advanced</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[102 * y]&quot;
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
-	at app//repls.IntReplTests.$anonfun$new$35(IntReplTests.scala:351)
+<pre>scala.MatchError: y (of class java.lang.String)
+	at app//repls.IntREPL.$anonfun$expressionToRPN$1(IntREPL.scala:32)
+	at app//scala.collection.immutable.List.foreach(List.scala:333)
+	at app//repls.IntREPL.expressionToRPN(IntREPL.scala:32)
+	at app//repls.IntREPL.readEval(IntREPL.scala:101)
+	at app//repls.IntReplTests.$anonfun$new$35(IntReplTests.scala:348)
 	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
 	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
 	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
@@ -334,12 +337,12 @@
 <a name="Simplify advanced 2"></a>
 <h3 class="failures">Simplify advanced 2</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
-	at app//repls.IntReplTests.$anonfun$new$45(IntReplTests.scala:447)
+<pre>scala.MatchError: b (of class java.lang.String)
+	at app//repls.IntREPL.$anonfun$expressionToRPN$1(IntREPL.scala:32)
+	at app//scala.collection.immutable.List.foreach(List.scala:333)
+	at app//repls.IntREPL.expressionToRPN(IntREPL.scala:32)
+	at app//repls.IntREPL.readEval(IntREPL.scala:101)
+	at app//repls.IntReplTests.$anonfun$new$45(IntReplTests.scala:444)
 	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
 	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
 	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
@@ -421,12 +424,12 @@
 <a name="Simplify brackets"></a>
 <h3 class="failures">Simplify brackets</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[y * 2]&quot;
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
-	at app//repls.IntReplTests.$anonfun$new$31(IntReplTests.scala:316)
+<pre>scala.MatchError: y (of class java.lang.String)
+	at app//repls.IntREPL.$anonfun$expressionToRPN$1(IntREPL.scala:32)
+	at app//scala.collection.immutable.List.foreach(List.scala:333)
+	at app//repls.IntREPL.expressionToRPN(IntREPL.scala:32)
+	at app//repls.IntREPL.readEval(IntREPL.scala:101)
+	at app//repls.IntReplTests.$anonfun$new$31(IntReplTests.scala:313)
 	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
 	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
 	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
@@ -508,12 +511,12 @@
 <a name="Simplify distributivity 2"></a>
 <h3 class="failures">Simplify distributivity 2</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[( 1 + x ) * ( b + c )]&quot;
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
-	at app//repls.IntReplTests.$anonfun$new$41(IntReplTests.scala:407)
+<pre>scala.MatchError: b (of class java.lang.String)
+	at app//repls.IntREPL.$anonfun$expressionToRPN$1(IntREPL.scala:32)
+	at app//scala.collection.immutable.List.foreach(List.scala:333)
+	at app//repls.IntREPL.expressionToRPN(IntREPL.scala:32)
+	at app//repls.IntREPL.readEval(IntREPL.scala:101)
+	at app//repls.IntReplTests.$anonfun$new$41(IntReplTests.scala:404)
 	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
 	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
 	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
@@ -595,7 +598,7 @@
 <a name="Simplify distributivity 3"></a>
 <h3 class="failures">Simplify distributivity 3</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[( x + 1 ) * 5]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;([((x + 1) * 2) + (3 * (x + 1)))]&quot; did not equal &quot;([ x + 1 ) * 5]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -682,12 +685,12 @@
 <a name="Simplify distributivity 4"></a>
 <h3 class="failures">Simplify distributivity 4</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[a * ( b + c )]&quot;
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
-	at app//repls.IntReplTests.$anonfun$new$43(IntReplTests.scala:427)
+<pre>scala.MatchError: b (of class java.lang.String)
+	at app//repls.IntREPL.$anonfun$expressionToRPN$1(IntREPL.scala:32)
+	at app//scala.collection.immutable.List.foreach(List.scala:333)
+	at app//repls.IntREPL.expressionToRPN(IntREPL.scala:32)
+	at app//repls.IntREPL.readEval(IntREPL.scala:101)
+	at app//repls.IntReplTests.$anonfun$new$43(IntReplTests.scala:424)
 	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
 	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
 	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
@@ -769,12 +772,12 @@
 <a name="Simplify distributivity simple"></a>
 <h3 class="failures">Simplify distributivity simple</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[a * ( b + c )]&quot;
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
-	at app//repls.IntReplTests.$anonfun$new$40(IntReplTests.scala:398)
+<pre>scala.MatchError: a (of class java.lang.String)
+	at app//repls.IntREPL.$anonfun$expressionToRPN$1(IntREPL.scala:32)
+	at app//scala.collection.immutable.List.foreach(List.scala:333)
+	at app//repls.IntREPL.expressionToRPN(IntREPL.scala:32)
+	at app//repls.IntREPL.readEval(IntREPL.scala:101)
+	at app//repls.IntReplTests.$anonfun$new$40(IntReplTests.scala:395)
 	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
 	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
 	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
@@ -856,273 +859,12 @@
 <a name="Simplify leading 0"></a>
 <h3 class="failures">Simplify leading 0</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
-	at app//repls.IntReplTests.$anonfun$new$34(IntReplTests.scala:343)
-	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
-	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
-	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
-	at app//org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
-	at app//org.scalatest.Transformer.apply(Transformer.scala:22)
-	at app//org.scalatest.Transformer.apply(Transformer.scala:20)
-	at app//org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)
-	at app//org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
-	at app//org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
-	at app//repls.infrastructure.TestBase.org$scalatest$concurrent$TimeLimitedTests$$super$withFixture(TestBase.scala:9)
-	at app//org.scalatest.concurrent.TimeLimitedTests.$anonfun$withFixture$3(TimeLimitedTests.scala:154)
-	at app//org.scalatest.enablers.Timed$$anon$1.timeoutAfter(Timed.scala:127)
-	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl(TimeLimits.scala:239)
-	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl$(TimeLimits.scala:233)
-	at app//org.scalatest.concurrent.TimeLimits$.failAfterImpl(TimeLimits.scala:305)
-	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture(TimeLimitedTests.scala:153)
-	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture$(TimeLimitedTests.scala:150)
-	at app//repls.infrastructure.TestBase.withFixture(TestBase.scala:9)
-	at app//org.scalatest.FunSuiteLike.invokeWithFixture$1(FunSuiteLike.scala:184)
-	at app//org.scalatest.FunSuiteLike.$anonfun$runTest$1(FunSuiteLike.scala:196)
-	at app//org.scalatest.SuperEngine.runTestImpl(Engine.scala:286)
-	at app//org.scalatest.FunSuiteLike.runTest(FunSuiteLike.scala:196)
-	at app//org.scalatest.FunSuiteLike.runTest$(FunSuiteLike.scala:178)
-	at app//org.scalatest.FunSuite.runTest(FunSuite.scala:1560)
-	at app//org.scalatest.FunSuiteLike.$anonfun$runTests$1(FunSuiteLike.scala:229)
-	at app//org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:393)
+<pre>scala.MatchError: y (of class java.lang.String)
+	at app//repls.IntREPL.$anonfun$expressionToRPN$1(IntREPL.scala:32)
 	at app//scala.collection.immutable.List.foreach(List.scala:333)
-	at app//org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:381)
-	at app//org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:376)
-	at app//org.scalatest.SuperEngine.runTestsImpl(Engine.scala:458)
-	at app//org.scalatest.FunSuiteLike.runTests(FunSuiteLike.scala:229)
-	at app//org.scalatest.FunSuiteLike.runTests$(FunSuiteLike.scala:228)
-	at app//org.scalatest.FunSuite.runTests(FunSuite.scala:1560)
-	at app//org.scalatest.Suite.run(Suite.scala:1124)
-	at app//org.scalatest.Suite.run$(Suite.scala:1106)
-	at app//org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1560)
-	at app//org.scalatest.FunSuiteLike.$anonfun$run$1(FunSuiteLike.scala:233)
-	at app//org.scalatest.SuperEngine.runImpl(Engine.scala:518)
-	at app//org.scalatest.FunSuiteLike.run(FunSuiteLike.scala:233)
-	at app//org.scalatest.FunSuiteLike.run$(FunSuiteLike.scala:232)
-	at app//repls.infrastructure.TestBase.run(TestBase.scala:26)
-	at app//org.scalatest.Suite.callExecuteOnSuite$1(Suite.scala:1187)
-	at app//org.scalatest.Suite.$anonfun$runNestedSuites$1(Suite.scala:1234)
-	at app//scala.collection.ArrayOps$.foreach$extension(ArrayOps.scala:1323)
-	at app//org.scalatest.Suite.runNestedSuites(Suite.scala:1232)
-	at app//org.scalatest.Suite.runNestedSuites$(Suite.scala:1166)
-	at app//org.scalatest.Suites.runNestedSuites(Suites.scala:56)
-	at app//org.scalatest.Suite.run(Suite.scala:1121)
-	at app//org.scalatest.Suite.run$(Suite.scala:1106)
-	at app//repls.ReplsTestSuitesBase.runDirect(ReplsTestSuitesBase.scala:16)
-	at app//repls.ReplsTestSuitesBase.runWithScoreCounter(ReplsTestSuitesBase.scala:11)
-	at app//repls.ReplsTestSuite4_1.run(ReplsTestSuite4_1.scala:15)
-	at app//org.scalatestplus.junit.JUnitRunner.run(JUnitRunner.scala:99)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
-	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
-	at java.base@18.0.2.1/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base@18.0.2.1/java.lang.reflect.Method.invoke(Method.java:577)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at jdk.proxy1/jdk.proxy1.$Proxy2.processTestClass(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-</pre>
-</span>
-</div>
-<div class="test">
-<a name="Simplify multiply by 0 left"></a>
-<h3 class="failures">Simplify multiply by 0 left</h3>
-<span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
-	at app//repls.IntReplTests.$anonfun$new$29(IntReplTests.scala:298)
-	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
-	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
-	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
-	at app//org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
-	at app//org.scalatest.Transformer.apply(Transformer.scala:22)
-	at app//org.scalatest.Transformer.apply(Transformer.scala:20)
-	at app//org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)
-	at app//org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
-	at app//org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
-	at app//repls.infrastructure.TestBase.org$scalatest$concurrent$TimeLimitedTests$$super$withFixture(TestBase.scala:9)
-	at app//org.scalatest.concurrent.TimeLimitedTests.$anonfun$withFixture$3(TimeLimitedTests.scala:154)
-	at app//org.scalatest.enablers.Timed$$anon$1.timeoutAfter(Timed.scala:127)
-	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl(TimeLimits.scala:239)
-	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl$(TimeLimits.scala:233)
-	at app//org.scalatest.concurrent.TimeLimits$.failAfterImpl(TimeLimits.scala:305)
-	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture(TimeLimitedTests.scala:153)
-	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture$(TimeLimitedTests.scala:150)
-	at app//repls.infrastructure.TestBase.withFixture(TestBase.scala:9)
-	at app//org.scalatest.FunSuiteLike.invokeWithFixture$1(FunSuiteLike.scala:184)
-	at app//org.scalatest.FunSuiteLike.$anonfun$runTest$1(FunSuiteLike.scala:196)
-	at app//org.scalatest.SuperEngine.runTestImpl(Engine.scala:286)
-	at app//org.scalatest.FunSuiteLike.runTest(FunSuiteLike.scala:196)
-	at app//org.scalatest.FunSuiteLike.runTest$(FunSuiteLike.scala:178)
-	at app//org.scalatest.FunSuite.runTest(FunSuite.scala:1560)
-	at app//org.scalatest.FunSuiteLike.$anonfun$runTests$1(FunSuiteLike.scala:229)
-	at app//org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:393)
-	at app//scala.collection.immutable.List.foreach(List.scala:333)
-	at app//org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:381)
-	at app//org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:376)
-	at app//org.scalatest.SuperEngine.runTestsImpl(Engine.scala:458)
-	at app//org.scalatest.FunSuiteLike.runTests(FunSuiteLike.scala:229)
-	at app//org.scalatest.FunSuiteLike.runTests$(FunSuiteLike.scala:228)
-	at app//org.scalatest.FunSuite.runTests(FunSuite.scala:1560)
-	at app//org.scalatest.Suite.run(Suite.scala:1124)
-	at app//org.scalatest.Suite.run$(Suite.scala:1106)
-	at app//org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1560)
-	at app//org.scalatest.FunSuiteLike.$anonfun$run$1(FunSuiteLike.scala:233)
-	at app//org.scalatest.SuperEngine.runImpl(Engine.scala:518)
-	at app//org.scalatest.FunSuiteLike.run(FunSuiteLike.scala:233)
-	at app//org.scalatest.FunSuiteLike.run$(FunSuiteLike.scala:232)
-	at app//repls.infrastructure.TestBase.run(TestBase.scala:26)
-	at app//org.scalatest.Suite.callExecuteOnSuite$1(Suite.scala:1187)
-	at app//org.scalatest.Suite.$anonfun$runNestedSuites$1(Suite.scala:1234)
-	at app//scala.collection.ArrayOps$.foreach$extension(ArrayOps.scala:1323)
-	at app//org.scalatest.Suite.runNestedSuites(Suite.scala:1232)
-	at app//org.scalatest.Suite.runNestedSuites$(Suite.scala:1166)
-	at app//org.scalatest.Suites.runNestedSuites(Suites.scala:56)
-	at app//org.scalatest.Suite.run(Suite.scala:1121)
-	at app//org.scalatest.Suite.run$(Suite.scala:1106)
-	at app//repls.ReplsTestSuitesBase.runDirect(ReplsTestSuitesBase.scala:16)
-	at app//repls.ReplsTestSuitesBase.runWithScoreCounter(ReplsTestSuitesBase.scala:11)
-	at app//repls.ReplsTestSuite4_1.run(ReplsTestSuite4_1.scala:15)
-	at app//org.scalatestplus.junit.JUnitRunner.run(JUnitRunner.scala:99)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
-	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
-	at java.base@18.0.2.1/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base@18.0.2.1/java.lang.reflect.Method.invoke(Method.java:577)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at jdk.proxy1/jdk.proxy1.$Proxy2.processTestClass(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-</pre>
-</span>
-</div>
-<div class="test">
-<a name="Simplify multiply by 0 right"></a>
-<h3 class="failures">Simplify multiply by 0 right</h3>
-<span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
-	at app//repls.IntReplTests.$anonfun$new$30(IntReplTests.scala:307)
-	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
-	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
-	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
-	at app//org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
-	at app//org.scalatest.Transformer.apply(Transformer.scala:22)
-	at app//org.scalatest.Transformer.apply(Transformer.scala:20)
-	at app//org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)
-	at app//org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
-	at app//org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
-	at app//repls.infrastructure.TestBase.org$scalatest$concurrent$TimeLimitedTests$$super$withFixture(TestBase.scala:9)
-	at app//org.scalatest.concurrent.TimeLimitedTests.$anonfun$withFixture$3(TimeLimitedTests.scala:154)
-	at app//org.scalatest.enablers.Timed$$anon$1.timeoutAfter(Timed.scala:127)
-	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl(TimeLimits.scala:239)
-	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl$(TimeLimits.scala:233)
-	at app//org.scalatest.concurrent.TimeLimits$.failAfterImpl(TimeLimits.scala:305)
-	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture(TimeLimitedTests.scala:153)
-	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture$(TimeLimitedTests.scala:150)
-	at app//repls.infrastructure.TestBase.withFixture(TestBase.scala:9)
-	at app//org.scalatest.FunSuiteLike.invokeWithFixture$1(FunSuiteLike.scala:184)
-	at app//org.scalatest.FunSuiteLike.$anonfun$runTest$1(FunSuiteLike.scala:196)
-	at app//org.scalatest.SuperEngine.runTestImpl(Engine.scala:286)
-	at app//org.scalatest.FunSuiteLike.runTest(FunSuiteLike.scala:196)
-	at app//org.scalatest.FunSuiteLike.runTest$(FunSuiteLike.scala:178)
-	at app//org.scalatest.FunSuite.runTest(FunSuite.scala:1560)
-	at app//org.scalatest.FunSuiteLike.$anonfun$runTests$1(FunSuiteLike.scala:229)
-	at app//org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:393)
-	at app//scala.collection.immutable.List.foreach(List.scala:333)
-	at app//org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:381)
-	at app//org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:376)
-	at app//org.scalatest.SuperEngine.runTestsImpl(Engine.scala:458)
-	at app//org.scalatest.FunSuiteLike.runTests(FunSuiteLike.scala:229)
-	at app//org.scalatest.FunSuiteLike.runTests$(FunSuiteLike.scala:228)
-	at app//org.scalatest.FunSuite.runTests(FunSuite.scala:1560)
-	at app//org.scalatest.Suite.run(Suite.scala:1124)
-	at app//org.scalatest.Suite.run$(Suite.scala:1106)
-	at app//org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1560)
-	at app//org.scalatest.FunSuiteLike.$anonfun$run$1(FunSuiteLike.scala:233)
-	at app//org.scalatest.SuperEngine.runImpl(Engine.scala:518)
-	at app//org.scalatest.FunSuiteLike.run(FunSuiteLike.scala:233)
-	at app//org.scalatest.FunSuiteLike.run$(FunSuiteLike.scala:232)
-	at app//repls.infrastructure.TestBase.run(TestBase.scala:26)
-	at app//org.scalatest.Suite.callExecuteOnSuite$1(Suite.scala:1187)
-	at app//org.scalatest.Suite.$anonfun$runNestedSuites$1(Suite.scala:1234)
-	at app//scala.collection.ArrayOps$.foreach$extension(ArrayOps.scala:1323)
-	at app//org.scalatest.Suite.runNestedSuites(Suite.scala:1232)
-	at app//org.scalatest.Suite.runNestedSuites$(Suite.scala:1166)
-	at app//org.scalatest.Suites.runNestedSuites(Suites.scala:56)
-	at app//org.scalatest.Suite.run(Suite.scala:1121)
-	at app//org.scalatest.Suite.run$(Suite.scala:1106)
-	at app//repls.ReplsTestSuitesBase.runDirect(ReplsTestSuitesBase.scala:16)
-	at app//repls.ReplsTestSuitesBase.runWithScoreCounter(ReplsTestSuitesBase.scala:11)
-	at app//repls.ReplsTestSuite4_1.run(ReplsTestSuite4_1.scala:15)
-	at app//org.scalatestplus.junit.JUnitRunner.run(JUnitRunner.scala:99)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
-	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
-	at java.base@18.0.2.1/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base@18.0.2.1/java.lang.reflect.Method.invoke(Method.java:577)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at jdk.proxy1/jdk.proxy1.$Proxy2.processTestClass(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-</pre>
-</span>
-</div>
-<div class="test">
-<a name="Simplify multiply by one left"></a>
-<h3 class="failures">Simplify multiply by one left</h3>
-<span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[x]&quot;
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
-	at app//repls.IntReplTests.$anonfun$new$27(IntReplTests.scala:280)
+	at app//repls.IntREPL.expressionToRPN(IntREPL.scala:32)
+	at app//repls.IntREPL.readEval(IntREPL.scala:101)
+	at app//repls.IntReplTests.$anonfun$new$34(IntReplTests.scala:340)
 	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
 	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
 	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
@@ -1204,12 +946,12 @@
 <a name="Simplify multiply by one right"></a>
 <h3 class="failures">Simplify multiply by one right</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[y]&quot;
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
-	at app//repls.IntReplTests.$anonfun$new$28(IntReplTests.scala:289)
+<pre>scala.MatchError: y (of class java.lang.String)
+	at app//repls.IntREPL.$anonfun$expressionToRPN$1(IntREPL.scala:32)
+	at app//scala.collection.immutable.List.foreach(List.scala:333)
+	at app//repls.IntREPL.expressionToRPN(IntREPL.scala:32)
+	at app//repls.IntREPL.readEval(IntREPL.scala:101)
+	at app//repls.IntReplTests.$anonfun$new$28(IntReplTests.scala:286)
 	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
 	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
 	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
@@ -1291,12 +1033,12 @@
 <a name="Simplify negative numbers"></a>
 <h3 class="failures">Simplify negative numbers</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[x * -11]&quot;
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
-	at app//repls.IntReplTests.$anonfun$new$32(IntReplTests.scala:325)
+<pre>scala.MatchError: a (of class java.lang.String)
+	at app//repls.IntREPL.$anonfun$expressionToRPN$1(IntREPL.scala:32)
+	at app//scala.collection.immutable.List.foreach(List.scala:333)
+	at app//repls.IntREPL.expressionToRPN(IntREPL.scala:32)
+	at app//repls.IntREPL.readEval(IntREPL.scala:101)
+	at app//repls.IntReplTests.$anonfun$new$32(IntReplTests.scala:322)
 	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
 	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
 	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
@@ -1378,12 +1120,12 @@
 <a name="Simplify nested"></a>
 <h3 class="failures">Simplify nested</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[a]&quot;
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
-	at app//repls.IntReplTests.$anonfun$new$39(IntReplTests.scala:389)
+<pre>scala.MatchError: a (of class java.lang.String)
+	at app//repls.IntREPL.$anonfun$expressionToRPN$1(IntREPL.scala:32)
+	at app//scala.collection.immutable.List.foreach(List.scala:333)
+	at app//repls.IntREPL.expressionToRPN(IntREPL.scala:32)
+	at app//repls.IntREPL.readEval(IntREPL.scala:101)
+	at app//repls.IntReplTests.$anonfun$new$39(IntReplTests.scala:386)
 	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
 	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
 	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
@@ -1465,7 +1207,7 @@
 <a name="Simplify simple"></a>
 <h3 class="failures">Simplify simple</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[16 * x]&quot;
+<pre>org.scalatest.exceptions.TestFailedException: &quot;[((4 * 4) * x)]&quot; did not equal &quot;[16 * x]&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
 	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
@@ -1552,12 +1294,12 @@
 <a name="Simplify subtract abstract"></a>
 <h3 class="failures">Simplify subtract abstract</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
-	at app//repls.IntReplTests.$anonfun$new$36(IntReplTests.scala:360)
+<pre>scala.MatchError: y (of class java.lang.String)
+	at app//repls.IntREPL.$anonfun$expressionToRPN$1(IntREPL.scala:32)
+	at app//scala.collection.immutable.List.foreach(List.scala:333)
+	at app//repls.IntREPL.expressionToRPN(IntREPL.scala:32)
+	at app//repls.IntREPL.readEval(IntREPL.scala:101)
+	at app//repls.IntReplTests.$anonfun$new$36(IntReplTests.scala:357)
 	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
 	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
 	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
@@ -1639,12 +1381,12 @@
 <a name="Simplify subtract abstract nested"></a>
 <h3 class="failures">Simplify subtract abstract nested</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
-	at app//repls.IntReplTests.$anonfun$new$37(IntReplTests.scala:369)
+<pre>scala.MatchError: y (of class java.lang.String)
+	at app//repls.IntREPL.$anonfun$expressionToRPN$1(IntREPL.scala:32)
+	at app//scala.collection.immutable.List.foreach(List.scala:333)
+	at app//repls.IntREPL.expressionToRPN(IntREPL.scala:32)
+	at app//repls.IntREPL.readEval(IntREPL.scala:101)
+	at app//repls.IntReplTests.$anonfun$new$37(IntReplTests.scala:366)
 	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
 	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
 	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
@@ -1726,186 +1468,12 @@
 <a name="Simplify trailing 0"></a>
 <h3 class="failures">Simplify trailing 0</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[0]&quot;
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
-	at app//repls.IntReplTests.$anonfun$new$33(IntReplTests.scala:334)
-	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
-	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
-	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
-	at app//org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
-	at app//org.scalatest.Transformer.apply(Transformer.scala:22)
-	at app//org.scalatest.Transformer.apply(Transformer.scala:20)
-	at app//org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)
-	at app//org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
-	at app//org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
-	at app//repls.infrastructure.TestBase.org$scalatest$concurrent$TimeLimitedTests$$super$withFixture(TestBase.scala:9)
-	at app//org.scalatest.concurrent.TimeLimitedTests.$anonfun$withFixture$3(TimeLimitedTests.scala:154)
-	at app//org.scalatest.enablers.Timed$$anon$1.timeoutAfter(Timed.scala:127)
-	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl(TimeLimits.scala:239)
-	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl$(TimeLimits.scala:233)
-	at app//org.scalatest.concurrent.TimeLimits$.failAfterImpl(TimeLimits.scala:305)
-	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture(TimeLimitedTests.scala:153)
-	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture$(TimeLimitedTests.scala:150)
-	at app//repls.infrastructure.TestBase.withFixture(TestBase.scala:9)
-	at app//org.scalatest.FunSuiteLike.invokeWithFixture$1(FunSuiteLike.scala:184)
-	at app//org.scalatest.FunSuiteLike.$anonfun$runTest$1(FunSuiteLike.scala:196)
-	at app//org.scalatest.SuperEngine.runTestImpl(Engine.scala:286)
-	at app//org.scalatest.FunSuiteLike.runTest(FunSuiteLike.scala:196)
-	at app//org.scalatest.FunSuiteLike.runTest$(FunSuiteLike.scala:178)
-	at app//org.scalatest.FunSuite.runTest(FunSuite.scala:1560)
-	at app//org.scalatest.FunSuiteLike.$anonfun$runTests$1(FunSuiteLike.scala:229)
-	at app//org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:393)
+<pre>scala.MatchError: a (of class java.lang.String)
+	at app//repls.IntREPL.$anonfun$expressionToRPN$1(IntREPL.scala:32)
 	at app//scala.collection.immutable.List.foreach(List.scala:333)
-	at app//org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:381)
-	at app//org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:376)
-	at app//org.scalatest.SuperEngine.runTestsImpl(Engine.scala:458)
-	at app//org.scalatest.FunSuiteLike.runTests(FunSuiteLike.scala:229)
-	at app//org.scalatest.FunSuiteLike.runTests$(FunSuiteLike.scala:228)
-	at app//org.scalatest.FunSuite.runTests(FunSuite.scala:1560)
-	at app//org.scalatest.Suite.run(Suite.scala:1124)
-	at app//org.scalatest.Suite.run$(Suite.scala:1106)
-	at app//org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1560)
-	at app//org.scalatest.FunSuiteLike.$anonfun$run$1(FunSuiteLike.scala:233)
-	at app//org.scalatest.SuperEngine.runImpl(Engine.scala:518)
-	at app//org.scalatest.FunSuiteLike.run(FunSuiteLike.scala:233)
-	at app//org.scalatest.FunSuiteLike.run$(FunSuiteLike.scala:232)
-	at app//repls.infrastructure.TestBase.run(TestBase.scala:26)
-	at app//org.scalatest.Suite.callExecuteOnSuite$1(Suite.scala:1187)
-	at app//org.scalatest.Suite.$anonfun$runNestedSuites$1(Suite.scala:1234)
-	at app//scala.collection.ArrayOps$.foreach$extension(ArrayOps.scala:1323)
-	at app//org.scalatest.Suite.runNestedSuites(Suite.scala:1232)
-	at app//org.scalatest.Suite.runNestedSuites$(Suite.scala:1166)
-	at app//org.scalatest.Suites.runNestedSuites(Suites.scala:56)
-	at app//org.scalatest.Suite.run(Suite.scala:1121)
-	at app//org.scalatest.Suite.run$(Suite.scala:1106)
-	at app//repls.ReplsTestSuitesBase.runDirect(ReplsTestSuitesBase.scala:16)
-	at app//repls.ReplsTestSuitesBase.runWithScoreCounter(ReplsTestSuitesBase.scala:11)
-	at app//repls.ReplsTestSuite4_1.run(ReplsTestSuite4_1.scala:15)
-	at app//org.scalatestplus.junit.JUnitRunner.run(JUnitRunner.scala:99)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
-	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
-	at java.base@18.0.2.1/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base@18.0.2.1/java.lang.reflect.Method.invoke(Method.java:577)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at jdk.proxy1/jdk.proxy1.$Proxy2.processTestClass(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-</pre>
-</span>
-</div>
-<div class="test">
-<a name="Simplify unneeded 0 left"></a>
-<h3 class="failures">Simplify unneeded 0 left</h3>
-<span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[x]&quot;
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
-	at app//repls.IntReplTests.$anonfun$new$25(IntReplTests.scala:262)
-	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
-	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
-	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
-	at app//org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
-	at app//org.scalatest.Transformer.apply(Transformer.scala:22)
-	at app//org.scalatest.Transformer.apply(Transformer.scala:20)
-	at app//org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)
-	at app//org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
-	at app//org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
-	at app//repls.infrastructure.TestBase.org$scalatest$concurrent$TimeLimitedTests$$super$withFixture(TestBase.scala:9)
-	at app//org.scalatest.concurrent.TimeLimitedTests.$anonfun$withFixture$3(TimeLimitedTests.scala:154)
-	at app//org.scalatest.enablers.Timed$$anon$1.timeoutAfter(Timed.scala:127)
-	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl(TimeLimits.scala:239)
-	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl$(TimeLimits.scala:233)
-	at app//org.scalatest.concurrent.TimeLimits$.failAfterImpl(TimeLimits.scala:305)
-	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture(TimeLimitedTests.scala:153)
-	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture$(TimeLimitedTests.scala:150)
-	at app//repls.infrastructure.TestBase.withFixture(TestBase.scala:9)
-	at app//org.scalatest.FunSuiteLike.invokeWithFixture$1(FunSuiteLike.scala:184)
-	at app//org.scalatest.FunSuiteLike.$anonfun$runTest$1(FunSuiteLike.scala:196)
-	at app//org.scalatest.SuperEngine.runTestImpl(Engine.scala:286)
-	at app//org.scalatest.FunSuiteLike.runTest(FunSuiteLike.scala:196)
-	at app//org.scalatest.FunSuiteLike.runTest$(FunSuiteLike.scala:178)
-	at app//org.scalatest.FunSuite.runTest(FunSuite.scala:1560)
-	at app//org.scalatest.FunSuiteLike.$anonfun$runTests$1(FunSuiteLike.scala:229)
-	at app//org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:393)
-	at app//scala.collection.immutable.List.foreach(List.scala:333)
-	at app//org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:381)
-	at app//org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:376)
-	at app//org.scalatest.SuperEngine.runTestsImpl(Engine.scala:458)
-	at app//org.scalatest.FunSuiteLike.runTests(FunSuiteLike.scala:229)
-	at app//org.scalatest.FunSuiteLike.runTests$(FunSuiteLike.scala:228)
-	at app//org.scalatest.FunSuite.runTests(FunSuite.scala:1560)
-	at app//org.scalatest.Suite.run(Suite.scala:1124)
-	at app//org.scalatest.Suite.run$(Suite.scala:1106)
-	at app//org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1560)
-	at app//org.scalatest.FunSuiteLike.$anonfun$run$1(FunSuiteLike.scala:233)
-	at app//org.scalatest.SuperEngine.runImpl(Engine.scala:518)
-	at app//org.scalatest.FunSuiteLike.run(FunSuiteLike.scala:233)
-	at app//org.scalatest.FunSuiteLike.run$(FunSuiteLike.scala:232)
-	at app//repls.infrastructure.TestBase.run(TestBase.scala:26)
-	at app//org.scalatest.Suite.callExecuteOnSuite$1(Suite.scala:1187)
-	at app//org.scalatest.Suite.$anonfun$runNestedSuites$1(Suite.scala:1234)
-	at app//scala.collection.ArrayOps$.foreach$extension(ArrayOps.scala:1323)
-	at app//org.scalatest.Suite.runNestedSuites(Suite.scala:1232)
-	at app//org.scalatest.Suite.runNestedSuites$(Suite.scala:1166)
-	at app//org.scalatest.Suites.runNestedSuites(Suites.scala:56)
-	at app//org.scalatest.Suite.run(Suite.scala:1121)
-	at app//org.scalatest.Suite.run$(Suite.scala:1106)
-	at app//repls.ReplsTestSuitesBase.runDirect(ReplsTestSuitesBase.scala:16)
-	at app//repls.ReplsTestSuitesBase.runWithScoreCounter(ReplsTestSuitesBase.scala:11)
-	at app//repls.ReplsTestSuite4_1.run(ReplsTestSuite4_1.scala:15)
-	at app//org.scalatestplus.junit.JUnitRunner.run(JUnitRunner.scala:99)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
-	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
-	at java.base@18.0.2.1/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base@18.0.2.1/java.lang.reflect.Method.invoke(Method.java:577)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at jdk.proxy1/jdk.proxy1.$Proxy2.processTestClass(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-</pre>
-</span>
-</div>
-<div class="test">
-<a name="Simplify unneeded 0 right"></a>
-<h3 class="failures">Simplify unneeded 0 right</h3>
-<span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[x]&quot;
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
-	at app//repls.IntReplTests.$anonfun$new$26(IntReplTests.scala:271)
+	at app//repls.IntREPL.expressionToRPN(IntREPL.scala:32)
+	at app//repls.IntREPL.readEval(IntREPL.scala:101)
+	at app//repls.IntReplTests.$anonfun$new$33(IntReplTests.scala:331)
 	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
 	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
 	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
@@ -1987,12 +1555,12 @@
 <a name="Simplify with assigned variables"></a>
 <h3 class="failures">Simplify with assigned variables</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[-15]&quot;
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
-	at app//repls.IntReplTests.$anonfun$new$46(IntReplTests.scala:461)
+<pre>scala.MatchError: a (of class java.lang.String)
+	at app//repls.IntREPL.$anonfun$expressionToRPN$1(IntREPL.scala:32)
+	at app//scala.collection.immutable.List.foreach(List.scala:333)
+	at app//repls.IntREPL.expressionToRPN(IntREPL.scala:32)
+	at app//repls.IntREPL.readEval(IntREPL.scala:101)
+	at app//repls.IntReplTests.$anonfun$new$46(IntReplTests.scala:458)
 	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
 	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
 	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
@@ -2074,12 +1642,12 @@
 <a name="Simplify with assigned variables advanced"></a>
 <h3 class="failures">Simplify with assigned variables advanced</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[720 + d]&quot;
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
-	at app//repls.IntReplTests.$anonfun$new$48(IntReplTests.scala:485)
+<pre>scala.MatchError: a (of class java.lang.String)
+	at app//repls.IntREPL.$anonfun$expressionToRPN$1(IntREPL.scala:32)
+	at app//scala.collection.immutable.List.foreach(List.scala:333)
+	at app//repls.IntREPL.expressionToRPN(IntREPL.scala:32)
+	at app//repls.IntREPL.readEval(IntREPL.scala:101)
+	at app//repls.IntReplTests.$anonfun$new$48(IntReplTests.scala:482)
 	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
 	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
 	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
@@ -2161,12 +1729,12 @@
 <a name="Simplify with assigned variables brackets"></a>
 <h3 class="failures">Simplify with assigned variables brackets</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[]&quot; did not equal &quot;[-37 * b]&quot;
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
-	at app//repls.IntReplTests.$anonfun$new$47(IntReplTests.scala:472)
+<pre>scala.MatchError: a (of class java.lang.String)
+	at app//repls.IntREPL.$anonfun$expressionToRPN$1(IntREPL.scala:32)
+	at app//scala.collection.immutable.List.foreach(List.scala:333)
+	at app//repls.IntREPL.expressionToRPN(IntREPL.scala:32)
+	at app//repls.IntREPL.readEval(IntREPL.scala:101)
+	at app//repls.IntReplTests.$anonfun$new$47(IntReplTests.scala:469)
 	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
 	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
 	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
@@ -2257,7 +1825,7 @@
 </thead>
 <tr>
 <td class="success">Assign variables advanced</td>
-<td class="success">0.001s</td>
+<td class="success">0.004s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2267,7 +1835,7 @@
 </tr>
 <tr>
 <td class="success">Assign variables evaluate</td>
-<td class="success">0.002s</td>
+<td class="success">0.003s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2277,7 +1845,7 @@
 </tr>
 <tr>
 <td class="success">Assign variables reassign</td>
-<td class="success">0.001s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2287,7 +1855,7 @@
 </tr>
 <tr>
 <td class="success">Assign variables simple</td>
-<td class="success">0.003s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2297,27 +1865,27 @@
 </tr>
 <tr>
 <td class="success">Echo simple</td>
-<td class="success">0.078s</td>
+<td class="success">0.069s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Evaluate Expressions advanced brackets</td>
-<td class="success">0.002s</td>
+<td class="success">0.003s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Evaluate Expressions brackets</td>
-<td class="success">0.002s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Evaluate Expressions nested brackets</td>
-<td class="success">0.002s</td>
+<td class="success">0.003s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Evaluate Expressions simple</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2327,12 +1895,12 @@
 </tr>
 <tr>
 <td class="success">Evaluate addition negative numbers</td>
-<td class="success">0.001s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Evaluate addition simple</td>
-<td class="success">0.003s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2342,7 +1910,7 @@
 </tr>
 <tr>
 <td class="success">Evaluate multiplication negative</td>
-<td class="success">0.002s</td>
+<td class="success">0.003s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2357,7 +1925,7 @@
 </tr>
 <tr>
 <td class="success">Evaluate subtraction negative</td>
-<td class="success">0.002s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -2372,22 +1940,22 @@
 </tr>
 <tr>
 <td class="failures">Simplify abstract advanced</td>
-<td class="failures">0.007s</td>
+<td class="failures">0.003s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify abstract brackets</td>
-<td class="failures">0s</td>
+<td class="failures">0.003s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify advanced</td>
-<td class="failures">0.001s</td>
+<td class="failures">0.002s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify advanced 2</td>
-<td class="failures">0.008s</td>
+<td class="failures">0.002s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
@@ -2397,17 +1965,17 @@
 </tr>
 <tr>
 <td class="failures">Simplify distributivity 2</td>
-<td class="failures">0.001s</td>
+<td class="failures">0.002s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify distributivity 3</td>
-<td class="failures">0.001s</td>
+<td class="failures">0.006s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify distributivity 4</td>
-<td class="failures">0s</td>
+<td class="failures">0.003s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
@@ -2417,85 +1985,119 @@
 </tr>
 <tr>
 <td class="failures">Simplify leading 0</td>
-<td class="failures">0.003s</td>
+<td class="failures">0.004s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
-<td class="failures">Simplify multiply by 0 left</td>
-<td class="failures">0.003s</td>
-<td class="failures">failed</td>
+<td class="success">Simplify multiply by 0 left</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
 </tr>
 <tr>
-<td class="failures">Simplify multiply by 0 right</td>
-<td class="failures">0.002s</td>
-<td class="failures">failed</td>
+<td class="success">Simplify multiply by 0 right</td>
+<td class="success">0.003s</td>
+<td class="success">passed</td>
 </tr>
 <tr>
-<td class="failures">Simplify multiply by one left</td>
-<td class="failures">0.002s</td>
-<td class="failures">failed</td>
+<td class="success">Simplify multiply by one left</td>
+<td class="success">0.002s</td>
+<td class="success">passed</td>
 </tr>
 <tr>
 <td class="failures">Simplify multiply by one right</td>
-<td class="failures">0.002s</td>
+<td class="failures">0.001s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify negative numbers</td>
-<td class="failures">0.002s</td>
+<td class="failures">0.001s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify nested</td>
-<td class="failures">0.004s</td>
+<td class="failures">0.002s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify simple</td>
-<td class="failures">0.020s</td>
+<td class="failures">0.035s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify subtract abstract</td>
-<td class="failures">0.001s</td>
+<td class="failures">0.011s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify subtract abstract nested</td>
-<td class="failures">0.001s</td>
+<td class="failures">0.002s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify trailing 0</td>
-<td class="failures">0.004s</td>
-<td class="failures">failed</td>
-</tr>
-<tr>
-<td class="failures">Simplify unneeded 0 left</td>
-<td class="failures">0.002s</td>
-<td class="failures">failed</td>
-</tr>
-<tr>
-<td class="failures">Simplify unneeded 0 right</td>
-<td class="failures">0.001s</td>
-<td class="failures">failed</td>
-</tr>
-<tr>
-<td class="failures">Simplify with assigned variables</td>
-<td class="failures">0.002s</td>
-<td class="failures">failed</td>
-</tr>
-<tr>
-<td class="failures">Simplify with assigned variables advanced</td>
 <td class="failures">0.003s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
+<td class="success">Simplify unneeded 0 left</td>
+<td class="success">0.004s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">Simplify unneeded 0 right</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="failures">Simplify with assigned variables</td>
+<td class="failures">0.003s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">Simplify with assigned variables advanced</td>
+<td class="failures">0.006s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
 <td class="failures">Simplify with assigned variables brackets</td>
-<td class="failures">0.001s</td>
+<td class="failures">0.007s</td>
 <td class="failures">failed</td>
 </tr>
 </table>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>The abstract output is:
+Operator(Operator(Const(4),*,Const(4)),*,Var(x))
+The output is:
+((4 * 4) * x)
+The abstract output is:
+Var(x)
+The output is:
+x
+The abstract output is:
+Var(x)
+The output is:
+x
+The abstract output is:
+Var(x)
+The output is:
+x
+The abstract output is:
+Const(0)
+The output is:
+0
+The abstract output is:
+Const(0)
+The output is:
+0
+The abstract output is:
+Operator(Operator(Operator(Var(x),+,Const(1)),*,Const(2)),+,Operator(Const(3),*,Operator(Var(x),+,Const(1))))
+The output is:
+(((x + 1) * 2) + (3 * (x + 1)))
+</pre>
+</span>
 </div>
 </div>
 <div id="footer">
@@ -2505,7 +2107,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.5.1</a> at Oct 11, 2023, 7:09:05 PM</p>
+<a href="http://www.gradle.org">Gradle 7.5.1</a> at Oct 12, 2023, 3:54:18 PM</p>
 </div>
 </div>
 </body>
