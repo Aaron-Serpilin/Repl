@@ -9,7 +9,7 @@ class IntREPL extends REPLBase {
 
     private def isOperator(char: String): Boolean = Set("+", "-", "*", "/").contains(char)
     private def isInteger(char: String): Boolean = char.matches("-?\\d+")
-    private def isVariable(char: String): Boolean = char.matches("[a-z]+")
+    private def isVariable(char: String): Boolean = char.matches("[a-zA-Z0-9]+")
 
     private def precedence(operator: String): Int = operator match {
         case "+" | "-" => 1
@@ -99,13 +99,13 @@ class IntREPL extends REPLBase {
 
         if (isSimplification) { // Check for simplification
             val expression = tokens.drop(1)
-//            println(s"$expression\n")
+            println(s"Expression is $expression\n")
             val reversePolishExpression = expressionToRPN(expression).mkString(" ")
-//            print(s"$reversePolishExpression\n")
+            print(s"RPN is $reversePolishExpression\n")
             val treeExpression = repls.Expressions.ReversePolish.reversePolishToExpression(reversePolishExpression) // We use the given code from the course
             val simplifiedExpression = repls.Expressions.PatternMatch.simplify(treeExpression, variablesMap).abstractToString
-//            println(s"$treeExpression\n")
-//            println(s"$simplifiedExpression\n")
+            println(s"Tree is $treeExpression\n")
+            println(s"Simplified is $simplifiedExpression\n")
             return simplifiedExpression
         }
 
