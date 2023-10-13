@@ -9,6 +9,7 @@ class IntREPL extends REPLBase {
 
     private def isOperator(char: String): Boolean = Set("+", "-", "*", "/").contains(char)
     private def isInteger(char: String): Boolean = char.matches("-?\\d+")
+    private def isVariable(char: String): Boolean = char.matches("[a-z]+")
 
     private def precedence(operator: String): Int = operator match {
         case "+" | "-" => 1
@@ -30,7 +31,7 @@ class IntREPL extends REPLBase {
         val operatorStack = mutable.Stack[String]()
 
         expression.foreach {
-            case token if isInteger(token) || token == "e" || token == "x" => outputStack.push(token)
+            case token if isInteger(token) || isVariable(token) => outputStack.push(token)
 
             case token if isOperator(token) =>
                 while (operatorStack.nonEmpty && precedence(operatorStack.top) >= precedence(token)) {
@@ -98,13 +99,14 @@ class IntREPL extends REPLBase {
 
         if (isSimplification) { // Check for simplification
             val expression = tokens.drop(1)
+            println(s"$expression\n")
             val reversePolishExpression = expressionToRPN(expression).mkString(" ")
+            print(s"$reversePolishExpression\n")
             val treeExpression = repls.Expressions.ReversePolish.reversePolishToExpression(reversePolishExpression) // We use the given code from the course
-            val simplifiedExpression = repls.Expressions.PatternMatch.simplify(treeExpression)
-//            println(s"The tree expression is:$treeExpression")
-//            println(s"The simplified expression is:\n $simplifiedExpression")
-            //println(s"The abstract output is:\n${simplifiedExpression}\nThe output is:\n${simplifiedExpression.abstractToString}")
-            return simplifiedExpression.abstractToString
+            val simplifiedExpression = repls.Expressions.PatternMatch.simplify(treeExpression).abstractToString
+            println(s"$treeExpression\n")
+            println(s"$simplifiedExpression\n")
+            return simplifiedExpression
         }
 
         val expression = if (isVariableAssignment) tokens.drop(2) else tokens

@@ -28,7 +28,7 @@ object Expressions {
       val r = secondOperand.evaluate(variableMap)
       PatternMatch.operatorByName(l, operatorName, r)
     }
-    override def abstractToString: String = s"(${firstOperand.abstractToString} $operatorName ${secondOperand.abstractToString})"
+    override def abstractToString: String = s"${firstOperand.abstractToString} $operatorName ${secondOperand.abstractToString}"
   }
 
   object PatternMatch {
@@ -53,6 +53,13 @@ object Expressions {
 
     def simplify(expression: Expression): Expression =
       expression match {
+        // Cases for simplification of computations
+        case Operator(Const(firstOperand), "+", Const(secondOperand)) => Const(firstOperand + secondOperand)
+        case Operator(Const(firstOperand), "-", Const(secondOperand)) => Const(firstOperand - secondOperand)
+        case Operator(Const(firstOperand), "*", Const(secondOperand)) => Const(firstOperand * secondOperand)
+        case Operator(Const(firstOperand), "/", Const(secondOperand)) => Const(firstOperand / secondOperand)
+
+        // Cases for basic arithmetic simplification
         case Negate(Negate(e)) => simplify(e)
         case Negate(e) => Negate(simplify(e))
         case Operator(e, "+", Const(0)) => simplify(e) //    e + 0 → e
