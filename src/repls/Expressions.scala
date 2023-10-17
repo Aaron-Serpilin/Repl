@@ -28,7 +28,20 @@ object Expressions {
       val r = secondOperand.evaluate(variableMap)
       PatternMatch.operatorByName(l, operatorName, r)
     }
-    override def abstractToString: String = s"${firstOperand.abstractToString} $operatorName ${secondOperand.abstractToString}"
+    
+    override def abstractToString: String = { // Correctly prints out the simplifications. Have to check for parenthesis placement for the distributivity rules
+      val shouldParenthesisBePlaced = ((operatorName == "*" || operatorName == "/")
+        && (secondOperand.isInstanceOf[Operator] && (secondOperand.asInstanceOf[Operator].operatorName == "+" || secondOperand.asInstanceOf[Operator].operatorName == "-")))
+
+      val addLeftParenthesis = firstOperand.isInstanceOf[Operator] &&
+        (firstOperand.asInstanceOf[Operator].operatorName == "+" || firstOperand.asInstanceOf[Operator].operatorName == "-") &&
+        (operatorName == "*" || operatorName == "/")
+
+      val leftOperand = if (addLeftParenthesis && !firstOperand.isInstanceOf[Var]) s"( ${firstOperand.abstractToString} )" else firstOperand.abstractToString
+      val rightOperand = if (shouldParenthesisBePlaced) s"( ${secondOperand.abstractToString} )" else secondOperand.abstractToString
+
+      s"$leftOperand $operatorName $rightOperand"
+    }
   }
 
   object PatternMatch {
@@ -44,17 +57,28 @@ object Expressions {
       }
     }
 
-    private def evaluate(variableMap: mutable.Map[String, Int], expression: Expression): Int =
-      expression match {
-        case Const(i) => i
-        case Var(s) => variableMap(s)
-        case Negate(arg) => -evaluate(variableMap, arg)
-        case Operator(firstOperand, op, secondOperand) =>
-          operatorByName(evaluate(variableMap, firstOperand), op, evaluate(variableMap, secondOperand))
-      }
+//    private def evaluate(variableMap: mutable.Map[String, Int], expression: Expression): Int =
+//      expression match {
+//        case Const(i) => i
+//        case Var(s) => variableMap(s)
+//        case Negate(arg) => -evaluate(variableMap, arg)
+//        case Operator(firstOperand, op, secondOperand) =>
+//          operatorByName(evaluate(variableMap, firstOperand), op, evaluate(variableMap, secondOperand))
+//      }
 
     def simplify(expression: Expression, variableMap: mutable.Map[String, Int]): Expression = {
       val simplifiedExpression = expression match {
+
+         // Cases for Distributivity Simplification
+        case Operator(Operator(a1, "*", b), "+", Operator(a2, "*", c))
+          if a1 == a2 => Operator(a1, "*", Operator(b, "+", c)) // ( a * b ) + ( a * c ) → a * ( b + c )
+        case Operator(Operator(b, "*", a1), "+", Operator(a2, "*", c))
+          if a1 == a2 => Operator(a1, "*", Operator(b, "+", c)) // ( b * a ) + ( a * c ) → a * ( b + c )
+        case Operator(Operator(a1, "*", b), "+", Operator(c, "*", a2))
+          if a1 == a2 => Operator(a1, "*", Operator(b, "+", c)) // ( a * b ) + ( c * a ) → a * ( b + c )
+        case Operator(Operator(b, "*", a1), "+", Operator(c, "*", a2))
+          if a1 == a2 => Operator(a1, "*", Operator(b, "+", c)) // ( b * a ) + ( c * a ) → a * ( b + c )
+
         // Cases for simplification of computations
         case Operator(Const(a), "+", Const(b)) => Const(a + b)
         case Operator(Const(a), "-", Const(b)) => Const(a - b)
@@ -95,14 +119,14 @@ object Expressions {
         case _ => expression
       }
 
-      if (simplifiedExpression != expression) { // We recursively reduce the expression if it is not completely reduced
+      // We recursively reduce the expression if it is not completely reduced already
+      if (simplifiedExpression != expression) {
         simplify(simplifiedExpression, variableMap)
       } else {
         simplifiedExpression
       }
 
     }
-
 
   }
 
@@ -121,8 +145,8 @@ object Expressions {
         if (!isChar(element)) {
           val secondOperand = outputStack.pop
           val firstOperand = outputStack.pop
-          val res = Operator(firstOperand, element, secondOperand)
-          outputStack.push(res)
+          val result = Operator(firstOperand, element, secondOperand)
+          outputStack.push(result)
         } else if (isChar(element)) {
           if (element.forall(_.isDigit)) {
             outputStack.push(Const(element.toInt))

@@ -99,13 +99,10 @@ class IntREPL extends REPLBase {
 
         if (isSimplification) { // Check for simplification
             val expression = tokens.drop(1)
-            println(s"Expression is $expression\n")
             val reversePolishExpression = expressionToRPN(expression).mkString(" ")
-            print(s"RPN is $reversePolishExpression\n")
             val treeExpression = repls.Expressions.ReversePolish.reversePolishToExpression(reversePolishExpression) // We use the given code from the course
             val simplifiedExpression = repls.Expressions.PatternMatch.simplify(treeExpression, variablesMap).abstractToString
-            println(s"Tree is $treeExpression\n")
-            println(s"Simplified is $simplifiedExpression\n")
+            repls.Expressions
             return simplifiedExpression
         }
 
@@ -120,6 +117,4 @@ class IntREPL extends REPLBase {
             result
         }
     }
-
-
 }
