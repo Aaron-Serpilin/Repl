@@ -6,8 +6,9 @@ class MultiSetREPL extends REPLBase {
     override val replName: String = "multiset-repl"
 
     override def readEval(command: String): String = {
-        // TODO: complete me!
-        ""
+        val tokens = command.split(" ").toList
+        println(command)
+        command
     }
 
     // TODO: Implement any further functions that are specifically for an MultiSetREPL

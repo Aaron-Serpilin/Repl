@@ -11,41 +11,37 @@ import repls.MultiSet.empty
 
 case class MultiSet[T] (multiplicity: Map[T, Int]) {
 
-    /* TODO
-        Intersection of two multisets:
-        ∀x m_c(x) = min(m_a(x), m_b(x))
-        Example:
-        {a,b,b,c,c,c} * {b,c,c,c,c} = {b,c,c,c}
-     */
-    def *(that: MultiSet[T]): MultiSet[T] = empty[T]
-
-    /* TODO
-        Summation of two multisets:
-        ∀x m_c(x) = m_a(x) + m_b(x)
-        Example:
-        {a,b,c,c} + {a,c,d} = {a,a,b,c,c,c,d}
-     */
-    def +(that: MultiSet[T]): MultiSet[T] = empty[T]
-
-    /* TODO
-        Subtraction of two multisets:
-        ∀x m_c(x) = max(m_a(x) - m_b(x), 0)
-        Example:
-        {a,b,b,d} - {b,c,c,d,d} = {a,b}
-     */
-    def -(that: MultiSet[T]): MultiSet[T] = empty[T]
-    /* TODO
-        Make sure a multiset can be returned as a sequence.
-
-        For example the multiset {a,a,b} should give the sequence Seq(a,a,b).
-
-        The order of the elements in the sequence does not matter.
-     */
-    def toSeq: Seq[T] = {
-        Seq.empty
+    // Intersection of multi sets
+    def *(that: MultiSet[T]): MultiSet[T] = {
+        val intersection = this.multiplicity.map {
+            case (elem, count) => elem -> math.min(count, that.multiplicity.getOrElse(elem, 0)) // We only return the elements in the this and that multi sets that have a count greater than 0
+        }
+        MultiSet(intersection)
     }
 
-    val MaxCountForDuplicatePrint = 5
+
+    // Addition of multi sets
+    def +(that: MultiSet[T]): MultiSet[T] = {
+        val summation = this.multiplicity.map {
+            case (elem, count) => elem -> (count + that.multiplicity.getOrElse(elem, 0)) // We add the values of the multi sets, and if there is no value, we fill with a 0
+        } ++ (that.multiplicity -- this.multiplicity.keys)
+        MultiSet(summation)
+    }
+
+
+    // Subtraction of multi sets
+    def -(that: MultiSet[T]): MultiSet[T] = {
+        val subtraction = this.multiplicity.map {
+            case (elem, count) => elem -> math.max(count - that.multiplicity.getOrElse(elem, 0), 0) // We subtract the values of the multi sets, and if there is no value, we fill with a 0
+        }
+        MultiSet(subtraction)
+    }
+
+    def toSeq: Seq[T] = {
+      multiplicity.flatMap { case (elem, count) => Seq.fill(count)(elem) }.toSeq
+    }
+
+  val MaxCountForDuplicatePrint = 5
 
     // A toString has already been provided
     override def toString: String = {
@@ -63,9 +59,11 @@ case class MultiSet[T] (multiplicity: Map[T, Int]) {
 }
 
 object MultiSet {
-    def empty[T] : MultiSet[T] = MultiSet(Map[T,Int]())
-    /* TODO
-        Write a constructor that constructs a multiset from a sequence of elements
-     */
-    def apply[T](elements: Seq[T]): MultiSet[T] = empty[T]
+    def empty[T]: MultiSet[T] = MultiSet(Map[T, Int]())
+
+    // Constructor to create a multiset from a sequence of elements
+    def apply[T](elements: Seq[T]): MultiSet[T] = {
+        val multiSetMap = elements.groupBy(identity).view.mapValues(_.size).toMap // We group elements by their keys, then associate the number of elements there are, and then map it out
+        new MultiSet(multiSetMap)
+    }
 }
