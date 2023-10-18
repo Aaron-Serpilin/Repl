@@ -57,6 +57,9 @@ object Expressions {
       }
     }
 
+//    def intVariableMap (variableMap: mutable.Map[String, Int]): mutable.Map[String, Int] = variableMap
+//    def multisetVariableMap (variableMap: mutable.Map[String, MultiSet[String]]): mutable.Map[String, MultiSet[String]] = variableMap
+
 //    private def evaluate(variableMap: mutable.Map[String, Int], expression: Expression): Int =
 //      expression match {
 //        case Const(i) => i

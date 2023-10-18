@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">2</div>
+<div class="counter">0</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.103s</div>
+<div class="counter">0.063s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox failures" id="successRate">
-<div class="percent">90%</div>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,197 +61,10 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Failed tests</a>
-</li>
-<li>
-<a href="#tab1">Tests</a>
-</li>
-<li>
-<a href="#tab2">Standard output</a>
+<a href="#tab0">Tests</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
-<h2>Failed tests</h2>
-<div class="test">
-<a name="Large Multiset 2"></a>
-<h3 class="failures">Large Multiset 2</h3>
-<span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: Expected Map(&quot;hello&quot; -&gt; 2147483647), but got Map(&quot;hello&quot; -&gt; 2147483647, &quot;bla&quot; -&gt; 0)
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions.assertResult(Assertions.scala:1025)
-	at app//org.scalatest.Assertions.assertResult$(Assertions.scala:1021)
-	at app//org.scalatest.FunSuite.assertResult(FunSuite.scala:1560)
-	at app//repls.MultiSetTests.$anonfun$new$21(MultiSetTests.scala:192)
-	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
-	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
-	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
-	at app//org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
-	at app//org.scalatest.Transformer.apply(Transformer.scala:22)
-	at app//org.scalatest.Transformer.apply(Transformer.scala:20)
-	at app//org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)
-	at app//org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
-	at app//org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
-	at app//repls.infrastructure.TestBase.org$scalatest$concurrent$TimeLimitedTests$$super$withFixture(TestBase.scala:9)
-	at app//org.scalatest.concurrent.TimeLimitedTests.$anonfun$withFixture$3(TimeLimitedTests.scala:154)
-	at app//org.scalatest.enablers.Timed$$anon$1.timeoutAfter(Timed.scala:127)
-	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl(TimeLimits.scala:239)
-	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl$(TimeLimits.scala:233)
-	at app//org.scalatest.concurrent.TimeLimits$.failAfterImpl(TimeLimits.scala:305)
-	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture(TimeLimitedTests.scala:153)
-	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture$(TimeLimitedTests.scala:150)
-	at app//repls.infrastructure.TestBase.withFixture(TestBase.scala:9)
-	at app//org.scalatest.FunSuiteLike.invokeWithFixture$1(FunSuiteLike.scala:184)
-	at app//org.scalatest.FunSuiteLike.$anonfun$runTest$1(FunSuiteLike.scala:196)
-	at app//org.scalatest.SuperEngine.runTestImpl(Engine.scala:286)
-	at app//org.scalatest.FunSuiteLike.runTest(FunSuiteLike.scala:196)
-	at app//org.scalatest.FunSuiteLike.runTest$(FunSuiteLike.scala:178)
-	at app//org.scalatest.FunSuite.runTest(FunSuite.scala:1560)
-	at app//org.scalatest.FunSuiteLike.$anonfun$runTests$1(FunSuiteLike.scala:229)
-	at app//org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:393)
-	at app//scala.collection.immutable.List.foreach(List.scala:333)
-	at app//org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:381)
-	at app//org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:376)
-	at app//org.scalatest.SuperEngine.runTestsImpl(Engine.scala:458)
-	at app//org.scalatest.FunSuiteLike.runTests(FunSuiteLike.scala:229)
-	at app//org.scalatest.FunSuiteLike.runTests$(FunSuiteLike.scala:228)
-	at app//org.scalatest.FunSuite.runTests(FunSuite.scala:1560)
-	at app//org.scalatest.Suite.run(Suite.scala:1124)
-	at app//org.scalatest.Suite.run$(Suite.scala:1106)
-	at app//org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1560)
-	at app//org.scalatest.FunSuiteLike.$anonfun$run$1(FunSuiteLike.scala:233)
-	at app//org.scalatest.SuperEngine.runImpl(Engine.scala:518)
-	at app//org.scalatest.FunSuiteLike.run(FunSuiteLike.scala:233)
-	at app//org.scalatest.FunSuiteLike.run$(FunSuiteLike.scala:232)
-	at app//repls.infrastructure.TestBase.run(TestBase.scala:26)
-	at app//org.scalatest.Suite.callExecuteOnSuite$1(Suite.scala:1187)
-	at app//org.scalatest.Suite.$anonfun$runNestedSuites$1(Suite.scala:1234)
-	at app//scala.collection.ArrayOps$.foreach$extension(ArrayOps.scala:1323)
-	at app//org.scalatest.Suite.runNestedSuites(Suite.scala:1232)
-	at app//org.scalatest.Suite.runNestedSuites$(Suite.scala:1166)
-	at app//org.scalatest.Suites.runNestedSuites(Suites.scala:56)
-	at app//org.scalatest.Suite.run(Suite.scala:1121)
-	at app//org.scalatest.Suite.run$(Suite.scala:1106)
-	at app//repls.ReplsTestSuitesBase.runDirect(ReplsTestSuitesBase.scala:16)
-	at app//repls.ReplsTestSuitesBase.runWithScoreCounter(ReplsTestSuitesBase.scala:11)
-	at app//repls.ReplsTestSuite4_2.run(ReplsTestSuite4_2.scala:16)
-	at app//org.scalatestplus.junit.JUnitRunner.run(JUnitRunner.scala:99)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
-	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
-	at java.base@18.0.2.1/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base@18.0.2.1/java.lang.reflect.Method.invoke(Method.java:577)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at jdk.proxy1/jdk.proxy1.$Proxy2.processTestClass(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-</pre>
-</span>
-</div>
-<div class="test">
-<a name="Large Multiset 3"></a>
-<h3 class="failures">Large Multiset 3</h3>
-<span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: Expected Map(&quot;hello&quot; -&gt; 2147483647, &quot;zozo&quot; -&gt; 2147483647, &quot;bla&quot; -&gt; 1073841823), but got Map(&quot;hello&quot; -&gt; 2147483647, &quot;bla&quot; -&gt; 1073841823, &quot;jada&quot; -&gt; 0, &quot;zozo&quot; -&gt; 2147483647)
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions.assertResult(Assertions.scala:1025)
-	at app//org.scalatest.Assertions.assertResult$(Assertions.scala:1021)
-	at app//org.scalatest.FunSuite.assertResult(FunSuite.scala:1560)
-	at app//repls.MultiSetTests.$anonfun$new$22(MultiSetTests.scala:200)
-	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
-	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
-	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
-	at app//org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
-	at app//org.scalatest.Transformer.apply(Transformer.scala:22)
-	at app//org.scalatest.Transformer.apply(Transformer.scala:20)
-	at app//org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)
-	at app//org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
-	at app//org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
-	at app//repls.infrastructure.TestBase.org$scalatest$concurrent$TimeLimitedTests$$super$withFixture(TestBase.scala:9)
-	at app//org.scalatest.concurrent.TimeLimitedTests.$anonfun$withFixture$3(TimeLimitedTests.scala:154)
-	at app//org.scalatest.enablers.Timed$$anon$1.timeoutAfter(Timed.scala:127)
-	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl(TimeLimits.scala:239)
-	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl$(TimeLimits.scala:233)
-	at app//org.scalatest.concurrent.TimeLimits$.failAfterImpl(TimeLimits.scala:305)
-	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture(TimeLimitedTests.scala:153)
-	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture$(TimeLimitedTests.scala:150)
-	at app//repls.infrastructure.TestBase.withFixture(TestBase.scala:9)
-	at app//org.scalatest.FunSuiteLike.invokeWithFixture$1(FunSuiteLike.scala:184)
-	at app//org.scalatest.FunSuiteLike.$anonfun$runTest$1(FunSuiteLike.scala:196)
-	at app//org.scalatest.SuperEngine.runTestImpl(Engine.scala:286)
-	at app//org.scalatest.FunSuiteLike.runTest(FunSuiteLike.scala:196)
-	at app//org.scalatest.FunSuiteLike.runTest$(FunSuiteLike.scala:178)
-	at app//org.scalatest.FunSuite.runTest(FunSuite.scala:1560)
-	at app//org.scalatest.FunSuiteLike.$anonfun$runTests$1(FunSuiteLike.scala:229)
-	at app//org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:393)
-	at app//scala.collection.immutable.List.foreach(List.scala:333)
-	at app//org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:381)
-	at app//org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:376)
-	at app//org.scalatest.SuperEngine.runTestsImpl(Engine.scala:458)
-	at app//org.scalatest.FunSuiteLike.runTests(FunSuiteLike.scala:229)
-	at app//org.scalatest.FunSuiteLike.runTests$(FunSuiteLike.scala:228)
-	at app//org.scalatest.FunSuite.runTests(FunSuite.scala:1560)
-	at app//org.scalatest.Suite.run(Suite.scala:1124)
-	at app//org.scalatest.Suite.run$(Suite.scala:1106)
-	at app//org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1560)
-	at app//org.scalatest.FunSuiteLike.$anonfun$run$1(FunSuiteLike.scala:233)
-	at app//org.scalatest.SuperEngine.runImpl(Engine.scala:518)
-	at app//org.scalatest.FunSuiteLike.run(FunSuiteLike.scala:233)
-	at app//org.scalatest.FunSuiteLike.run$(FunSuiteLike.scala:232)
-	at app//repls.infrastructure.TestBase.run(TestBase.scala:26)
-	at app//org.scalatest.Suite.callExecuteOnSuite$1(Suite.scala:1187)
-	at app//org.scalatest.Suite.$anonfun$runNestedSuites$1(Suite.scala:1234)
-	at app//scala.collection.ArrayOps$.foreach$extension(ArrayOps.scala:1323)
-	at app//org.scalatest.Suite.runNestedSuites(Suite.scala:1232)
-	at app//org.scalatest.Suite.runNestedSuites$(Suite.scala:1166)
-	at app//org.scalatest.Suites.runNestedSuites(Suites.scala:56)
-	at app//org.scalatest.Suite.run(Suite.scala:1121)
-	at app//org.scalatest.Suite.run$(Suite.scala:1106)
-	at app//repls.ReplsTestSuitesBase.runDirect(ReplsTestSuitesBase.scala:16)
-	at app//repls.ReplsTestSuitesBase.runWithScoreCounter(ReplsTestSuitesBase.scala:11)
-	at app//repls.ReplsTestSuite4_2.run(ReplsTestSuite4_2.scala:16)
-	at app//org.scalatestplus.junit.JUnitRunner.run(JUnitRunner.scala:99)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
-	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
-	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
-	at java.base@18.0.2.1/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base@18.0.2.1/java.lang.reflect.Method.invoke(Method.java:577)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
-	at jdk.proxy1/jdk.proxy1.$Proxy2.processTestClass(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
-	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
-	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
-</pre>
-</span>
-</div>
-</div>
-<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -263,12 +76,12 @@
 </thead>
 <tr>
 <td class="success">Difference of a multiset with empty set</td>
-<td class="success">0.003s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Difference of three multisets</td>
-<td class="success">0.002s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -278,12 +91,12 @@
 </tr>
 <tr>
 <td class="success">Different and same elements</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Intersection of tree multisets</td>
-<td class="success">0.002s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -293,27 +106,27 @@
 </tr>
 <tr>
 <td class="success">Intersection with empty set</td>
-<td class="success">0.002s</td>
+<td class="success">0.003s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Large Multiset 1</td>
-<td class="success">0.006s</td>
+<td class="success">0.003s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="failures">Large Multiset 2</td>
-<td class="failures">0.018s</td>
-<td class="failures">failed</td>
+<td class="success">Large Multiset 2</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
 </tr>
 <tr>
-<td class="failures">Large Multiset 3</td>
-<td class="failures">0.003s</td>
-<td class="failures">failed</td>
+<td class="success">Large Multiset 3</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">MultiSets can represent the empty Set</td>
-<td class="success">0.020s</td>
+<td class="success">0.015s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -328,17 +141,17 @@
 </tr>
 <tr>
 <td class="success">Multiset expressions numeric</td>
-<td class="success">0.005s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Same elements</td>
-<td class="success">0.002s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Simple multiset Int</td>
-<td class="success">0.002s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -358,94 +171,20 @@
 </tr>
 <tr>
 <td class="success">Sum of multiset with empty set</td>
-<td class="success">0.005s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Sum of three multisets</td>
-<td class="success">0.006s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Sum of two multisets</td>
-<td class="success">0.006s</td>
+<td class="success">0.004s</td>
 <td class="success">passed</td>
 </tr>
 </table>
-</div>
-<div id="tab2" class="tab">
-<h2>Standard output</h2>
-<span class="code">
-<pre>Map()
-Map(a -&gt; 1)
-Map(element -&gt; 1)
-Map(1 -&gt; 1)
-Map(1.0 -&gt; 1)
-Map(a -&gt; 1, b -&gt; 1, c -&gt; 1)
-Map(a -&gt; 3)
-Map(1 -&gt; 2, 2 -&gt; 2, 3 -&gt; 1)
-Map(a -&gt; 1)
-Map()
-Map(a -&gt; 1)
-Map(2.0 -&gt; 1, 1.0 -&gt; 1, 1.2 -&gt; 1)
-Map(2.2 -&gt; 1, 4.0 -&gt; 1, 1.0 -&gt; 1, 1.2 -&gt; 1)
-HashMap(2.2 -&gt; 1, 2.0 -&gt; 1, 4.0 -&gt; 1, 1.0 -&gt; 2, 1.2 -&gt; 2)
-Map(1 -&gt; 1, 2 -&gt; 1)
-Map(5 -&gt; 1, 2 -&gt; 1, 4 -&gt; 1)
-Map(5 -&gt; 1, 3 -&gt; 1)
-Map(1 -&gt; 1, 2 -&gt; 2, 5 -&gt; 1, 4 -&gt; 1)
-HashMap(5 -&gt; 2, 1 -&gt; 1, 2 -&gt; 2, 3 -&gt; 1, 4 -&gt; 1)
-Map(a -&gt; 1)
-Map()
-Map()
-Map(2.0 -&gt; 1, 1.0 -&gt; 1, 1.2 -&gt; 1)
-Map(2.2 -&gt; 1, 4.0 -&gt; 1, 1.0 -&gt; 1, 1.2 -&gt; 1)
-Map(2.0 -&gt; 1, 1.0 -&gt; 0, 1.2 -&gt; 0)
-Map(1 -&gt; 1, 2 -&gt; 1, 3 -&gt; 1)
-Map(5 -&gt; 1, 2 -&gt; 1, 4 -&gt; 1)
-Map(5 -&gt; 1, 3 -&gt; 1)
-Map(1 -&gt; 1, 2 -&gt; 0, 3 -&gt; 1)
-Map(1 -&gt; 1, 2 -&gt; 0, 3 -&gt; 0)
-Map(1 -&gt; 2, 2 -&gt; 1, 3 -&gt; 1)
-Map()
-Map(1 -&gt; 0, 2 -&gt; 0, 3 -&gt; 0)
-Map(1 -&gt; 1, 2 -&gt; 2, 3 -&gt; 2, 4 -&gt; 3)
-Map(5 -&gt; 3, 2 -&gt; 1, 3 -&gt; 1)
-Map(1 -&gt; 0, 2 -&gt; 1, 3 -&gt; 1, 4 -&gt; 0)
-Map(1 -&gt; 1, 2 -&gt; 1, 3 -&gt; 1)
-Map(5 -&gt; 1, 2 -&gt; 1, 4 -&gt; 1)
-Map(5 -&gt; 1, 2 -&gt; 1, 3 -&gt; 1)
-Map(1 -&gt; 0, 2 -&gt; 1, 3 -&gt; 0)
-Map(1 -&gt; 0, 2 -&gt; 1, 3 -&gt; 0)
-Map(1 -&gt; 1, 2 -&gt; 1, 3 -&gt; 1, 4 -&gt; 3)
-Map(5 -&gt; 3, 1 -&gt; 1, 4 -&gt; 1)
-HashMap(5 -&gt; 1, 1 -&gt; 3, 2 -&gt; 1, 3 -&gt; 2, 4 -&gt; 1)
-HashMap(1 -&gt; 1, 6 -&gt; 1, 7 -&gt; 2, 8 -&gt; 1, 4 -&gt; 1)
-Map(1 -&gt; 0, 2 -&gt; 1, 3 -&gt; 1, 4 -&gt; 2)
-HashMap(5 -&gt; 1, 1 -&gt; 2, 2 -&gt; 1, 3 -&gt; 2, 4 -&gt; 0)
-Map(1 -&gt; 0, 2 -&gt; 1, 3 -&gt; 1, 4 -&gt; 0)
-HashMap(i -&gt; 3, g -&gt; 1, h -&gt; 1, o -&gt; 1, d -&gt; 3)
-HashMap(a -&gt; 1, i -&gt; 2, b -&gt; 1, g -&gt; 1, d -&gt; 1)
-HashMap(i -&gt; 1, l -&gt; 1, h -&gt; 1, o -&gt; 2, d -&gt; 3)
-Map(i -&gt; 2, p -&gt; 2, o -&gt; 2, d -&gt; 2)
-HashMap(i -&gt; 1, g -&gt; 0, h -&gt; 1, o -&gt; 1, d -&gt; 2)
-HashMap(i -&gt; 1, g -&gt; 0, h -&gt; 1, o -&gt; 1, d -&gt; 2)
-HashMap(i -&gt; 1, g -&gt; 0, h -&gt; 0, o -&gt; 1, d -&gt; 2)
-Map(hello -&gt; 2147483647, bla -&gt; 1073741823)
-Map(bye -&gt; 2147483647)
-Map(hello -&gt; 2147483647, bla -&gt; 1073741823, bye -&gt; 2147483647)
-Map(hello -&gt; 2147483647, bla -&gt; 1073741823)
-Map(hello -&gt; 2147483647)
-Map(hello -&gt; 2147483647, bla -&gt; 0)
-Map(hello -&gt; 2147483647, bla -&gt; 1073741823, jada -&gt; 2147483647)
-Map(hello -&gt; 2147483647, jada -&gt; 2147483647)
-Map(hello -&gt; 2147483647, bla -&gt; 2147483647)
-Map(hello -&gt; 2147483647, zozo -&gt; 2147483647, bla -&gt; 100000)
-Map(hello -&gt; 0, bla -&gt; 1073741823, jada -&gt; 0)
-Map(hello -&gt; 0, bla -&gt; 1073741823, jada -&gt; 0)
-Map(hello -&gt; 2147483647, bla -&gt; 1073841823, jada -&gt; 0, zozo -&gt; 2147483647)
-</pre>
-</span>
 </div>
 </div>
 <div id="footer">
@@ -455,7 +194,7 @@ Map(hello -&gt; 2147483647, bla -&gt; 1073841823, jada -&gt; 0, zozo -&gt; 21474
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.5.1</a> at Oct 17, 2023, 4:27:40 PM</p>
+<a href="http://www.gradle.org">Gradle 7.5.1</a> at Oct 18, 2023, 5:19:39 PM</p>
 </div>
 </div>
 </body>

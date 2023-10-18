@@ -4,20 +4,20 @@ import scala.collection.mutable
 class IntREPL extends REPLBase {
 
     type Base = Int
-    override val replName: String = "int-repl"
-    private val variablesMap = mutable.Map[String, Int]() // Dictionary to store variablesMap and their values
+    override val replName: String = "Base-repl"
+    private val variablesMap = mutable.Map[String, Base]() // Dictionary to store variablesMap and their values
 
     private def isOperator(char: String): Boolean = Set("+", "-", "*", "/").contains(char)
     private def isInteger(char: String): Boolean = char.matches("-?\\d+")
     private def isVariable(char: String): Boolean = char.matches("[a-zA-Z0-9]+")
 
-    private def precedence(operator: String): Int = operator match {
+    private def precedence(operator: String): Base = operator match {
         case "+" | "-" => 1
         case "*" | "/" => 2
         case _ => 0 // Default precedence
     }
 
-    private def applyOperation(firstOperator: Int, operator: String, secondOperator: Int): Int = operator match {
+    private def applyOperation(firstOperator: Base, operator: String, secondOperator: Base): Base = operator match {
         case "+" => firstOperator + secondOperator
         case "-" => firstOperator - secondOperator
         case "*" => firstOperator * secondOperator

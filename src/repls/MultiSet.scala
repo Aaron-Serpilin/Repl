@@ -16,34 +16,33 @@ case class MultiSet[T] (multiplicity: Map[T, Int]) {
         val intersection = this.multiplicity.map {
             case (elem, count) => elem -> math.min(count, that.multiplicity.getOrElse(elem, 0)) // We only return the elements in the this and that multi sets that have a count greater than 0
         }
-        MultiSet(intersection)
+        MultiSet(intersection.filter{case (_, count) => count > 0})
     }
-
 
     // Addition of multi sets
     def +(that: MultiSet[T]): MultiSet[T] = {
+
         val summation = this.multiplicity.map {
             case (elem, count) => elem -> (count + that.multiplicity.getOrElse(elem, 0)) // We add the values of the multi sets, and if there is no value, we fill with a 0
         } ++ (that.multiplicity -- this.multiplicity.keys)
-        MultiSet(summation)
-    }
+        MultiSet(summation.filter{case (_, count) => count > 0})
 
+    }
 
     // Subtraction of multi sets
     def -(that: MultiSet[T]): MultiSet[T] = {
         val subtraction = this.multiplicity.map {
             case (elem, count) => elem -> math.max(count - that.multiplicity.getOrElse(elem, 0), 0) // We subtract the values of the multi sets, and if there is no value, we fill with a 0
         }
-        MultiSet(subtraction)
+        MultiSet(subtraction.filter{case (_, count) => count > 0})
     }
 
     def toSeq: Seq[T] = {
-      multiplicity.flatMap { case (elem, count) => Seq.fill(count)(elem) }.toSeq
+      multiplicity.flatMap { case (elem, count)=> Seq.fill(count)(elem) }.toSeq
     }
 
   val MaxCountForDuplicatePrint = 5
 
-    // A toString has already been provided
     override def toString: String = {
         def elemToString(elem : T) : String = {
             val count = multiplicity(elem)
@@ -54,8 +53,6 @@ case class MultiSet[T] (multiplicity: Map[T, Int]) {
         val keyStringSet = multiplicity.keySet.map(elemToString)
         "{" + keyStringSet.toSeq.sorted.mkString(",") + "}"
     }
-
-
 }
 
 object MultiSet {
