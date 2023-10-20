@@ -1,33 +1,25 @@
 package repls
 import scala.collection.mutable
+import repls.MultiSet.empty
 
 object Expressions {
   abstract class Expression {
-    def evaluate(variableMap: mutable.Map[String, Int]): Int
     def abstractToString: String
   }
 
   case class Const (number: Int) extends Expression {
-    override def evaluate(variableMap: mutable.Map[String, Int]): Int = number
     override def abstractToString: String = number.toString
   }
 
   case class Var (string: String) extends Expression {
-    override def evaluate(variableMap: mutable.Map[String, Int]): Int = variableMap(string)
     override def abstractToString: String = string
   }
 
   case class Negate (arg: Expression) extends Expression {
-    override def evaluate(variableMap: mutable.Map[String, Int]): Int = -arg.evaluate(variableMap)
     override def abstractToString: String = s"-${arg.abstractToString}"
   }
 
   case class Operator (firstOperand: Expression, operatorName: String, secondOperand: Expression) extends Expression {
-    override def evaluate(variableMap: mutable.Map[String, Int]): Int = {
-      val l = firstOperand.evaluate(variableMap)
-      val r = secondOperand.evaluate(variableMap)
-      PatternMatch.operatorByName(l, operatorName, r)
-    }
     
     override def abstractToString: String = { // Correctly prints out the simplifications. Have to check for parenthesis placement for the distributivity rules
       val shouldParenthesisBePlaced = ((operatorName == "*" || operatorName == "/")
@@ -57,78 +49,78 @@ object Expressions {
       }
     }
 
-//    def intVariableMap (variableMap: mutable.Map[String, Int]): mutable.Map[String, Int] = variableMap
-//    def multisetVariableMap (variableMap: mutable.Map[String, MultiSet[String]]): mutable.Map[String, MultiSet[String]] = variableMap
+    def simplify(expression: Expression, intVariableMap: mutable.Map[String, Int], multiSetVariableMap: mutable.Map[String, MultiSet[String]]): Expression = {
+      def simplifyExpression (expression: Expression): Expression = {
+        //println(s"Expression is $expression")
+        val simplifiedExpression = expression match {
 
-//    private def evaluate(variableMap: mutable.Map[String, Int], expression: Expression): Int =
-//      expression match {
-//        case Const(i) => i
-//        case Var(s) => variableMap(s)
-//        case Negate(arg) => -evaluate(variableMap, arg)
-//        case Operator(firstOperand, op, secondOperand) =>
-//          operatorByName(evaluate(variableMap, firstOperand), op, evaluate(variableMap, secondOperand))
-//      }
+          // Cases for Multi sets
+          case Operator(Var(a1), "*", Var(a2)) if a1 == a2 && a1.contains("{") && a2.contains("{") => Var(a1) // e * e → e
+          case Operator(Var(a), "*", Var(_)) if a == "{}" => Var(a) // {} * e → {}
+          case Operator(Var(_), "*", Var(a)) if a == "{}" => Var(a) // e * {} → {}
+          case Operator(Var(a1), "+", Var(a2)) if a2 == "{}" => Var(a1)// e + {} → e
+          case Operator(Var(a1), "+", Var(a2)) if a1 == "{}" => Var(a2) // {} + e → e
+          case Operator(Var(a1), "-", Var(a2)) if a1 == a2 && a1.contains("{") && a2.contains("{") => Var("{}")// e - e → {}
 
-    def simplify(expression: Expression, variableMap: mutable.Map[String, Int]): Expression = {
-      val simplifiedExpression = expression match {
+          // Cases for Distributivity Simplification
+          case Operator(Operator(a1, "*", b), "+", Operator(a2, "*", c))
+            if a1 == a2 => Operator(a1, "*", Operator(b, "+", c)) // ( a * b ) + ( a * c ) → a * ( b + c )
+          case Operator(Operator(b, "*", a1), "+", Operator(a2, "*", c))
+            if a1 == a2 => Operator(a1, "*", Operator(b, "+", c)) // ( b * a ) + ( a * c ) → a * ( b + c )
+          case Operator(Operator(a1, "*", b), "+", Operator(c, "*", a2))
+            if a1 == a2 => Operator(a1, "*", Operator(b, "+", c)) // ( a * b ) + ( c * a ) → a * ( b + c )
+          case Operator(Operator(b, "*", a1), "+", Operator(c, "*", a2))
+            if a1 == a2 => Operator(a1, "*", Operator(b, "+", c)) // ( b * a ) + ( c * a ) → a * ( b + c )
 
-         // Cases for Distributivity Simplification
-        case Operator(Operator(a1, "*", b), "+", Operator(a2, "*", c))
-          if a1 == a2 => Operator(a1, "*", Operator(b, "+", c)) // ( a * b ) + ( a * c ) → a * ( b + c )
-        case Operator(Operator(b, "*", a1), "+", Operator(a2, "*", c))
-          if a1 == a2 => Operator(a1, "*", Operator(b, "+", c)) // ( b * a ) + ( a * c ) → a * ( b + c )
-        case Operator(Operator(a1, "*", b), "+", Operator(c, "*", a2))
-          if a1 == a2 => Operator(a1, "*", Operator(b, "+", c)) // ( a * b ) + ( c * a ) → a * ( b + c )
-        case Operator(Operator(b, "*", a1), "+", Operator(c, "*", a2))
-          if a1 == a2 => Operator(a1, "*", Operator(b, "+", c)) // ( b * a ) + ( c * a ) → a * ( b + c )
+          // Cases for simplification of computations
+          case Operator(Const(a), "+", Const(b)) => Const(a + b)
+          case Operator(Const(a), "-", Const(b)) => Const(a - b)
+          case Operator(Const(a), "*", Const(b)) => Const(a * b)
+          case Operator(Const(a), "/", Const(b)) => Const(a / b)
 
-        // Cases for simplification of computations
-        case Operator(Const(a), "+", Const(b)) => Const(a + b)
-        case Operator(Const(a), "-", Const(b)) => Const(a - b)
-        case Operator(Const(a), "*", Const(b)) => Const(a * b)
-        case Operator(Const(a), "/", Const(b)) => Const(a / b)
+          // Cases for Negate simplification
+          case Negate(Negate(expr)) => simplifyExpression(expr)
+          case Negate(expr) => Negate(simplifyExpression(expr))
 
-        // Cases for Negate simplification
-        case Negate(Negate(expr)) => simplify(expr, variableMap)
-        case Negate(expr) => Negate(simplify(expr, variableMap))
+          // Cases for addition and multiplication identity
+          case Operator(expr, "+", Const(0)) => simplifyExpression(expr)
+          case Operator(Const(0), "+", expr) => simplifyExpression(expr)
+          case Operator(expr, "*", Const(1)) => simplifyExpression(expr)
+          case Operator(Const(1), "*", expr) => simplifyExpression(expr)
+          case Operator(_, "*", Const(0)) => Const(0)
+          case Operator(Const(0), "*", _) => Const(0)
 
-        // Cases for addition and multiplication identity
-        case Operator(expr, "+", Const(0)) => simplify(expr, variableMap)
-        case Operator(Const(0), "+", expr) => simplify(expr, variableMap)
-        case Operator(expr, "*", Const(1)) => simplify(expr, variableMap)
-        case Operator(Const(1), "*", expr) => simplify(expr, variableMap)
-        case Operator(_, "*", Const(0)) => Const(0)
-        case Operator(Const(0), "*", _) => Const(0)
+          // Case for subtracting identical expressions
+          case Operator(lhs, "-", rhs) if lhs == rhs => Const(0)
 
-        // Case for subtracting identical expressions
-        case Operator(lhs, "-", rhs) if lhs == rhs => Const(0)
+          // Case for variable in variablesMap
+          case Var(variable) if intVariableMap.contains(variable) => Const(intVariableMap(variable))
+          case Var(variable) if multiSetVariableMap.contains(variable) => Var(multiSetVariableMap(variable).toString)
 
-        // Case for variable in variablesMap
-        case Var(variable) if variableMap.contains(variable) => Const(variableMap(variable))
+          // General case for binary operators
+          case Operator(lhs, op, rhs) =>
+            val simplifiedLhs = simplifyExpression(lhs)
+            val simplifiedRhs = simplifyExpression(rhs)
 
-        // General case for binary operators
-        case Operator(lhs, op, rhs) =>
-          val simplifiedLhs = simplify(lhs, variableMap)
-          val simplifiedRhs = simplify(rhs, variableMap)
+            (simplifiedLhs, simplifiedRhs) match {
+              case (Const(a), Const(b)) if isOperator(op) =>
+                Const(operatorByName(a, op, b)) // Simplify the operation with constants of a sequence of operations
+              case _ =>
+                Operator(simplifiedLhs, op, simplifiedRhs) // Return the normal operation between two operands
+            }
 
-          (simplifiedLhs, simplifiedRhs) match {
-            case (Const(a), Const(b)) if isOperator(op) =>
-              Const(operatorByName(a, op, b)) // Simplify the operation with constants of a sequence of operations
-            case _ =>
-              Operator(simplifiedLhs, op, simplifiedRhs) // Return the normal operation between two operands
-          }
+          // Default case, non-simplifiable
+          case _ => expression
+        }
 
-        // Default case, non-simplifiable
-        case _ => expression
+        // We recursively reduce the expression if it is not completely reduced already
+        if (simplifiedExpression != expression) {
+          simplifyExpression(simplifiedExpression)
+        } else {
+          simplifiedExpression
+        }
       }
-
-      // We recursively reduce the expression if it is not completely reduced already
-      if (simplifiedExpression != expression) {
-        simplify(simplifiedExpression, variableMap)
-      } else {
-        simplifiedExpression
-      }
-
+      simplifyExpression(expression)
     }
 
   }

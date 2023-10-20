@@ -5,7 +5,6 @@ class IntREPL extends REPLBase {
 
     type Base = Int
     override val replName: String = "Base-repl"
-    private val variablesMap = mutable.Map[String, Base]() // Dictionary to store variablesMap and their values
 
     private def isOperator(char: String): Boolean = Set("+", "-", "*", "/").contains(char)
     private def isInteger(char: String): Boolean = char.matches("-?\\d+")
@@ -77,8 +76,8 @@ class IntREPL extends REPLBase {
 
     private def substituteVariables(expression: Seq[String]): Seq[String] = {
         expression.map {
-            case variable if variablesMap.contains(variable) =>
-                variablesMap(variable).toString
+            case variable if intVariablesMap.contains(variable) =>
+                intVariablesMap(variable).toString
             case other =>
                 other
         }
@@ -101,7 +100,7 @@ class IntREPL extends REPLBase {
             val expression = tokens.drop(1)
             val reversePolishExpression = expressionToRPN(expression).mkString(" ")
             val treeExpression = repls.Expressions.ReversePolish.reversePolishToExpression(reversePolishExpression) // We use the given code from the course
-            val simplifiedExpression = repls.Expressions.PatternMatch.simplify(treeExpression, variablesMap).abstractToString
+            val simplifiedExpression = repls.Expressions.PatternMatch.simplify(treeExpression, intVariablesMap, multiSetVariablesMap).abstractToString
             repls.Expressions
             return simplifiedExpression
         }
@@ -111,7 +110,7 @@ class IntREPL extends REPLBase {
 
         if (isVariableAssignment) {
             val variableName = tokens.head
-            variablesMap(variableName) = result.toInt
+            intVariablesMap(variableName) = result.toInt
             s"$variableName = $result"
         } else { // Else we work like normal evaluations
             result

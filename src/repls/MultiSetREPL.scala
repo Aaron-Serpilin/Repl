@@ -1,12 +1,11 @@
 package repls
 import scala.collection.mutable
 
+
 class MultiSetREPL extends REPLBase {
 
     override type Base = MultiSet[String]
     override val replName: String = "multiset-repl"
-
-    private val variablesMap = mutable.Map[String, Base]()
 
     private def isOperator(char: String): Boolean = Set("+", "-", "*", "/").contains(char)
     private def isVariable(char: String): Boolean = char.matches("[a-zA-Z0-9]+")
@@ -67,7 +66,7 @@ class MultiSetREPL extends REPLBase {
                 outputStack.push(result)
 
             case token if isVariable(token) =>
-                val variableValue = variablesMap.getOrElse(token, MultiSet.empty)
+                val variableValue = multiSetVariablesMap.getOrElse(token, MultiSet.empty)
                 outputStack.push(variableValue)
 
             case token if token.length > 1 => // Handle multi sets
@@ -79,51 +78,52 @@ class MultiSetREPL extends REPLBase {
     }
 
     private def substituteVariables(expression: Seq[String]): Seq[String] = {
-        expression.map {
-            case variable if variablesMap.contains(variable) =>
-                variablesMap(variable).toString
+        expression.flatMap {
+            case variable if multiSetVariablesMap.contains(variable) =>
+                val variableValue = multiSetVariablesMap(variable)
+                variableValue.toSeq.map(_.toString)
+
             case other =>
-                other
+                Seq(other)
         }
     }
 
+
     private def solveExpression(expression: Seq[String]): String = {
         val substitutedExpression = substituteVariables(expression)
+        //println(s"The sub expression is $substitutedExpression")
         val reversePolishExpression = expressionToRPN(substitutedExpression)
         val result = RPNToResult(reversePolishExpression)
-        println(result.toString)
+        //println(result.toString)
         result.toString
     }
 
     override def readEval(command: String): String = {
-        println(command)
+        //println(command)
         val tokens = command.split(" ")
         val isVariableAssignment = command.contains("=")
-        val isSimplification = command.contains("@")
+        val isSimplification = command.startsWith("@")
+
+        if (isSimplification) {
+            //println("Triggered")
+            val expression = tokens.drop(1)
+            val reversePolishExpression = expressionToRPN(expression).mkString(" ")
+            val treeExpression = repls.Expressions.ReversePolish.reversePolishToExpression(reversePolishExpression)
+            println(treeExpression)
+            val simplifiedExpression = repls.Expressions.PatternMatch.simplify(treeExpression, intVariablesMap, multiSetVariablesMap).abstractToString
+            return simplifiedExpression
+        }
 
         val expression = if (isVariableAssignment) tokens.drop(2) else tokens
         val result = solveExpression(expression)
 
         if (isVariableAssignment) {
             val variableName = tokens.head
-            variablesMap(variableName) = MultiSet(expression)
+            multiSetVariablesMap(variableName) = MultiSet(expression)
             s"$variableName = $result"
 
-//        } else if (isSimplification) {
-//            val expression = tokens.drop(1)
-//            val reversePolishExpression = expressionToRPN(expression).mkString(" ")
-//            val treeExpression = repls.Expressions.ReversePolish.reversePolishToExpression(reversePolishExpression) // We use the given code from the course
-//            val simplifiedExpression = repls.Expressions.PatternMatch.simplify(treeExpression, variablesMap).abstractToString
-//            repls.Expressions
-//            simplifiedExpression
         } else {
             result
         }
     }
 }
-
-
-
-
-
-
