@@ -6,55 +6,10 @@ class IntREPL extends REPLBase {
     type Base = Int
     override val replName: String = "Base-repl"
 
-    private def isOperator(char: String): Boolean = Set("+", "-", "*", "/").contains(char)
-    private def isInteger(char: String): Boolean = char.matches("-?\\d+")
-    private def isVariable(char: String): Boolean = char.matches("[a-zA-Z0-9]+")
-
-    private def precedence(operator: String): Base = operator match {
-        case "+" | "-" => 1
-        case "*" | "/" => 2
-        case _ => 0 // Default precedence
-    }
-
     private def applyOperation(firstOperator: Base, operator: String, secondOperator: Base): Base = operator match {
         case "+" => firstOperator + secondOperator
         case "-" => firstOperator - secondOperator
         case "*" => firstOperator * secondOperator
-        case "/" => firstOperator / secondOperator
-    }
-
-    // Shunting Yard Algorithm Pseudocode: https://aquarchitect.github.io/swift-algorithm-club/Shunting%20Yard/
-    private def expressionToRPN(expression: Seq[String]): Seq[String] = {
-
-        val outputStack = mutable.Stack[String]()
-        val operatorStack = mutable.Stack[String]()
-
-        expression.foreach {
-            case token if isInteger(token) || isVariable(token) => outputStack.push(token)
-
-            case token if isOperator(token) =>
-                while (operatorStack.nonEmpty && precedence(operatorStack.top) >= precedence(token)) {
-                    val operator = operatorStack.pop()
-                    outputStack.push(operator)
-                }
-                operatorStack.push(token)
-
-            case "(" => operatorStack.push("(")
-
-            case ")" =>
-                while (operatorStack.nonEmpty && operatorStack.top != "(") {
-                    val operator = operatorStack.pop()
-                    outputStack.push(operator)
-                }
-                operatorStack.pop()
-        }
-
-        while (operatorStack.nonEmpty) {
-            val operator = operatorStack.pop()
-            outputStack.push(operator)
-        }
-
-        outputStack.reverse.toSeq
     }
 
     // Polish to Result/Expression Tree Code: https://gitlab.com/vu-oofp/lecture-code/-/blob/master/OOReversePolish.scala
@@ -76,8 +31,8 @@ class IntREPL extends REPLBase {
 
     private def substituteVariables(expression: Seq[String]): Seq[String] = {
         expression.map {
-            case variable if intVariablesMap.contains(variable) =>
-                intVariablesMap(variable).toString
+            case variable if variablesMap.contains(variable) =>
+                variablesMap(variable).toString
             case other =>
                 other
         }
@@ -100,7 +55,7 @@ class IntREPL extends REPLBase {
             val expression = tokens.drop(1)
             val reversePolishExpression = expressionToRPN(expression).mkString(" ")
             val treeExpression = Expressions.ReversePolish.reversePolishToTreeExpression(reversePolishExpression) // We use the given code from the course
-            val simplifiedExpression = Expressions.PatternMatch.simplify(treeExpression, intVariablesMap, multiSetVariablesMap).abstractToString
+            val simplifiedExpression = Expressions.PatternMatch.simplify(treeExpression).abstractToString
             return simplifiedExpression
         }
 
@@ -109,7 +64,7 @@ class IntREPL extends REPLBase {
 
         if (isVariableAssignment) {
             val variableName = tokens.head
-            intVariablesMap(variableName) = result.toInt
+            variablesMap(variableName) = result.toInt
             s"$variableName = $result"
         } else { // Else we work like normal evaluations
             result

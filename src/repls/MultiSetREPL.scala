@@ -7,53 +7,10 @@ class MultiSetREPL extends REPLBase {
     override type Base = MultiSet[String]
     override val replName: String = "multiset-repl"
 
-    private def isOperator(char: String): Boolean = Set("+", "-", "*", "/").contains(char)
-    private def isVariable(char: String): Boolean = char.matches("[a-zA-Z0-9]+")
-    private def precedence(operator: String): Int = operator match {
-        case "+" | "-" => 1
-        case "*" | "/" => 2
-        case _ => 0 // Default precedence
-    }
-
     private def applyOperation(firstOperator: Base, operator: String, secondOperator: Base): Base = operator match {
         case "+" => firstOperator + secondOperator
         case "-" => firstOperator - secondOperator
         case "*" => firstOperator * secondOperator
-    }
-
-    private def expressionToRPN(expression: Seq[String]): Seq[String] = {
-
-        val outputStack = mutable.Stack[String]()
-        val operatorStack = mutable.Stack[String]()
-
-        expression.foreach {
-            case token if isVariable(token) => outputStack.push(token)
-
-            case token if isOperator(token) =>
-                while (operatorStack.nonEmpty && precedence(operatorStack.top) >= precedence(token)) {
-                    val operator = operatorStack.pop()
-                    outputStack.push(operator)
-                }
-                operatorStack.push(token)
-
-            case "(" => operatorStack.push("(")
-
-            case ")" =>
-                while (operatorStack.nonEmpty && operatorStack.top != "(") {
-                    val operator = operatorStack.pop()
-                    outputStack.push(operator)
-                }
-                operatorStack.pop()
-
-            case token if token.length > 1 => outputStack.push(token) // Accounts for multi sets
-        }
-
-        while (operatorStack.nonEmpty) {
-            val operator = operatorStack.pop()
-            outputStack.push(operator)
-        }
-
-        outputStack.reverse.toSeq
     }
 
     private def RPNToResult(expression: Seq[String]): Base = {
@@ -66,7 +23,7 @@ class MultiSetREPL extends REPLBase {
                 outputStack.push(result)
 
             case token if isVariable(token) =>
-                val variableValue = multiSetVariablesMap.getOrElse(token, MultiSet.empty)
+                val variableValue = variablesMap.getOrElse(token, MultiSet.empty)
                 outputStack.push(variableValue)
 
             case token if token.length > 1 => // Handle multi sets
@@ -79,8 +36,8 @@ class MultiSetREPL extends REPLBase {
 
     private def substituteVariables(expression: Seq[String]): Seq[String] = {
         expression.flatMap {
-            case variable if multiSetVariablesMap.contains(variable) =>
-                val variableValue = multiSetVariablesMap(variable)
+            case variable if variablesMap.contains(variable) =>
+                val variableValue = variablesMap(variable)
                 variableValue.toSeq.map(_.toString)
 
             case other =>
@@ -88,29 +45,23 @@ class MultiSetREPL extends REPLBase {
         }
     }
 
-
     private def solveExpression(expression: Seq[String]): String = {
         val substitutedExpression = substituteVariables(expression)
-        //println(s"The sub expression is $substitutedExpression")
         val reversePolishExpression = expressionToRPN(substitutedExpression)
         val result = RPNToResult(reversePolishExpression)
-        //println(result.toString)
         result.toString
     }
 
     override def readEval(command: String): String = {
-        //println(command)
         val tokens = command.split(" ")
         val isVariableAssignment = command.contains("=")
         val isSimplification = command.startsWith("@")
 
         if (isSimplification) {
-            //println("Triggered")
             val expression = tokens.drop(1)
             val reversePolishExpression = expressionToRPN(expression).mkString(" ")
             val treeExpression = Expressions.ReversePolish.reversePolishToTreeExpression(reversePolishExpression)
-            println(treeExpression)
-            val simplifiedExpression = Expressions.PatternMatch.simplify(treeExpression, intVariablesMap, multiSetVariablesMap).abstractToString
+            val simplifiedExpression = Expressions.PatternMatch.simplify(treeExpression).abstractToString
             return simplifiedExpression
         }
 
@@ -119,7 +70,7 @@ class MultiSetREPL extends REPLBase {
 
         if (isVariableAssignment) {
             val variableName = tokens.head
-            multiSetVariablesMap(variableName) = MultiSet(expression)
+            variablesMap(variableName) = MultiSet(expression)
             s"$variableName = $result"
 
         } else {

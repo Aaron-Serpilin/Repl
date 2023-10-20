@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">12</div>
+<div class="counter">13</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.210s</div>
+<div class="counter">0.185s</div>
 <p>duration</p>
 </div>
 </td>
@@ -51,7 +51,7 @@
 </td>
 <td>
 <div class="infoBox failures" id="successRate">
-<div class="percent">73%</div>
+<div class="percent">71%</div>
 <p>successful</p>
 </div>
 </td>
@@ -65,9 +65,6 @@
 </li>
 <li>
 <a href="#tab1">Tests</a>
-</li>
-<li>
-<a href="#tab2">Standard output</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
@@ -250,72 +247,79 @@
 <a name="Simplify advanced"></a>
 <h3 class="failures">Simplify advanced</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[a * ( b + c ) - a * ( b + c ) * ( a * ( b + c ) + ( {a,b,b} + {a} ) * {} )]&quot; did not equal &quot;[{}]&quot;
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
-	at app//repls.MultiSetReplTests.$anonfun$new$42(MultiSetReplTests.scala:427)
-	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
-	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
-	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
-	at app//org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
-	at app//org.scalatest.Transformer.apply(Transformer.scala:22)
-	at app//org.scalatest.Transformer.apply(Transformer.scala:20)
-	at app//org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)
-	at app//org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
-	at app//org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
-	at app//repls.infrastructure.TestBase.org$scalatest$concurrent$TimeLimitedTests$$super$withFixture(TestBase.scala:9)
-	at app//org.scalatest.concurrent.TimeLimitedTests.$anonfun$withFixture$3(TimeLimitedTests.scala:154)
-	at app//org.scalatest.enablers.Timed$$anon$1.timeoutAfter(Timed.scala:127)
-	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl(TimeLimits.scala:239)
-	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl$(TimeLimits.scala:233)
-	at app//org.scalatest.concurrent.TimeLimits$.failAfterImpl(TimeLimits.scala:305)
-	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture(TimeLimitedTests.scala:153)
-	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture$(TimeLimitedTests.scala:150)
-	at app//repls.infrastructure.TestBase.withFixture(TestBase.scala:9)
-	at app//org.scalatest.FunSuiteLike.invokeWithFixture$1(FunSuiteLike.scala:184)
-	at app//org.scalatest.FunSuiteLike.$anonfun$runTest$1(FunSuiteLike.scala:196)
-	at app//org.scalatest.SuperEngine.runTestImpl(Engine.scala:286)
-	at app//org.scalatest.FunSuiteLike.runTest(FunSuiteLike.scala:196)
-	at app//org.scalatest.FunSuiteLike.runTest$(FunSuiteLike.scala:178)
-	at app//org.scalatest.FunSuite.runTest(FunSuite.scala:1560)
-	at app//org.scalatest.FunSuiteLike.$anonfun$runTests$1(FunSuiteLike.scala:229)
-	at app//org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:393)
-	at app//scala.collection.immutable.List.foreach(List.scala:333)
-	at app//org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:381)
-	at app//org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:376)
-	at app//org.scalatest.SuperEngine.runTestsImpl(Engine.scala:458)
-	at app//org.scalatest.FunSuiteLike.runTests(FunSuiteLike.scala:229)
-	at app//org.scalatest.FunSuiteLike.runTests$(FunSuiteLike.scala:228)
-	at app//org.scalatest.FunSuite.runTests(FunSuite.scala:1560)
-	at app//org.scalatest.Suite.run(Suite.scala:1124)
-	at app//org.scalatest.Suite.run$(Suite.scala:1106)
-	at app//org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1560)
-	at app//org.scalatest.FunSuiteLike.$anonfun$run$1(FunSuiteLike.scala:233)
-	at app//org.scalatest.SuperEngine.runImpl(Engine.scala:518)
-	at app//org.scalatest.FunSuiteLike.run(FunSuiteLike.scala:233)
-	at app//org.scalatest.FunSuiteLike.run$(FunSuiteLike.scala:232)
-	at app//repls.infrastructure.TestBase.run(TestBase.scala:26)
-	at app//org.scalatest.Suite.callExecuteOnSuite$1(Suite.scala:1187)
-	at app//org.scalatest.Suite.$anonfun$runNestedSuites$1(Suite.scala:1234)
-	at app//scala.collection.ArrayOps$.foreach$extension(ArrayOps.scala:1323)
-	at app//org.scalatest.Suite.runNestedSuites(Suite.scala:1232)
-	at app//org.scalatest.Suite.runNestedSuites$(Suite.scala:1166)
-	at app//org.scalatest.Suites.runNestedSuites(Suites.scala:56)
-	at app//org.scalatest.Suite.run(Suite.scala:1121)
-	at app//org.scalatest.Suite.run$(Suite.scala:1106)
-	at app//repls.ReplsTestSuitesBase.runDirect(ReplsTestSuitesBase.scala:16)
-	at app//repls.ReplsTestSuitesBase.runWithScoreCounter(ReplsTestSuitesBase.scala:11)
-	at app//repls.ReplsTestSuite4_2.run(ReplsTestSuite4_2.scala:16)
-	at app//org.scalatestplus.junit.JUnitRunner.run(JUnitRunner.scala:99)
+<pre>java.lang.NumberFormatException: For input string: &quot;{{a,b,b}}&quot;
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:784)
+	at scala.collection.StringOps$.toInt$extension(StringOps.scala:910)
+	at repls.REPLBase$Expressions$PatternMatch$.simplify(REPLBase.scala:152)
+	at repls.REPLBase$Expressions$PatternMatch$.simplify(REPLBase.scala:160)
+	at repls.REPLBase$Expressions$PatternMatch$.simplify(REPLBase.scala:160)
+	at repls.REPLBase$Expressions$PatternMatch$.simplify(REPLBase.scala:161)
+	at repls.REPLBase$Expressions$PatternMatch$.simplify(REPLBase.scala:161)
+	at repls.REPLBase$Expressions$PatternMatch$.simplify(REPLBase.scala:161)
+	at repls.MultiSetREPL.readEval(MultiSetREPL.scala:64)
+	at repls.MultiSetReplTests.$anonfun$new$42(MultiSetReplTests.scala:424)
+	at repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
+	at org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
+	at org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
+	at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
+	at org.scalatest.Transformer.apply(Transformer.scala:22)
+	at org.scalatest.Transformer.apply(Transformer.scala:20)
+	at org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)
+	at org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
+	at org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
+	at repls.infrastructure.TestBase.org$scalatest$concurrent$TimeLimitedTests$$super$withFixture(TestBase.scala:9)
+	at org.scalatest.concurrent.TimeLimitedTests.$anonfun$withFixture$3(TimeLimitedTests.scala:154)
+	at org.scalatest.enablers.Timed$$anon$1.timeoutAfter(Timed.scala:127)
+	at org.scalatest.concurrent.TimeLimits.failAfterImpl(TimeLimits.scala:239)
+	at org.scalatest.concurrent.TimeLimits.failAfterImpl$(TimeLimits.scala:233)
+	at org.scalatest.concurrent.TimeLimits$.failAfterImpl(TimeLimits.scala:305)
+	at org.scalatest.concurrent.TimeLimitedTests.withFixture(TimeLimitedTests.scala:153)
+	at org.scalatest.concurrent.TimeLimitedTests.withFixture$(TimeLimitedTests.scala:150)
+	at repls.infrastructure.TestBase.withFixture(TestBase.scala:9)
+	at org.scalatest.FunSuiteLike.invokeWithFixture$1(FunSuiteLike.scala:184)
+	at org.scalatest.FunSuiteLike.$anonfun$runTest$1(FunSuiteLike.scala:196)
+	at org.scalatest.SuperEngine.runTestImpl(Engine.scala:286)
+	at org.scalatest.FunSuiteLike.runTest(FunSuiteLike.scala:196)
+	at org.scalatest.FunSuiteLike.runTest$(FunSuiteLike.scala:178)
+	at org.scalatest.FunSuite.runTest(FunSuite.scala:1560)
+	at org.scalatest.FunSuiteLike.$anonfun$runTests$1(FunSuiteLike.scala:229)
+	at org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:393)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:381)
+	at org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:376)
+	at org.scalatest.SuperEngine.runTestsImpl(Engine.scala:458)
+	at org.scalatest.FunSuiteLike.runTests(FunSuiteLike.scala:229)
+	at org.scalatest.FunSuiteLike.runTests$(FunSuiteLike.scala:228)
+	at org.scalatest.FunSuite.runTests(FunSuite.scala:1560)
+	at org.scalatest.Suite.run(Suite.scala:1124)
+	at org.scalatest.Suite.run$(Suite.scala:1106)
+	at org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1560)
+	at org.scalatest.FunSuiteLike.$anonfun$run$1(FunSuiteLike.scala:233)
+	at org.scalatest.SuperEngine.runImpl(Engine.scala:518)
+	at org.scalatest.FunSuiteLike.run(FunSuiteLike.scala:233)
+	at org.scalatest.FunSuiteLike.run$(FunSuiteLike.scala:232)
+	at repls.infrastructure.TestBase.run(TestBase.scala:26)
+	at org.scalatest.Suite.callExecuteOnSuite$1(Suite.scala:1187)
+	at org.scalatest.Suite.$anonfun$runNestedSuites$1(Suite.scala:1234)
+	at scala.collection.ArrayOps$.foreach$extension(ArrayOps.scala:1323)
+	at org.scalatest.Suite.runNestedSuites(Suite.scala:1232)
+	at org.scalatest.Suite.runNestedSuites$(Suite.scala:1166)
+	at org.scalatest.Suites.runNestedSuites(Suites.scala:56)
+	at org.scalatest.Suite.run(Suite.scala:1121)
+	at org.scalatest.Suite.run$(Suite.scala:1106)
+	at repls.ReplsTestSuitesBase.runDirect(ReplsTestSuitesBase.scala:16)
+	at repls.ReplsTestSuitesBase.runWithScoreCounter(ReplsTestSuitesBase.scala:11)
+	at repls.ReplsTestSuite4_2.run(ReplsTestSuite4_2.scala:16)
+	at org.scalatestplus.junit.JUnitRunner.run(JUnitRunner.scala:99)
 	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
 	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
 	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
 	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
 	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
-	at java.base@18.0.2.1/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base@18.0.2.1/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
 	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
 	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
@@ -328,8 +332,8 @@
 	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </pre>
 </span>
 </div>
@@ -943,75 +947,77 @@
 </span>
 </div>
 <div class="test">
-<a name="Simplify with assigned variables advanced"></a>
-<h3 class="failures">Simplify with assigned variables advanced</h3>
+<a name="Simplify with assigned variables"></a>
+<h3 class="failures">Simplify with assigned variables</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[*,a,{a,b} * ( {a,c} + {a} ) + (,),*,+,a,b,{c,b]} + d&quot; did not equal &quot;[{a,a,a,c]} + d&quot;
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
-	at app//repls.MultiSetReplTests.$anonfun$new$45(MultiSetReplTests.scala:468)
-	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
-	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
-	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
-	at app//org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
-	at app//org.scalatest.Transformer.apply(Transformer.scala:22)
-	at app//org.scalatest.Transformer.apply(Transformer.scala:20)
-	at app//org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)
-	at app//org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
-	at app//org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
-	at app//repls.infrastructure.TestBase.org$scalatest$concurrent$TimeLimitedTests$$super$withFixture(TestBase.scala:9)
-	at app//org.scalatest.concurrent.TimeLimitedTests.$anonfun$withFixture$3(TimeLimitedTests.scala:154)
-	at app//org.scalatest.enablers.Timed$$anon$1.timeoutAfter(Timed.scala:127)
-	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl(TimeLimits.scala:239)
-	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl$(TimeLimits.scala:233)
-	at app//org.scalatest.concurrent.TimeLimits$.failAfterImpl(TimeLimits.scala:305)
-	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture(TimeLimitedTests.scala:153)
-	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture$(TimeLimitedTests.scala:150)
-	at app//repls.infrastructure.TestBase.withFixture(TestBase.scala:9)
-	at app//org.scalatest.FunSuiteLike.invokeWithFixture$1(FunSuiteLike.scala:184)
-	at app//org.scalatest.FunSuiteLike.$anonfun$runTest$1(FunSuiteLike.scala:196)
-	at app//org.scalatest.SuperEngine.runTestImpl(Engine.scala:286)
-	at app//org.scalatest.FunSuiteLike.runTest(FunSuiteLike.scala:196)
-	at app//org.scalatest.FunSuiteLike.runTest$(FunSuiteLike.scala:178)
-	at app//org.scalatest.FunSuite.runTest(FunSuite.scala:1560)
-	at app//org.scalatest.FunSuiteLike.$anonfun$runTests$1(FunSuiteLike.scala:229)
-	at app//org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:393)
-	at app//scala.collection.immutable.List.foreach(List.scala:333)
-	at app//org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:381)
-	at app//org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:376)
-	at app//org.scalatest.SuperEngine.runTestsImpl(Engine.scala:458)
-	at app//org.scalatest.FunSuiteLike.runTests(FunSuiteLike.scala:229)
-	at app//org.scalatest.FunSuiteLike.runTests$(FunSuiteLike.scala:228)
-	at app//org.scalatest.FunSuite.runTests(FunSuite.scala:1560)
-	at app//org.scalatest.Suite.run(Suite.scala:1124)
-	at app//org.scalatest.Suite.run$(Suite.scala:1106)
-	at app//org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1560)
-	at app//org.scalatest.FunSuiteLike.$anonfun$run$1(FunSuiteLike.scala:233)
-	at app//org.scalatest.SuperEngine.runImpl(Engine.scala:518)
-	at app//org.scalatest.FunSuiteLike.run(FunSuiteLike.scala:233)
-	at app//org.scalatest.FunSuiteLike.run$(FunSuiteLike.scala:232)
-	at app//repls.infrastructure.TestBase.run(TestBase.scala:26)
-	at app//org.scalatest.Suite.callExecuteOnSuite$1(Suite.scala:1187)
-	at app//org.scalatest.Suite.$anonfun$runNestedSuites$1(Suite.scala:1234)
-	at app//scala.collection.ArrayOps$.foreach$extension(ArrayOps.scala:1323)
-	at app//org.scalatest.Suite.runNestedSuites(Suite.scala:1232)
-	at app//org.scalatest.Suite.runNestedSuites$(Suite.scala:1166)
-	at app//org.scalatest.Suites.runNestedSuites(Suites.scala:56)
-	at app//org.scalatest.Suite.run(Suite.scala:1121)
-	at app//org.scalatest.Suite.run$(Suite.scala:1106)
-	at app//repls.ReplsTestSuitesBase.runDirect(ReplsTestSuitesBase.scala:16)
-	at app//repls.ReplsTestSuitesBase.runWithScoreCounter(ReplsTestSuitesBase.scala:11)
-	at app//repls.ReplsTestSuite4_2.run(ReplsTestSuite4_2.scala:16)
-	at app//org.scalatestplus.junit.JUnitRunner.run(JUnitRunner.scala:99)
+<pre>java.lang.NumberFormatException: For input string: &quot;{{a,b,b}}&quot;
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:784)
+	at scala.collection.StringOps$.toInt$extension(StringOps.scala:910)
+	at repls.REPLBase$Expressions$PatternMatch$.simplify(REPLBase.scala:152)
+	at repls.MultiSetREPL.readEval(MultiSetREPL.scala:64)
+	at repls.MultiSetReplTests.$anonfun$new$43(MultiSetReplTests.scala:439)
+	at repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
+	at org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
+	at org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
+	at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
+	at org.scalatest.Transformer.apply(Transformer.scala:22)
+	at org.scalatest.Transformer.apply(Transformer.scala:20)
+	at org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)
+	at org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
+	at org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
+	at repls.infrastructure.TestBase.org$scalatest$concurrent$TimeLimitedTests$$super$withFixture(TestBase.scala:9)
+	at org.scalatest.concurrent.TimeLimitedTests.$anonfun$withFixture$3(TimeLimitedTests.scala:154)
+	at org.scalatest.enablers.Timed$$anon$1.timeoutAfter(Timed.scala:127)
+	at org.scalatest.concurrent.TimeLimits.failAfterImpl(TimeLimits.scala:239)
+	at org.scalatest.concurrent.TimeLimits.failAfterImpl$(TimeLimits.scala:233)
+	at org.scalatest.concurrent.TimeLimits$.failAfterImpl(TimeLimits.scala:305)
+	at org.scalatest.concurrent.TimeLimitedTests.withFixture(TimeLimitedTests.scala:153)
+	at org.scalatest.concurrent.TimeLimitedTests.withFixture$(TimeLimitedTests.scala:150)
+	at repls.infrastructure.TestBase.withFixture(TestBase.scala:9)
+	at org.scalatest.FunSuiteLike.invokeWithFixture$1(FunSuiteLike.scala:184)
+	at org.scalatest.FunSuiteLike.$anonfun$runTest$1(FunSuiteLike.scala:196)
+	at org.scalatest.SuperEngine.runTestImpl(Engine.scala:286)
+	at org.scalatest.FunSuiteLike.runTest(FunSuiteLike.scala:196)
+	at org.scalatest.FunSuiteLike.runTest$(FunSuiteLike.scala:178)
+	at org.scalatest.FunSuite.runTest(FunSuite.scala:1560)
+	at org.scalatest.FunSuiteLike.$anonfun$runTests$1(FunSuiteLike.scala:229)
+	at org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:393)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:381)
+	at org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:376)
+	at org.scalatest.SuperEngine.runTestsImpl(Engine.scala:458)
+	at org.scalatest.FunSuiteLike.runTests(FunSuiteLike.scala:229)
+	at org.scalatest.FunSuiteLike.runTests$(FunSuiteLike.scala:228)
+	at org.scalatest.FunSuite.runTests(FunSuite.scala:1560)
+	at org.scalatest.Suite.run(Suite.scala:1124)
+	at org.scalatest.Suite.run$(Suite.scala:1106)
+	at org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1560)
+	at org.scalatest.FunSuiteLike.$anonfun$run$1(FunSuiteLike.scala:233)
+	at org.scalatest.SuperEngine.runImpl(Engine.scala:518)
+	at org.scalatest.FunSuiteLike.run(FunSuiteLike.scala:233)
+	at org.scalatest.FunSuiteLike.run$(FunSuiteLike.scala:232)
+	at repls.infrastructure.TestBase.run(TestBase.scala:26)
+	at org.scalatest.Suite.callExecuteOnSuite$1(Suite.scala:1187)
+	at org.scalatest.Suite.$anonfun$runNestedSuites$1(Suite.scala:1234)
+	at scala.collection.ArrayOps$.foreach$extension(ArrayOps.scala:1323)
+	at org.scalatest.Suite.runNestedSuites(Suite.scala:1232)
+	at org.scalatest.Suite.runNestedSuites$(Suite.scala:1166)
+	at org.scalatest.Suites.runNestedSuites(Suites.scala:56)
+	at org.scalatest.Suite.run(Suite.scala:1121)
+	at org.scalatest.Suite.run$(Suite.scala:1106)
+	at repls.ReplsTestSuitesBase.runDirect(ReplsTestSuitesBase.scala:16)
+	at repls.ReplsTestSuitesBase.runWithScoreCounter(ReplsTestSuitesBase.scala:11)
+	at repls.ReplsTestSuite4_2.run(ReplsTestSuite4_2.scala:16)
+	at org.scalatestplus.junit.JUnitRunner.run(JUnitRunner.scala:99)
 	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
 	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
 	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
 	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
 	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
-	at java.base@18.0.2.1/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base@18.0.2.1/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
 	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
 	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
@@ -1024,8 +1030,100 @@
 	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="Simplify with assigned variables advanced"></a>
+<h3 class="failures">Simplify with assigned variables advanced</h3>
+<span class="code">
+<pre>java.lang.NumberFormatException: For input string: &quot;{*,a,{a,b}}&quot;
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:784)
+	at scala.collection.StringOps$.toInt$extension(StringOps.scala:910)
+	at repls.REPLBase$Expressions$PatternMatch$.simplify(REPLBase.scala:152)
+	at repls.REPLBase$Expressions$PatternMatch$.simplify(REPLBase.scala:160)
+	at repls.REPLBase$Expressions$PatternMatch$.simplify(REPLBase.scala:160)
+	at repls.REPLBase$Expressions$PatternMatch$.simplify(REPLBase.scala:160)
+	at repls.MultiSetREPL.readEval(MultiSetREPL.scala:64)
+	at repls.MultiSetReplTests.$anonfun$new$45(MultiSetReplTests.scala:465)
+	at repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
+	at org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
+	at org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
+	at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
+	at org.scalatest.Transformer.apply(Transformer.scala:22)
+	at org.scalatest.Transformer.apply(Transformer.scala:20)
+	at org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)
+	at org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
+	at org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
+	at repls.infrastructure.TestBase.org$scalatest$concurrent$TimeLimitedTests$$super$withFixture(TestBase.scala:9)
+	at org.scalatest.concurrent.TimeLimitedTests.$anonfun$withFixture$3(TimeLimitedTests.scala:154)
+	at org.scalatest.enablers.Timed$$anon$1.timeoutAfter(Timed.scala:127)
+	at org.scalatest.concurrent.TimeLimits.failAfterImpl(TimeLimits.scala:239)
+	at org.scalatest.concurrent.TimeLimits.failAfterImpl$(TimeLimits.scala:233)
+	at org.scalatest.concurrent.TimeLimits$.failAfterImpl(TimeLimits.scala:305)
+	at org.scalatest.concurrent.TimeLimitedTests.withFixture(TimeLimitedTests.scala:153)
+	at org.scalatest.concurrent.TimeLimitedTests.withFixture$(TimeLimitedTests.scala:150)
+	at repls.infrastructure.TestBase.withFixture(TestBase.scala:9)
+	at org.scalatest.FunSuiteLike.invokeWithFixture$1(FunSuiteLike.scala:184)
+	at org.scalatest.FunSuiteLike.$anonfun$runTest$1(FunSuiteLike.scala:196)
+	at org.scalatest.SuperEngine.runTestImpl(Engine.scala:286)
+	at org.scalatest.FunSuiteLike.runTest(FunSuiteLike.scala:196)
+	at org.scalatest.FunSuiteLike.runTest$(FunSuiteLike.scala:178)
+	at org.scalatest.FunSuite.runTest(FunSuite.scala:1560)
+	at org.scalatest.FunSuiteLike.$anonfun$runTests$1(FunSuiteLike.scala:229)
+	at org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:393)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:381)
+	at org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:376)
+	at org.scalatest.SuperEngine.runTestsImpl(Engine.scala:458)
+	at org.scalatest.FunSuiteLike.runTests(FunSuiteLike.scala:229)
+	at org.scalatest.FunSuiteLike.runTests$(FunSuiteLike.scala:228)
+	at org.scalatest.FunSuite.runTests(FunSuite.scala:1560)
+	at org.scalatest.Suite.run(Suite.scala:1124)
+	at org.scalatest.Suite.run$(Suite.scala:1106)
+	at org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1560)
+	at org.scalatest.FunSuiteLike.$anonfun$run$1(FunSuiteLike.scala:233)
+	at org.scalatest.SuperEngine.runImpl(Engine.scala:518)
+	at org.scalatest.FunSuiteLike.run(FunSuiteLike.scala:233)
+	at org.scalatest.FunSuiteLike.run$(FunSuiteLike.scala:232)
+	at repls.infrastructure.TestBase.run(TestBase.scala:26)
+	at org.scalatest.Suite.callExecuteOnSuite$1(Suite.scala:1187)
+	at org.scalatest.Suite.$anonfun$runNestedSuites$1(Suite.scala:1234)
+	at scala.collection.ArrayOps$.foreach$extension(ArrayOps.scala:1323)
+	at org.scalatest.Suite.runNestedSuites(Suite.scala:1232)
+	at org.scalatest.Suite.runNestedSuites$(Suite.scala:1166)
+	at org.scalatest.Suites.runNestedSuites(Suites.scala:56)
+	at org.scalatest.Suite.run(Suite.scala:1121)
+	at org.scalatest.Suite.run$(Suite.scala:1106)
+	at repls.ReplsTestSuitesBase.runDirect(ReplsTestSuitesBase.scala:16)
+	at repls.ReplsTestSuitesBase.runWithScoreCounter(ReplsTestSuitesBase.scala:11)
+	at repls.ReplsTestSuite4_2.run(ReplsTestSuite4_2.scala:16)
+	at org.scalatestplus.junit.JUnitRunner.run(JUnitRunner.scala:99)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:176)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </pre>
 </span>
 </div>
@@ -1033,72 +1131,77 @@
 <a name="Simplify with assigned variables brackets"></a>
 <h3 class="failures">Simplify with assigned variables brackets</h3>
 <span class="code">
-<pre>org.scalatest.exceptions.TestFailedException: &quot;[( {} + {b,c,e} * {a,b,c,c,d} )] * b&quot; did not equal &quot;[{b,c}] * b&quot;
-	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
-	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
-	at app//org.scalatest.FunSuite.newAssertionFailedException(FunSuite.scala:1560)
-	at app//org.scalatest.Assertions$AssertionsHelper.macroAssert(Assertions.scala:503)
-	at app//repls.MultiSetReplTests.$anonfun$new$44(MultiSetReplTests.scala:455)
-	at app//repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
-	at app//org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
-	at app//org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
-	at app//org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
-	at app//org.scalatest.Transformer.apply(Transformer.scala:22)
-	at app//org.scalatest.Transformer.apply(Transformer.scala:20)
-	at app//org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)
-	at app//org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
-	at app//org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
-	at app//repls.infrastructure.TestBase.org$scalatest$concurrent$TimeLimitedTests$$super$withFixture(TestBase.scala:9)
-	at app//org.scalatest.concurrent.TimeLimitedTests.$anonfun$withFixture$3(TimeLimitedTests.scala:154)
-	at app//org.scalatest.enablers.Timed$$anon$1.timeoutAfter(Timed.scala:127)
-	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl(TimeLimits.scala:239)
-	at app//org.scalatest.concurrent.TimeLimits.failAfterImpl$(TimeLimits.scala:233)
-	at app//org.scalatest.concurrent.TimeLimits$.failAfterImpl(TimeLimits.scala:305)
-	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture(TimeLimitedTests.scala:153)
-	at app//org.scalatest.concurrent.TimeLimitedTests.withFixture$(TimeLimitedTests.scala:150)
-	at app//repls.infrastructure.TestBase.withFixture(TestBase.scala:9)
-	at app//org.scalatest.FunSuiteLike.invokeWithFixture$1(FunSuiteLike.scala:184)
-	at app//org.scalatest.FunSuiteLike.$anonfun$runTest$1(FunSuiteLike.scala:196)
-	at app//org.scalatest.SuperEngine.runTestImpl(Engine.scala:286)
-	at app//org.scalatest.FunSuiteLike.runTest(FunSuiteLike.scala:196)
-	at app//org.scalatest.FunSuiteLike.runTest$(FunSuiteLike.scala:178)
-	at app//org.scalatest.FunSuite.runTest(FunSuite.scala:1560)
-	at app//org.scalatest.FunSuiteLike.$anonfun$runTests$1(FunSuiteLike.scala:229)
-	at app//org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:393)
-	at app//scala.collection.immutable.List.foreach(List.scala:333)
-	at app//org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:381)
-	at app//org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:376)
-	at app//org.scalatest.SuperEngine.runTestsImpl(Engine.scala:458)
-	at app//org.scalatest.FunSuiteLike.runTests(FunSuiteLike.scala:229)
-	at app//org.scalatest.FunSuiteLike.runTests$(FunSuiteLike.scala:228)
-	at app//org.scalatest.FunSuite.runTests(FunSuite.scala:1560)
-	at app//org.scalatest.Suite.run(Suite.scala:1124)
-	at app//org.scalatest.Suite.run$(Suite.scala:1106)
-	at app//org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1560)
-	at app//org.scalatest.FunSuiteLike.$anonfun$run$1(FunSuiteLike.scala:233)
-	at app//org.scalatest.SuperEngine.runImpl(Engine.scala:518)
-	at app//org.scalatest.FunSuiteLike.run(FunSuiteLike.scala:233)
-	at app//org.scalatest.FunSuiteLike.run$(FunSuiteLike.scala:232)
-	at app//repls.infrastructure.TestBase.run(TestBase.scala:26)
-	at app//org.scalatest.Suite.callExecuteOnSuite$1(Suite.scala:1187)
-	at app//org.scalatest.Suite.$anonfun$runNestedSuites$1(Suite.scala:1234)
-	at app//scala.collection.ArrayOps$.foreach$extension(ArrayOps.scala:1323)
-	at app//org.scalatest.Suite.runNestedSuites(Suite.scala:1232)
-	at app//org.scalatest.Suite.runNestedSuites$(Suite.scala:1166)
-	at app//org.scalatest.Suites.runNestedSuites(Suites.scala:56)
-	at app//org.scalatest.Suite.run(Suite.scala:1121)
-	at app//org.scalatest.Suite.run$(Suite.scala:1106)
-	at app//repls.ReplsTestSuitesBase.runDirect(ReplsTestSuitesBase.scala:16)
-	at app//repls.ReplsTestSuitesBase.runWithScoreCounter(ReplsTestSuitesBase.scala:11)
-	at app//repls.ReplsTestSuite4_2.run(ReplsTestSuite4_2.scala:16)
-	at app//org.scalatestplus.junit.JUnitRunner.run(JUnitRunner.scala:99)
+<pre>java.lang.NumberFormatException: For input string: &quot;{{a,b,c,c,d}}&quot;
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:668)
+	at java.base/java.lang.Integer.parseInt(Integer.java:784)
+	at scala.collection.StringOps$.toInt$extension(StringOps.scala:910)
+	at repls.REPLBase$Expressions$PatternMatch$.simplify(REPLBase.scala:152)
+	at repls.REPLBase$Expressions$PatternMatch$.simplify(REPLBase.scala:161)
+	at repls.REPLBase$Expressions$PatternMatch$.simplify(REPLBase.scala:161)
+	at repls.REPLBase$Expressions$PatternMatch$.simplify(REPLBase.scala:160)
+	at repls.MultiSetREPL.readEval(MultiSetREPL.scala:64)
+	at repls.MultiSetReplTests.$anonfun$new$44(MultiSetReplTests.scala:452)
+	at repls.infrastructure.TestBase.$anonfun$test$1(TestBase.scala:36)
+	at org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
+	at org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:83)
+	at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
+	at org.scalatest.Transformer.apply(Transformer.scala:22)
+	at org.scalatest.Transformer.apply(Transformer.scala:20)
+	at org.scalatest.FunSuiteLike$$anon$1.apply(FunSuiteLike.scala:186)
+	at org.scalatest.TestSuite.withFixture(TestSuite.scala:196)
+	at org.scalatest.TestSuite.withFixture$(TestSuite.scala:195)
+	at repls.infrastructure.TestBase.org$scalatest$concurrent$TimeLimitedTests$$super$withFixture(TestBase.scala:9)
+	at org.scalatest.concurrent.TimeLimitedTests.$anonfun$withFixture$3(TimeLimitedTests.scala:154)
+	at org.scalatest.enablers.Timed$$anon$1.timeoutAfter(Timed.scala:127)
+	at org.scalatest.concurrent.TimeLimits.failAfterImpl(TimeLimits.scala:239)
+	at org.scalatest.concurrent.TimeLimits.failAfterImpl$(TimeLimits.scala:233)
+	at org.scalatest.concurrent.TimeLimits$.failAfterImpl(TimeLimits.scala:305)
+	at org.scalatest.concurrent.TimeLimitedTests.withFixture(TimeLimitedTests.scala:153)
+	at org.scalatest.concurrent.TimeLimitedTests.withFixture$(TimeLimitedTests.scala:150)
+	at repls.infrastructure.TestBase.withFixture(TestBase.scala:9)
+	at org.scalatest.FunSuiteLike.invokeWithFixture$1(FunSuiteLike.scala:184)
+	at org.scalatest.FunSuiteLike.$anonfun$runTest$1(FunSuiteLike.scala:196)
+	at org.scalatest.SuperEngine.runTestImpl(Engine.scala:286)
+	at org.scalatest.FunSuiteLike.runTest(FunSuiteLike.scala:196)
+	at org.scalatest.FunSuiteLike.runTest$(FunSuiteLike.scala:178)
+	at org.scalatest.FunSuite.runTest(FunSuite.scala:1560)
+	at org.scalatest.FunSuiteLike.$anonfun$runTests$1(FunSuiteLike.scala:229)
+	at org.scalatest.SuperEngine.$anonfun$runTestsInBranch$1(Engine.scala:393)
+	at scala.collection.immutable.List.foreach(List.scala:333)
+	at org.scalatest.SuperEngine.traverseSubNodes$1(Engine.scala:381)
+	at org.scalatest.SuperEngine.runTestsInBranch(Engine.scala:376)
+	at org.scalatest.SuperEngine.runTestsImpl(Engine.scala:458)
+	at org.scalatest.FunSuiteLike.runTests(FunSuiteLike.scala:229)
+	at org.scalatest.FunSuiteLike.runTests$(FunSuiteLike.scala:228)
+	at org.scalatest.FunSuite.runTests(FunSuite.scala:1560)
+	at org.scalatest.Suite.run(Suite.scala:1124)
+	at org.scalatest.Suite.run$(Suite.scala:1106)
+	at org.scalatest.FunSuite.org$scalatest$FunSuiteLike$$super$run(FunSuite.scala:1560)
+	at org.scalatest.FunSuiteLike.$anonfun$run$1(FunSuiteLike.scala:233)
+	at org.scalatest.SuperEngine.runImpl(Engine.scala:518)
+	at org.scalatest.FunSuiteLike.run(FunSuiteLike.scala:233)
+	at org.scalatest.FunSuiteLike.run$(FunSuiteLike.scala:232)
+	at repls.infrastructure.TestBase.run(TestBase.scala:26)
+	at org.scalatest.Suite.callExecuteOnSuite$1(Suite.scala:1187)
+	at org.scalatest.Suite.$anonfun$runNestedSuites$1(Suite.scala:1234)
+	at scala.collection.ArrayOps$.foreach$extension(ArrayOps.scala:1323)
+	at org.scalatest.Suite.runNestedSuites(Suite.scala:1232)
+	at org.scalatest.Suite.runNestedSuites$(Suite.scala:1166)
+	at org.scalatest.Suites.runNestedSuites(Suites.scala:56)
+	at org.scalatest.Suite.run(Suite.scala:1121)
+	at org.scalatest.Suite.run$(Suite.scala:1106)
+	at repls.ReplsTestSuitesBase.runDirect(ReplsTestSuitesBase.scala:16)
+	at repls.ReplsTestSuitesBase.runWithScoreCounter(ReplsTestSuitesBase.scala:11)
+	at repls.ReplsTestSuite4_2.run(ReplsTestSuite4_2.scala:16)
+	at org.scalatestplus.junit.JUnitRunner.run(JUnitRunner.scala:99)
 	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
 	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
 	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
 	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
 	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
-	at java.base@18.0.2.1/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base@18.0.2.1/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
 	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
 	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
 	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
@@ -1111,8 +1214,8 @@
 	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:133)
 	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
-	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </pre>
 </span>
 </div>
@@ -1129,7 +1232,7 @@
 </thead>
 <tr>
 <td class="failures">Assign variables advanced</td>
-<td class="failures">0.041s</td>
+<td class="failures">0.036s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
@@ -1144,17 +1247,17 @@
 </tr>
 <tr>
 <td class="success">Assign variables reassign</td>
-<td class="success">0.005s</td>
+<td class="success">0.006s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Assign variables reuse</td>
-<td class="success">0.005s</td>
+<td class="success">0.006s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Assign variables simple</td>
-<td class="success">0.002s</td>
+<td class="success">0.003s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -1164,7 +1267,7 @@
 </tr>
 <tr>
 <td class="success">Echo simple</td>
-<td class="success">0.013s</td>
+<td class="success">0.014s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -1184,17 +1287,17 @@
 </tr>
 <tr>
 <td class="success">Evaluate expressions simple</td>
-<td class="success">0.002s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Evaluate intersection brackets</td>
-<td class="success">0.005s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Evaluate intersection simple</td>
-<td class="success">0.002s</td>
+<td class="success">0.003s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -1204,12 +1307,12 @@
 </tr>
 <tr>
 <td class="success">Evaluate subtraction simple</td>
-<td class="success">0.003s</td>
+<td class="success">0.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Evaluate summation brackets</td>
-<td class="success">0.010s</td>
+<td class="success">0.011s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -1224,7 +1327,7 @@
 </tr>
 <tr>
 <td class="failures">Simplify abstract advanced</td>
-<td class="failures">0.001s</td>
+<td class="failures">0s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
@@ -1239,17 +1342,17 @@
 </tr>
 <tr>
 <td class="success">Simplify abstract simple</td>
-<td class="success">0.007s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="failures">Simplify advanced</td>
-<td class="failures">0.003s</td>
+<td class="failures">0.004s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify brackets</td>
-<td class="failures">0.002s</td>
+<td class="failures">0.005s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
@@ -1259,7 +1362,7 @@
 </tr>
 <tr>
 <td class="success">Simplify empty set right</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -1279,7 +1382,7 @@
 </tr>
 <tr>
 <td class="failures">Simplify intersection by its abstract self compositie</td>
-<td class="failures">0.009s</td>
+<td class="failures">0.002s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
@@ -1289,12 +1392,12 @@
 </tr>
 <tr>
 <td class="failures">Simplify leading empty set</td>
-<td class="failures">0.003s</td>
+<td class="failures">0.001s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">Simplify multiply by empty set on abstract left</td>
-<td class="success">0.002s</td>
+<td class="success">0s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -1304,17 +1407,17 @@
 </tr>
 <tr>
 <td class="success">Simplify nested</td>
-<td class="success">0s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="failures">Simplify simple</td>
-<td class="failures">0.008s</td>
+<td class="failures">0.003s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify subtract abstract</td>
-<td class="failures">0.005s</td>
+<td class="failures">0.003s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
@@ -1324,67 +1427,35 @@
 </tr>
 <tr>
 <td class="failures">Simplify trailing empty set</td>
-<td class="failures">0.002s</td>
+<td class="failures">0.001s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">Simplify unneeded empty set on abstract left</td>
-<td class="success">0.003s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">Simplify unneeded empty set on abstract right</td>
-<td class="success">0.003s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">Simplify with assigned variables</td>
 <td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
+<td class="success">Simplify unneeded empty set on abstract right</td>
+<td class="success">0.001s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="failures">Simplify with assigned variables</td>
+<td class="failures">0.005s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
 <td class="failures">Simplify with assigned variables advanced</td>
-<td class="failures">0.034s</td>
+<td class="failures">0.012s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="failures">Simplify with assigned variables brackets</td>
-<td class="failures">0.001s</td>
+<td class="failures">0.019s</td>
 <td class="failures">failed</td>
 </tr>
 </table>
-</div>
-<div id="tab2" class="tab">
-<h2>Standard output</h2>
-<span class="code">
-<pre>Operator(Var({a}),+,Var({b}))
-Operator(Var({}),+,Var({a,b}))
-Operator(Var({a}),+,Var({}))
-Operator(Var({a}),*,Var({a}))
-Operator(Var({}),*,Var({a}))
-Operator(Var({a}),*,Var({}))
-Operator(Operator(Var({a,b,c}),*,Var({b,c,d})),+,Operator(Var({a,b,c}),*,Var({e,f,g})))
-Operator(Operator(Operator(Var({}),*,Operator(Operator(Var({b,n,g}),*,Var({f,g})),+,Operator(Var({b}),*,Var({r,t,f})))),+,Var({b})),+,Operator(Var({a,n,b}),*,Var({a,n,b})))
-Operator(Operator(Operator(Var({g,h}),+,Operator(Var({b,n,n}),*,Var({b,n,n}))),*,Var({a,a,e,r})),+,Operator(Var({u,u,i,p}),*,Var({})))
-Operator(Var(a),+,Var({a,b,b,c}))
-Operator(Var({}),+,Var(a))
-Operator(Var(a),+,Var({}))
-Operator(Var({}),*,Var(a))
-Operator(Var(a),*,Var({}))
-Operator(Var(a),*,Var(a))
-Operator(Operator(Operator(Var(x),+,Var(y)),+,Var(z)),*,Operator(Operator(Var(x),+,Var(y)),+,Var(z)))
-Operator(Operator(Operator(Var(x),+,Var(y)),+,Var(z)),-,Operator(Operator(Var(x),+,Var(y)),+,Var(z)))
-Operator(Operator(Operator(Var(x),+,Var(y)),+,Var(z)),-,Operator(Operator(Operator(Var(x),+,Var(y)),+,Var(z)),*,Operator(Operator(Var(x),+,Var(y)),+,Var(z))))
-Operator(Var(a),+,Operator(Var(b),*,Var(b)))
-Operator(Var(a),+,Operator(Operator(Var(b),*,Var(c)),*,Operator(Var(b),*,Var(c))))
-Operator(Var(a),+,Operator(Var(b),+,Var({})))
-Operator(Var(a),+,Operator(Var({}),+,Operator(Var({}),+,Operator(Var({}),+,Var({})))))
-Operator(Operator(Operator(Var(x),-,Var(x)),+,Operator(Operator(Var(a),*,Var(b)),+,Operator(Var(a),*,Var(c)))),-,Operator(Operator(Operator(Operator(Var(a),+,Var({})),*,Operator(Var(b),+,Var({}))),+,Operator(Operator(Var(a),*,Var(a)),*,Operator(Var(c),*,Var(c)))),*,Operator(Operator(Operator(Var(a),*,Var(b)),+,Operator(Var(a),*,Var(c))),+,Operator(Operator(Var(z),+,Var(q)),*,Var({})))))
-Var(a)
-Operator(Operator(Var({}),+,Operator(Var({b,c,e}),*,Var(a))),*,Var(b))
-Operator(Operator(Operator(Operator(Var(a),*,Var(b)),+,Operator(Var({a}),*,Var(b))),+,Var(c)),+,Var(d))
-</pre>
-</span>
 </div>
 </div>
 <div id="footer">
@@ -1394,7 +1465,7 @@ Operator(Operator(Operator(Operator(Var(a),*,Var(b)),+,Operator(Var({a}),*,Var(b
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.5.1</a> at Oct 20, 2023, 5:18:19 PM</p>
+<a href="http://www.gradle.org">Gradle 7.5.1</a> at Oct 20, 2023, 5:51:53 PM</p>
 </div>
 </div>
 </body>

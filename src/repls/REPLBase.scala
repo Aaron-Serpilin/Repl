@@ -1,17 +1,58 @@
 package repls
 import scala.collection.mutable
 
-/*
-    The parent class of IntREPL and MultiSetREPL.
- */
 abstract class REPLBase extends REPL {
 
     type Base
-    //def evaluate (expression: String): Base = _
+    // Dictionary to store variablesMap for Integers and MultiSets
+    val variablesMap: mutable.Map[String, Base] = mutable.Map[String, Base]()
+    
+    // Repeated Code for the IntRepl and MultiSetRepl
+    def isOperator(char: String): Boolean = Set("+", "-", "*", "/").contains(char)
+    def isInteger(char: String): Boolean = char.matches("-?\\d+")
+    def isVariable(char: String): Boolean = char.matches("[a-zA-Z0-9]+")
 
-    // Dictionaries to store variablesMap and their values for IntRepl and MultiSetRepl
-    val intVariablesMap = mutable.Map[String, Int]()
-    val multiSetVariablesMap = mutable.Map[String, MultiSet[String]]()
+    def precedence(operator: String): Int = operator match {
+        case "+" | "-" => 1
+        case "*" | "/" => 2
+        case _ => 0 // Default precedence
+    }
+
+    // Shunting Yard Algorithm Pseudocode: https://aquarchitect.github.io/swift-algorithm-club/Shunting%20Yard/
+    def expressionToRPN(expression: Seq[String]): Seq[String] = {
+
+        val outputStack = mutable.Stack[String]()
+        val operatorStack = mutable.Stack[String]()
+
+        expression.foreach {
+            case token if isVariable(token) => outputStack.push(token)
+
+            case token if isOperator(token) =>
+                while (operatorStack.nonEmpty && precedence(operatorStack.top) >= precedence(token)) {
+                    val operator = operatorStack.pop()
+                    outputStack.push(operator)
+                }
+                operatorStack.push(token)
+
+            case "(" => operatorStack.push("(")
+
+            case ")" =>
+                while (operatorStack.nonEmpty && operatorStack.top != "(") {
+                    val operator = operatorStack.pop()
+                    outputStack.push(operator)
+                }
+                operatorStack.pop()
+
+            case token if token.length > 1 => outputStack.push(token) // Accounts for multi sets
+        }
+
+        while (operatorStack.nonEmpty) {
+            val operator = operatorStack.pop()
+            outputStack.push(operator)
+        }
+
+        outputStack.reverse.toSeq
+    }
 
     object Expressions {
         abstract class Expression {
@@ -30,7 +71,7 @@ abstract class REPLBase extends REPL {
             override def abstractToString: String = s"-${arg.abstractToString}"
         }
 
-        case class Operator(firstOperand: Expression, operatorName: String, secondOperand: Expression) extends Expression {
+        private case class Operator(firstOperand: Expression, operatorName: String, secondOperand: Expression) extends Expression {
 
             override def abstractToString: String = { // Correctly prints out the simplifications. Have to check for parenthesis placement for the distributivity rules
                 val shouldParenthesisBePlaced = ((operatorName == "*" || operatorName == "/")
@@ -60,9 +101,8 @@ abstract class REPLBase extends REPL {
                 }
             }
 
-            def simplify(expression: Expression, intVariableMap: mutable.Map[String, Int], multiSetVariableMap: mutable.Map[String, MultiSet[String]]): Expression = {
-                def simplifyExpression(expression: Expression): Expression = {
-
+            def simplify(expression: Expression): Expression = {
+                
                     val simplifiedExpression = expression match {
 
                         // Cases for Multi sets
@@ -91,14 +131,14 @@ abstract class REPLBase extends REPL {
                         case Operator(Const(a), "/", Const(b)) => Const(a / b)
 
                         // Cases for Negate simplification
-                        case Negate(Negate(expr)) => simplifyExpression(expr)
-                        case Negate(expr) => Negate(simplifyExpression(expr))
+                        case Negate(Negate(expr)) => simplify(expr)
+                        case Negate(expr) => Negate(simplify(expr))
 
                         // Cases for addition and multiplication identity
-                        case Operator(expr, "+", Const(0)) => simplifyExpression(expr)
-                        case Operator(Const(0), "+", expr) => simplifyExpression(expr)
-                        case Operator(expr, "*", Const(1)) => simplifyExpression(expr)
-                        case Operator(Const(1), "*", expr) => simplifyExpression(expr)
+                        case Operator(expr, "+", Const(0)) => simplify(expr)
+                        case Operator(Const(0), "+", expr) => simplify(expr)
+                        case Operator(expr, "*", Const(1)) => simplify(expr)
+                        case Operator(Const(1), "*", expr) => simplify(expr)
                         case Operator(_, "*", Const(0)) => Const(0)
                         case Operator(Const(0), "*", _) => Const(0)
 
@@ -106,16 +146,16 @@ abstract class REPLBase extends REPL {
                         case Operator(lhs, "-", rhs) if lhs == rhs => Const(0)
 
                         // Case for variable in variablesMap
-                        case Var(variable) if intVariableMap.contains(variable) => Const(intVariableMap(variable))
-                        case Var(variable) if multiSetVariableMap.contains(variable) =>
-                            val multiSetValue = multiSetVariableMap(variable)
+                        case Var(variable) if variablesMap.contains(variable) => Const(variablesMap(variable).toString.toInt)
+                        case Var(variable) if variablesMap.contains(variable) =>
+                            val multiSetValue = variablesMap(variable)
                             val varString = multiSetValue.toString.stripPrefix("{").stripSuffix("}") // To achieve the desired structure by the tests
                             Var(varString)
 
                         // General case for binary operators
                         case Operator(lhs, op, rhs) =>
-                            val simplifiedLhs = simplifyExpression(lhs)
-                            val simplifiedRhs = simplifyExpression(rhs)
+                            val simplifiedLhs = simplify(lhs)
+                            val simplifiedRhs = simplify(rhs)
 
                             (simplifiedLhs, simplifiedRhs) match {
                                 case (Const(a), Const(b)) if isOperator(op) =>
@@ -130,14 +170,12 @@ abstract class REPLBase extends REPL {
 
                     // We recursively reduce the expression if it is not completely reduced already
                     if (simplifiedExpression != expression) {
-                        simplifyExpression(simplifiedExpression)
+                        simplify(simplifiedExpression)
                     } else {
                         simplifiedExpression
                     }
                 }
-
-                simplifyExpression(expression)
-            }
+            
 
         }
 
