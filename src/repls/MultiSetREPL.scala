@@ -108,9 +108,9 @@ class MultiSetREPL extends REPLBase {
             //println("Triggered")
             val expression = tokens.drop(1)
             val reversePolishExpression = expressionToRPN(expression).mkString(" ")
-            val treeExpression = repls.Expressions.ReversePolish.reversePolishToExpression(reversePolishExpression)
+            val treeExpression = Expressions.ReversePolish.reversePolishToTreeExpression(reversePolishExpression)
             println(treeExpression)
-            val simplifiedExpression = repls.Expressions.PatternMatch.simplify(treeExpression, intVariablesMap, multiSetVariablesMap).abstractToString
+            val simplifiedExpression = Expressions.PatternMatch.simplify(treeExpression, intVariablesMap, multiSetVariablesMap).abstractToString
             return simplifiedExpression
         }
 

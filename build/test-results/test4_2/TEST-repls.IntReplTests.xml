@@ -1,54 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="repls.IntReplTests" tests="48" skipped="0" failures="0" errors="0" timestamp="2023-10-20T11:43:41" hostname="Jays-MacBook-Pro-2.local" time="0.218">
+<testsuite name="repls.IntReplTests" tests="48" skipped="0" failures="0" errors="0" timestamp="2023-10-20T15:18:18" hostname="Jays-MacBook-Pro-2.local" time="0.212">
   <properties/>
-  <testcase name="Echo simple" classname="repls.IntReplTests" time="0.078"/>
-  <testcase name="Echo brackets" classname="repls.IntReplTests" time="0.001"/>
-  <testcase name="Evaluate addition simple" classname="repls.IntReplTests" time="0.002"/>
+  <testcase name="Echo simple" classname="repls.IntReplTests" time="0.08"/>
+  <testcase name="Echo brackets" classname="repls.IntReplTests" time="0.002"/>
+  <testcase name="Evaluate addition simple" classname="repls.IntReplTests" time="0.003"/>
   <testcase name="Evaluate addition brackets" classname="repls.IntReplTests" time="0.002"/>
-  <testcase name="Evaluate addition negative numbers" classname="repls.IntReplTests" time="0.003"/>
+  <testcase name="Evaluate addition negative numbers" classname="repls.IntReplTests" time="0.002"/>
   <testcase name="Evaluate subtraction simple" classname="repls.IntReplTests" time="0.002"/>
-  <testcase name="Evaluate subtraction brackets" classname="repls.IntReplTests" time="0.002"/>
+  <testcase name="Evaluate subtraction brackets" classname="repls.IntReplTests" time="0.001"/>
   <testcase name="Evaluate subtraction negative" classname="repls.IntReplTests" time="0.002"/>
-  <testcase name="Evaluate subtraction two negatives make positives" classname="repls.IntReplTests" time="0.002"/>
+  <testcase name="Evaluate subtraction two negatives make positives" classname="repls.IntReplTests" time="0.001"/>
   <testcase name="Evaluate multiplication simple" classname="repls.IntReplTests" time="0.002"/>
   <testcase name="Evaluate multiplication brackets" classname="repls.IntReplTests" time="0.001"/>
   <testcase name="Evaluate multiplication negative" classname="repls.IntReplTests" time="0.001"/>
-  <testcase name="Evaluate Expressions simple" classname="repls.IntReplTests" time="0.003"/>
+  <testcase name="Evaluate Expressions simple" classname="repls.IntReplTests" time="0.002"/>
   <testcase name="Evaluate Expressions brackets" classname="repls.IntReplTests" time="0.001"/>
-  <testcase name="Evaluate Expressions nested brackets" classname="repls.IntReplTests" time="0.004"/>
-  <testcase name="Evaluate Expressions advanced brackets" classname="repls.IntReplTests" time="0.006"/>
+  <testcase name="Evaluate Expressions nested brackets" classname="repls.IntReplTests" time="0.003"/>
+  <testcase name="Evaluate Expressions advanced brackets" classname="repls.IntReplTests" time="0.004"/>
   <testcase name="Assign variables simple" classname="repls.IntReplTests" time="0.001"/>
   <testcase name="Assign variables and evaluate" classname="repls.IntReplTests" time="0.001"/>
-  <testcase name="Assign variables reuse" classname="repls.IntReplTests" time="0.002"/>
+  <testcase name="Assign variables reuse" classname="repls.IntReplTests" time="0.001"/>
   <testcase name="Assign variables negative numbers" classname="repls.IntReplTests" time="0.002"/>
-  <testcase name="Assign variables reassign" classname="repls.IntReplTests" time="0.002"/>
+  <testcase name="Assign variables reassign" classname="repls.IntReplTests" time="0.001"/>
   <testcase name="Assign variables evaluate" classname="repls.IntReplTests" time="0.002"/>
-  <testcase name="Assign variables advanced" classname="repls.IntReplTests" time="0.003"/>
+  <testcase name="Assign variables advanced" classname="repls.IntReplTests" time="0.005"/>
   <testcase name="Simplify simple" classname="repls.IntReplTests" time="0.007"/>
   <testcase name="Simplify unneeded 0 left" classname="repls.IntReplTests" time="0.005"/>
   <testcase name="Simplify unneeded 0 right" classname="repls.IntReplTests" time="0.001"/>
   <testcase name="Simplify multiply by one left" classname="repls.IntReplTests" time="0.001"/>
-  <testcase name="Simplify multiply by one right" classname="repls.IntReplTests" time="0.001"/>
-  <testcase name="Simplify multiply by 0 left" classname="repls.IntReplTests" time="0.003"/>
-  <testcase name="Simplify multiply by 0 right" classname="repls.IntReplTests" time="0.002"/>
-  <testcase name="Simplify brackets" classname="repls.IntReplTests" time="0.003"/>
-  <testcase name="Simplify negative numbers" classname="repls.IntReplTests" time="0.003"/>
+  <testcase name="Simplify multiply by one right" classname="repls.IntReplTests" time="0.0"/>
+  <testcase name="Simplify multiply by 0 left" classname="repls.IntReplTests" time="0.0"/>
+  <testcase name="Simplify multiply by 0 right" classname="repls.IntReplTests" time="0.001"/>
+  <testcase name="Simplify brackets" classname="repls.IntReplTests" time="0.005"/>
+  <testcase name="Simplify negative numbers" classname="repls.IntReplTests" time="0.002"/>
   <testcase name="Simplify trailing 0" classname="repls.IntReplTests" time="0.003"/>
-  <testcase name="Simplify leading 0" classname="repls.IntReplTests" time="0.0"/>
+  <testcase name="Simplify leading 0" classname="repls.IntReplTests" time="0.001"/>
   <testcase name="Simplify advanced" classname="repls.IntReplTests" time="0.002"/>
-  <testcase name="Simplify subtract abstract" classname="repls.IntReplTests" time="0.001"/>
-  <testcase name="Simplify subtract abstract nested" classname="repls.IntReplTests" time="0.016"/>
-  <testcase name="Simplify abstract brackets" classname="repls.IntReplTests" time="0.004"/>
+  <testcase name="Simplify subtract abstract" classname="repls.IntReplTests" time="0.009"/>
+  <testcase name="Simplify subtract abstract nested" classname="repls.IntReplTests" time="0.002"/>
+  <testcase name="Simplify abstract brackets" classname="repls.IntReplTests" time="0.001"/>
   <testcase name="Simplify nested" classname="repls.IntReplTests" time="0.001"/>
   <testcase name="Simplify distributivity simple" classname="repls.IntReplTests" time="0.001"/>
-  <testcase name="Simplify distributivity 2" classname="repls.IntReplTests" time="0.0"/>
-  <testcase name="Simplify distributivity 3" classname="repls.IntReplTests" time="0.001"/>
+  <testcase name="Simplify distributivity 2" classname="repls.IntReplTests" time="0.003"/>
+  <testcase name="Simplify distributivity 3" classname="repls.IntReplTests" time="0.004"/>
   <testcase name="Simplify distributivity 4" classname="repls.IntReplTests" time="0.003"/>
   <testcase name="Simplify abstract advanced" classname="repls.IntReplTests" time="0.001"/>
-  <testcase name="Simplify advanced 2" classname="repls.IntReplTests" time="0.002"/>
+  <testcase name="Simplify advanced 2" classname="repls.IntReplTests" time="0.001"/>
   <testcase name="Simplify with assigned variables" classname="repls.IntReplTests" time="0.002"/>
-  <testcase name="Simplify with assigned variables brackets" classname="repls.IntReplTests" time="0.002"/>
-  <testcase name="Simplify with assigned variables advanced" classname="repls.IntReplTests" time="0.003"/>
+  <testcase name="Simplify with assigned variables brackets" classname="repls.IntReplTests" time="0.001"/>
+  <testcase name="Simplify with assigned variables advanced" classname="repls.IntReplTests" time="0.005"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
