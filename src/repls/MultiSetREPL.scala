@@ -18,12 +18,11 @@ class MultiSetREPL extends REPLBase {
         outputStack.push(Const(MultiSet(elementAsSeq)))
     }
 
-    override def pushBaseValueToBaseStack(outputStack: mutable.Stack[MultiSet[String]], element: String): Unit = {
-    val elementAsSeq = Seq(element)
-    outputStack.push(MultiSet(elementAsSeq))
+    def baseVariableAssigner (expression: Array[String], result: String, variableName: String): Unit = {
+        variablesMap(variableName) = MultiSet(expression)
     }
 
-    private def RPNToResult(expression: Seq[String]): Base = {
+    override def RPNToResult(expression: Seq[String]): Base = {
         val outputStack = mutable.Stack[Base]()
         expression.foreach {
             case token if isOperator(token) =>
@@ -44,7 +43,7 @@ class MultiSetREPL extends REPLBase {
         outputStack.head
     }
 
-    private def substituteVariables(expression: Seq[String]): Seq[String] = {
+    override def substituteVariables(expression: Seq[String]): Seq[String] = {
         expression.flatMap {
             case variable if variablesMap.contains(variable) =>
                 val variableValue = variablesMap(variable)
@@ -52,39 +51,6 @@ class MultiSetREPL extends REPLBase {
 
             case other =>
                 Seq(other)
-        }
-    }
-
-    private def solveExpression(expression: Seq[String]): String = {
-        val substitutedExpression = substituteVariables(expression)
-        val reversePolishExpression = expressionToRPN(substitutedExpression)
-        val result = RPNToResult(reversePolishExpression)
-        result.toString
-    }
-
-    override def readEval(command: String): String = {
-        val tokens = command.split(" ")
-        val isVariableAssignment = command.contains("=")
-        val isSimplification = command.startsWith("@")
-
-        if (isSimplification) {
-            val expression = tokens.drop(1)
-            val reversePolishExpression = expressionToRPN(expression).mkString(" ")
-            val treeExpression = reversePolishToTreeExpression(reversePolishExpression)
-            val simplifiedExpression = simplify(treeExpression).abstractToString
-            return simplifiedExpression
-        }
-
-        val expression = if (isVariableAssignment) tokens.drop(2) else tokens
-        val result = solveExpression(expression)
-
-        if (isVariableAssignment) {
-            val variableName = tokens.head
-            variablesMap(variableName) = MultiSet(expression)
-            s"$variableName = $result"
-
-        } else {
-            result
         }
     }
 }

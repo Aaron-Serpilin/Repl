@@ -16,12 +16,11 @@ class IntREPL extends REPLBase {
         outputStack.push(Const(element.toInt))
     }
 
-    override def pushBaseValueToBaseStack(outputStack: mutable.Stack[Base], element: String): Unit = {
-        outputStack.push(element.toInt)
+    override def baseVariableAssigner (expression: Array[String], result: String, variableName: String): Unit = {
+        variablesMap(variableName) = result.toInt
     }
 
-    // Polish to Result/Expression Tree Code: https://gitlab.com/vu-oofp/lecture-code/-/blob/master/OOReversePolish.scala
-    private def RPNToResult(expression: Seq[String]): Base = {
+    override def RPNToResult(expression: Seq[String]): Base = {
         val outputStack = mutable.Stack[Base]() // Change the type of outputStack
         expression.foreach {
             case token if isOperator(token) =>
@@ -37,45 +36,12 @@ class IntREPL extends REPLBase {
         outputStack.head
     }
 
-    private def substituteVariables(expression: Seq[String]): Seq[String] = {
+    override def substituteVariables(expression: Seq[String]): Seq[String] = {
         expression.map {
             case variable if variablesMap.contains(variable) =>
                 variablesMap(variable).toString
             case other =>
                 other
-        }
-    }
-
-    private def solveExpression(expression: Seq[String]): String = {
-        val substitutedExpression = substituteVariables(expression)
-        val reversePolishExpression = expressionToRPN(substitutedExpression)
-        val result = RPNToResult(reversePolishExpression)
-        result.toString
-    }
-
-    override def readEval(command: String): String = {
-
-        val tokens = command.split(" ").toList
-        val isVariableAssignment = tokens.contains("=") // We check for assignments
-        val isSimplification = command.contains("@") // We check for simplifications
-
-        if (isSimplification) { // Check for simplification
-            val expression = tokens.drop(1)
-            val reversePolishExpression = expressionToRPN(expression).mkString(" ")
-            val treeExpression = reversePolishToTreeExpression(reversePolishExpression) // We use the given code from the course
-            val simplifiedExpression = simplify(treeExpression).abstractToString
-            return simplifiedExpression
-        }
-
-        val expression = if (isVariableAssignment) tokens.drop(2) else tokens
-        val result = solveExpression(expression)
-
-        if (isVariableAssignment) {
-            val variableName = tokens.head
-            variablesMap(variableName) = result.toInt
-            s"$variableName = $result"
-        } else { // Else we work like normal evaluations
-            result
         }
     }
 }

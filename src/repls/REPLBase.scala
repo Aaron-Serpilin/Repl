@@ -20,7 +20,7 @@ abstract class REPLBase extends REPL {
     }
 
     // Shunting Yard Algorithm Pseudocode: https://aquarchitect.github.io/swift-algorithm-club/Shunting%20Yard/
-    def expressionToRPN(expression: Seq[String]): Seq[String] = {
+    private def expressionToRPN(expression: Seq[String]): Seq[String] = {
 
         val outputStack = mutable.Stack[String]()
         val operatorStack = mutable.Stack[String]()
@@ -63,33 +63,45 @@ abstract class REPLBase extends REPL {
         }
     }
     def pushBaseValueToExpressionStack (outputStack: mutable.Stack[Expression], element: String): Unit // Function to push base type values to the expression stack
-    def pushBaseValueToBaseStack (outputStack: mutable.Stack[Base], element: String): Unit // Function to push base type values to the base type stack
 
-//   def RPNToResult(expression: Seq[String]): Base  = {
-//        val outputStack = mutable.Stack[Base]()
-//        expression.foreach {
-//            case token if isOperator(token) =>
-//                val firstOperand = outputStack.pop()
-//                val secondOperand = outputStack.pop()
-//                val result = applyOperation(secondOperand, token, firstOperand)
-//                outputStack.push(result)
-//
-//
-//            case token if token.length > 1 => // Handle multi sets
-//                val multiSetElements = token.drop(1).dropRight(1).split(",").toSeq
-//                val multiSet = MultiSet(multiSetElements)
-//                pushBaseValueToBaseStack(outputStack, multiSet.toString)
-//
-//            case token if isVariable(token) =>
-//                val variableValue = variablesMap.getOrElse(token, emptyValue)
-//                pushBaseValueToBaseStack(outputStack, variableValue.toString)
-//
-//            case token if isInteger(token) =>
-//                pushBaseValueToBaseStack(outputStack, token)
-//
-//        }
-//        outputStack.head
-//    }
+    def RPNToResult (expression: Seq[String]): Base // Polish to Result/Expression Tree Code: https://gitlab.com/vu-oofp/lecture-code/-/blob/master/OOReversePolish.scala
+
+    def substituteVariables (expression: Seq[String]): Seq[String]
+
+    private def solveExpression(expression: Seq[String]): String = {
+        val substitutedExpression = substituteVariables(expression)
+        val reversePolishExpression = expressionToRPN(substitutedExpression)
+        val result = RPNToResult(reversePolishExpression)
+        result.toString
+    }
+
+    def baseVariableAssigner (expression: Array[String], result: String, variableName: String): Unit
+
+    override def readEval(command: String): String = {
+        val tokens = command.split(" ")
+        val isVariableAssignment = command.contains("=")
+        val isSimplification = command.startsWith("@")
+
+        if (isSimplification) {
+            val expression = tokens.drop(1)
+            val reversePolishExpression = expressionToRPN(expression).mkString(" ")
+            val treeExpression = reversePolishToTreeExpression(reversePolishExpression)
+            val simplifiedExpression = simplify(treeExpression).abstractToString
+            return simplifiedExpression
+        }
+
+        val expression = if (isVariableAssignment) tokens.drop(2) else tokens
+        val result = solveExpression(expression)
+
+        if (isVariableAssignment) {
+            val variableName = tokens.head
+            baseVariableAssigner(expression, result, variableName) // The IntRepl needs the result while the MultiSetRepl the expression. So in the overrides they use the right value
+            s"$variableName = $result"
+
+        } else {
+            result
+        }
+    }
 
     // Code for all the classes
     abstract class Expression {
@@ -104,8 +116,7 @@ abstract class REPLBase extends REPL {
         override def abstractToString: String = string
     }
 
-    private case class Operator(firstOperand: Expression, operatorName: String, secondOperand: Expression) extends Expression {
-
+    private case class Operator (firstOperand: Expression, operatorName: String, secondOperand: Expression) extends Expression {
         override def abstractToString: String = { // Correctly prints out the simplifications. Have to check for parenthesis placement for the distributivity rules
             val shouldParenthesisBePlaced = ((operatorName == "*" || operatorName == "/")
               && (secondOperand.isInstanceOf[Operator] && (secondOperand.asInstanceOf[Operator].operatorName == "+" || secondOperand.asInstanceOf[Operator].operatorName == "-")))
@@ -121,7 +132,7 @@ abstract class REPLBase extends REPL {
         }
     }
 
-    def simplify(expression: Expression): Expression = {
+    private def simplify (expression: Expression): Expression = {
 
         val simplifiedExpression = expression match {
 
@@ -190,14 +201,14 @@ abstract class REPLBase extends REPL {
         }
     }
 
-    private def isChar(string: String): Boolean = {
+    private def isChar (string: String): Boolean = {
         string match {
             case "(" | ")" | "," | "+" | "-" | "*" | "/" | "=" | "@" => false
             case _ => true
         }
     }
 
-    def reversePolishToTreeExpression(expression: String): Expression = {
+    private def reversePolishToTreeExpression (expression: String): Expression = {
         val outputStack: mutable.Stack[Expression] = new mutable.Stack()
         for (element <- expression.split(" ")) {
             if (!isChar(element)) {
@@ -216,5 +227,4 @@ abstract class REPLBase extends REPL {
         }
         outputStack.top
     }
-
 }
