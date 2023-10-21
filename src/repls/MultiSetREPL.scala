@@ -13,11 +13,15 @@ class MultiSetREPL extends REPLBase {
     )
     override val emptyValue: MultiSet[String] = empty[String]
 
-    override def pushBaseTypeValue(outputStack: mutable.Stack[Expression], element: String): Unit = {
+    override def pushBaseValueToExpressionStack(outputStack: mutable.Stack[Expression], element: String): Unit = {
         val elementAsSeq = Seq(element) // Convert to a sequence
         outputStack.push(Const(MultiSet(elementAsSeq)))
     }
 
+    override def pushBaseValueToBaseStack(outputStack: mutable.Stack[MultiSet[String]], element: String): Unit = {
+    val elementAsSeq = Seq(element)
+    outputStack.push(MultiSet(elementAsSeq))
+    }
 
     private def RPNToResult(expression: Seq[String]): Base = {
         val outputStack = mutable.Stack[Base]()

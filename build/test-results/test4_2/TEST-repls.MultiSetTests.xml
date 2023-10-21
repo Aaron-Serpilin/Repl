@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="repls.MultiSetTests" tests="22" skipped="0" failures="0" errors="0" timestamp="2023-10-21T11:41:52" hostname="Jays-MacBook-Pro-2.local" time="0.061">
+<testsuite name="repls.MultiSetTests" tests="22" skipped="0" failures="0" errors="0" timestamp="2023-10-21T20:40:21" hostname="Jays-MacBook-Pro-2.local" time="0.092">
   <properties/>
   <testcase name="MultiSets can represent the empty Set" classname="repls.MultiSetTests" time="0.006"/>
-  <testcase name="Simple multiset character" classname="repls.MultiSetTests" time="0.004"/>
-  <testcase name="Simple multiset string" classname="repls.MultiSetTests" time="0.0"/>
+  <testcase name="Simple multiset character" classname="repls.MultiSetTests" time="0.005"/>
+  <testcase name="Simple multiset string" classname="repls.MultiSetTests" time="0.001"/>
   <testcase name="Simple multiset Int" classname="repls.MultiSetTests" time="0.002"/>
   <testcase name="Simple multiset double" classname="repls.MultiSetTests" time="0.002"/>
-  <testcase name="Multiple elements" classname="repls.MultiSetTests" time="0.004"/>
-  <testcase name="Same elements" classname="repls.MultiSetTests" time="0.0"/>
-  <testcase name="Different and same elements" classname="repls.MultiSetTests" time="0.0"/>
-  <testcase name="Sum of multiset with empty set" classname="repls.MultiSetTests" time="0.002"/>
-  <testcase name="Sum of two multisets" classname="repls.MultiSetTests" time="0.004"/>
-  <testcase name="Sum of three multisets" classname="repls.MultiSetTests" time="0.002"/>
-  <testcase name="Difference of a multiset with empty set" classname="repls.MultiSetTests" time="0.001"/>
-  <testcase name="Difference of two multisets" classname="repls.MultiSetTests" time="0.001"/>
+  <testcase name="Multiple elements" classname="repls.MultiSetTests" time="0.003"/>
+  <testcase name="Same elements" classname="repls.MultiSetTests" time="0.002"/>
+  <testcase name="Different and same elements" classname="repls.MultiSetTests" time="0.01"/>
+  <testcase name="Sum of multiset with empty set" classname="repls.MultiSetTests" time="0.006"/>
+  <testcase name="Sum of two multisets" classname="repls.MultiSetTests" time="0.006"/>
+  <testcase name="Sum of three multisets" classname="repls.MultiSetTests" time="0.003"/>
+  <testcase name="Difference of a multiset with empty set" classname="repls.MultiSetTests" time="0.002"/>
+  <testcase name="Difference of two multisets" classname="repls.MultiSetTests" time="0.002"/>
   <testcase name="Difference of three multisets" classname="repls.MultiSetTests" time="0.001"/>
   <testcase name="Intersection with empty set" classname="repls.MultiSetTests" time="0.002"/>
-  <testcase name="Intersection of two multisets" classname="repls.MultiSetTests" time="0.001"/>
+  <testcase name="Intersection of two multisets" classname="repls.MultiSetTests" time="0.003"/>
   <testcase name="Intersection of tree multisets" classname="repls.MultiSetTests" time="0.001"/>
   <testcase name="Multiset expressions numeric" classname="repls.MultiSetTests" time="0.002"/>
   <testcase name="Multiset expression characters" classname="repls.MultiSetTests" time="0.003"/>
-  <testcase name="Large Multiset 1" classname="repls.MultiSetTests" time="0.004"/>
-  <testcase name="Large Multiset 2" classname="repls.MultiSetTests" time="0.0"/>
+  <testcase name="Large Multiset 1" classname="repls.MultiSetTests" time="0.005"/>
+  <testcase name="Large Multiset 2" classname="repls.MultiSetTests" time="0.001"/>
   <testcase name="Large Multiset 3" classname="repls.MultiSetTests" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

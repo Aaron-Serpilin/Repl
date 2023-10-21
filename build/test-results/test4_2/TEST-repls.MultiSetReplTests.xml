@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="repls.MultiSetReplTests" tests="45" skipped="0" failures="8" errors="0" timestamp="2023-10-21T11:41:52" hostname="Jays-MacBook-Pro-2.local" time="0.196">
+<testsuite name="repls.MultiSetReplTests" tests="45" skipped="0" failures="8" errors="0" timestamp="2023-10-21T20:40:21" hostname="Jays-MacBook-Pro-2.local" time="0.249">
   <properties/>
-  <testcase name="Echo simple" classname="repls.MultiSetReplTests" time="0.011"/>
-  <testcase name="Echo brackets" classname="repls.MultiSetReplTests" time="0.002"/>
+  <testcase name="Echo simple" classname="repls.MultiSetReplTests" time="0.014"/>
+  <testcase name="Echo brackets" classname="repls.MultiSetReplTests" time="0.001"/>
   <testcase name="Evaluate summation simple" classname="repls.MultiSetReplTests" time="0.001"/>
-  <testcase name="Evaluate summation brackets" classname="repls.MultiSetReplTests" time="0.009"/>
+  <testcase name="Evaluate summation brackets" classname="repls.MultiSetReplTests" time="0.014"/>
   <testcase name="Evaluate summation longer names" classname="repls.MultiSetReplTests" time="0.008"/>
   <testcase name="Evaluate subtraction simple" classname="repls.MultiSetReplTests" time="0.001"/>
-  <testcase name="Evaluate subtraction brackets" classname="repls.MultiSetReplTests" time="0.001"/>
-  <testcase name="Evaluate intersection simple" classname="repls.MultiSetReplTests" time="0.001"/>
-  <testcase name="Evaluate intersection brackets" classname="repls.MultiSetReplTests" time="0.001"/>
-  <testcase name="Evaluate expressions simple" classname="repls.MultiSetReplTests" time="0.001"/>
-  <testcase name="Evaluate expressions brackets" classname="repls.MultiSetReplTests" time="0.003"/>
+  <testcase name="Evaluate subtraction brackets" classname="repls.MultiSetReplTests" time="0.002"/>
+  <testcase name="Evaluate intersection simple" classname="repls.MultiSetReplTests" time="0.002"/>
+  <testcase name="Evaluate intersection brackets" classname="repls.MultiSetReplTests" time="0.002"/>
+  <testcase name="Evaluate expressions simple" classname="repls.MultiSetReplTests" time="0.0"/>
+  <testcase name="Evaluate expressions brackets" classname="repls.MultiSetReplTests" time="0.001"/>
   <testcase name="Evaluate expressions nested brackets" classname="repls.MultiSetReplTests" time="0.001"/>
-  <testcase name="Evaluate expressions advanced brackets" classname="repls.MultiSetReplTests" time="0.001"/>
+  <testcase name="Evaluate expressions advanced brackets" classname="repls.MultiSetReplTests" time="0.003"/>
   <testcase name="Assign variables simple" classname="repls.MultiSetReplTests" time="0.001"/>
-  <testcase name="Assign variables and evaluate" classname="repls.MultiSetReplTests" time="0.002"/>
-  <testcase name="Assign variables reuse" classname="repls.MultiSetReplTests" time="0.005"/>
-  <testcase name="Assign variables reassign" classname="repls.MultiSetReplTests" time="0.003"/>
-  <testcase name="Assign variables evaluate" classname="repls.MultiSetReplTests" time="0.005"/>
-  <testcase name="Assign variables advanced" classname="repls.MultiSetReplTests" time="0.036">
+  <testcase name="Assign variables and evaluate" classname="repls.MultiSetReplTests" time="0.005"/>
+  <testcase name="Assign variables reuse" classname="repls.MultiSetReplTests" time="0.007"/>
+  <testcase name="Assign variables reassign" classname="repls.MultiSetReplTests" time="0.004"/>
+  <testcase name="Assign variables evaluate" classname="repls.MultiSetReplTests" time="0.002"/>
+  <testcase name="Assign variables advanced" classname="repls.MultiSetReplTests" time="0.049">
     <failure message="org.scalatest.exceptions.TestFailedException: &quot;{[(,),*,+,-,{d,d,d,c},{g,c,c},{g,h,y}]}&quot; did not equal &quot;{[g,g]}&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;{[(,),*,+,-,{d,d,d,c},{g,c,c},{g,h,y}]}&quot; did not equal &quot;{[g,g]}&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
@@ -185,9 +185,9 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simplify empty set left" classname="repls.MultiSetReplTests" time="0.001"/>
-  <testcase name="Simplify empty set right" classname="repls.MultiSetReplTests" time="0.001"/>
-  <testcase name="Simplify intersection by itself" classname="repls.MultiSetReplTests" time="0.001"/>
+  <testcase name="Simplify empty set left" classname="repls.MultiSetReplTests" time="0.0"/>
+  <testcase name="Simplify empty set right" classname="repls.MultiSetReplTests" time="0.0"/>
+  <testcase name="Simplify intersection by itself" classname="repls.MultiSetReplTests" time="0.002"/>
   <testcase name="Simplify intersection by empty set left" classname="repls.MultiSetReplTests" time="0.001"/>
   <testcase name="Simplify intersection by empty set right" classname="repls.MultiSetReplTests" time="0.0"/>
   <testcase name="Simplify brackets" classname="repls.MultiSetReplTests" time="0.0">
@@ -273,7 +273,7 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simplify leading empty set" classname="repls.MultiSetReplTests" time="0.0">
+  <testcase name="Simplify leading empty set" classname="repls.MultiSetReplTests" time="0.001">
     <failure message="org.scalatest.exceptions.TestFailedException: &quot;{[b} + {a,n,b]}&quot; did not equal &quot;{[a,b,b,n]}&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;{[b} + {a,n,b]}&quot; did not equal &quot;{[a,b,b,n]}&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
@@ -439,21 +439,21 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simplify abstract simple" classname="repls.MultiSetReplTests" time="0.0"/>
-  <testcase name="Simplify unneeded empty set on abstract left" classname="repls.MultiSetReplTests" time="0.001"/>
+  <testcase name="Simplify abstract simple" classname="repls.MultiSetReplTests" time="0.001"/>
+  <testcase name="Simplify unneeded empty set on abstract left" classname="repls.MultiSetReplTests" time="0.0"/>
   <testcase name="Simplify unneeded empty set on abstract right" classname="repls.MultiSetReplTests" time="0.0"/>
-  <testcase name="Simplify multiply by empty set on abstract left" classname="repls.MultiSetReplTests" time="0.0"/>
-  <testcase name="Simplify multiply by empty set on abstract right" classname="repls.MultiSetReplTests" time="0.0"/>
-  <testcase name="Simplify intersection by its abstract self" classname="repls.MultiSetReplTests" time="0.001"/>
+  <testcase name="Simplify multiply by empty set on abstract left" classname="repls.MultiSetReplTests" time="0.001"/>
+  <testcase name="Simplify multiply by empty set on abstract right" classname="repls.MultiSetReplTests" time="0.001"/>
+  <testcase name="Simplify intersection by its abstract self" classname="repls.MultiSetReplTests" time="0.0"/>
   <testcase name="Simplify intersection by its abstract self compositie" classname="repls.MultiSetReplTests" time="0.0"/>
-  <testcase name="Simplify subtract abstract" classname="repls.MultiSetReplTests" time="0.0"/>
-  <testcase name="Simplify subtract abstract nested" classname="repls.MultiSetReplTests" time="0.0"/>
-  <testcase name="Simplify abstract brackets" classname="repls.MultiSetReplTests" time="0.016"/>
-  <testcase name="Simplify abstract advanced" classname="repls.MultiSetReplTests" time="0.003"/>
+  <testcase name="Simplify subtract abstract" classname="repls.MultiSetReplTests" time="0.001"/>
+  <testcase name="Simplify subtract abstract nested" classname="repls.MultiSetReplTests" time="0.021"/>
+  <testcase name="Simplify abstract brackets" classname="repls.MultiSetReplTests" time="0.006"/>
+  <testcase name="Simplify abstract advanced" classname="repls.MultiSetReplTests" time="0.002"/>
   <testcase name="Simplify abstract brackets 2" classname="repls.MultiSetReplTests" time="0.001"/>
   <testcase name="Simplify nested" classname="repls.MultiSetReplTests" time="0.001"/>
-  <testcase name="Simplify advanced" classname="repls.MultiSetReplTests" time="0.023"/>
-  <testcase name="Simplify with assigned variables" classname="repls.MultiSetReplTests" time="0.002">
+  <testcase name="Simplify advanced" classname="repls.MultiSetReplTests" time="0.013"/>
+  <testcase name="Simplify with assigned variables" classname="repls.MultiSetReplTests" time="0.003">
     <failure message="org.scalatest.exceptions.TestFailedException: &quot;{[{a,b,b}]}&quot; did not equal &quot;{[a,b,b]}&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;{[{a,b,b}]}&quot; did not equal &quot;{[a,b,b]}&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
@@ -536,7 +536,7 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simplify with assigned variables brackets" classname="repls.MultiSetReplTests" time="0.007">
+  <testcase name="Simplify with assigned variables brackets" classname="repls.MultiSetReplTests" time="0.013">
     <failure message="org.scalatest.exceptions.TestFailedException: &quot;{b,c[,e} * {{a,b,c,c,d}]} * b&quot; did not equal &quot;{b,c[]} * b&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;{b,c[,e} * {{a,b,c,c,d}]} * b&quot; did not equal &quot;{b,c[]} * b&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)
@@ -619,7 +619,7 @@
 	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
 </failure>
   </testcase>
-  <testcase name="Simplify with assigned variables advanced" classname="repls.MultiSetReplTests" time="0.015">
+  <testcase name="Simplify with assigned variables advanced" classname="repls.MultiSetReplTests" time="0.023">
     <failure message="org.scalatest.exceptions.TestFailedException: &quot;{[*,a,{a,b}} * ( {{a,c}} + {a} ) + {(,),*,+,a,b,{c,b}]} + d&quot; did not equal &quot;{[a,a,a,c]} + d&quot;" type="org.scalatest.exceptions.TestFailedException">org.scalatest.exceptions.TestFailedException: &quot;{[*,a,{a,b}} * ( {{a,c}} + {a} ) + {(,),*,+,a,b,{c,b}]} + d&quot; did not equal &quot;{[a,a,a,c]} + d&quot;
 	at app//org.scalatest.Assertions.newAssertionFailedException(Assertions.scala:530)
 	at app//org.scalatest.Assertions.newAssertionFailedException$(Assertions.scala:529)

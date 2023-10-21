@@ -11,25 +11,30 @@ class IntREPL extends REPLBase {
         "*" -> ((a, b) => a * b)
     )
     override val emptyValue: Int = 0
-    override def pushBaseTypeValue(outputStack: mutable.Stack[Expression], element: String): Unit = {
+
+    override def pushBaseValueToExpressionStack(outputStack: mutable.Stack[Expression], element: String): Unit = {
         outputStack.push(Const(element.toInt))
     }
 
+    override def pushBaseValueToBaseStack(outputStack: mutable.Stack[Base], element: String): Unit = {
+        outputStack.push(element.toInt)
+    }
+
     // Polish to Result/Expression Tree Code: https://gitlab.com/vu-oofp/lecture-code/-/blob/master/OOReversePolish.scala
-    private def RPNToResult(expression: Seq[String]): Seq[String] = {
-        val outputStack = mutable.Stack[String]()
+    private def RPNToResult(expression: Seq[String]): Base = {
+        val outputStack = mutable.Stack[Base]() // Change the type of outputStack
         expression.foreach {
             case token if isOperator(token) =>
                 val firstOperand = outputStack.pop()
                 val secondOperand = outputStack.pop()
-                val result = applyOperation(secondOperand.toInt, token, firstOperand.toInt)
-                outputStack.push(result.toString)
+                val result = applyOperation(secondOperand, token, firstOperand)
+                outputStack.push(result)
 
             case token if isInteger(token) =>
-                outputStack.push(token)
+                outputStack.push(token.toInt)
 
         }
-        outputStack.toSeq
+        outputStack.head
     }
 
     private def substituteVariables(expression: Seq[String]): Seq[String] = {
@@ -41,11 +46,11 @@ class IntREPL extends REPLBase {
         }
     }
 
-    private def solveExpression (expression: Seq[String]): String = {
+    private def solveExpression(expression: Seq[String]): String = {
         val substitutedExpression = substituteVariables(expression)
         val reversePolishExpression = expressionToRPN(substitutedExpression)
         val result = RPNToResult(reversePolishExpression)
-        result.head
+        result.toString
     }
 
     override def readEval(command: String): String = {
