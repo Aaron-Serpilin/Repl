@@ -5,11 +5,14 @@ class IntREPL extends REPLBase {
 
     type Base = Int
     override val replName: String = "Base-repl"
-
-    private def applyOperation(firstOperator: Base, operator: String, secondOperator: Base): Base = operator match {
-        case "+" => firstOperator + secondOperator
-        case "-" => firstOperator - secondOperator
-        case "*" => firstOperator * secondOperator
+    override val operationHandler: Map[String, (Base, Base) => Base] = Map(
+        "+" -> ((a, b) => a + b),
+        "-" -> ((a, b) => a - b),
+        "*" -> ((a, b) => a * b)
+    )
+    override val emptyValue: Int = 0
+    override def pushBaseTypeValue(outputStack: mutable.Stack[Expression], element: String): Unit = {
+        outputStack.push(Const(element.toInt))
     }
 
     // Polish to Result/Expression Tree Code: https://gitlab.com/vu-oofp/lecture-code/-/blob/master/OOReversePolish.scala
@@ -54,8 +57,8 @@ class IntREPL extends REPLBase {
         if (isSimplification) { // Check for simplification
             val expression = tokens.drop(1)
             val reversePolishExpression = expressionToRPN(expression).mkString(" ")
-            val treeExpression = Expressions.ReversePolish.reversePolishToTreeExpression(reversePolishExpression) // We use the given code from the course
-            val simplifiedExpression = Expressions.PatternMatch.simplify(treeExpression).abstractToString
+            val treeExpression = reversePolishToTreeExpression(reversePolishExpression) // We use the given code from the course
+            val simplifiedExpression = simplify(treeExpression).abstractToString
             return simplifiedExpression
         }
 

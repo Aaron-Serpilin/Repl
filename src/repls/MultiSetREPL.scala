@@ -1,17 +1,23 @@
 package repls
 import scala.collection.mutable
-
+import repls.MultiSet.empty
 
 class MultiSetREPL extends REPLBase {
 
     override type Base = MultiSet[String]
     override val replName: String = "multiset-repl"
+    override val operationHandler: Map[String, (Base, Base) => Base] = Map(
+        "+" -> ((a, b) => a + b),
+        "-" -> ((a, b) => a - b),
+        "*" -> ((a, b) => a * b)
+    )
+    override val emptyValue: MultiSet[String] = empty[String]
 
-    private def applyOperation(firstOperator: Base, operator: String, secondOperator: Base): Base = operator match {
-        case "+" => firstOperator + secondOperator
-        case "-" => firstOperator - secondOperator
-        case "*" => firstOperator * secondOperator
+    override def pushBaseTypeValue(outputStack: mutable.Stack[Expression], element: String): Unit = {
+        val elementAsSeq = Seq(element) // Convert to a sequence
+        outputStack.push(Const(MultiSet(elementAsSeq)))
     }
+
 
     private def RPNToResult(expression: Seq[String]): Base = {
         val outputStack = mutable.Stack[Base]()
@@ -60,8 +66,8 @@ class MultiSetREPL extends REPLBase {
         if (isSimplification) {
             val expression = tokens.drop(1)
             val reversePolishExpression = expressionToRPN(expression).mkString(" ")
-            val treeExpression = Expressions.ReversePolish.reversePolishToTreeExpression(reversePolishExpression)
-            val simplifiedExpression = Expressions.PatternMatch.simplify(treeExpression).abstractToString
+            val treeExpression = reversePolishToTreeExpression(reversePolishExpression)
+            val simplifiedExpression = simplify(treeExpression).abstractToString
             return simplifiedExpression
         }
 

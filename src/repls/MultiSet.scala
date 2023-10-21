@@ -1,14 +1,5 @@
 package repls
 
-import repls.MultiSet.empty
-
-/*
-    Multiset is a Map of elements and their respective count.
-    For example:
-    {a,a,a,b,c,c} = Map('a'->3, 'b'->1, 'c'->2)
- */
-
-
 case class MultiSet[T] (multiplicity: Map[T, Int]) {
 
     // Intersection of multi sets
